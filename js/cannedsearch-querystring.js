@@ -80,7 +80,7 @@
 
 					// alert("scenario: " + scenario);
 
-					window.location.href = "https://gc-proto.github.io/ei-mat-parental/scenarioA/search-results-" + scenario + ".html";
+					window.location.href = "https://gc-proto.github.io/cra-contactus/search-results-" + scenario + ".html";
 
 					// tell the form not to do whatever the HTML code was telling it to do
 					event.preventDefault();
@@ -105,7 +105,7 @@
 
 						// alert("scenario: " + scenario);
 
-						window.location.href = "https://gc-proto.github.io/ei-mat-parental/scenarioA/search-results-" + scenario + ".html";
+						window.location.href = "https://gc-proto.github.io/cra-contactus/search-results-" + scenario + ".html";
 
 						// tell the form not to do whatever the HTML code was telling it to do
 						event.preventDefault();
@@ -124,7 +124,7 @@
 			var currentpage = document.location.pathname.match(/[^\/]+$/)[0];
 
 			// if we're on template_links.html, warn the moderator that the canned search script won't work
-			if (currentpage = "template_links.html") {
+			if (currentpage = "ut_en.html") {
 
 				alert("sessionStorage is not available!  This will prevent the canned search results pages from functioning.");
 
