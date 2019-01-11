@@ -286,8 +286,8 @@ th {
 
 @font-face {
     font-family: 'Glyphicons Halflings';
-    src: url(../../wet-boew/fonts/glyphicons-halflings-regular.eot);
-    src: url(../../wet-boew/fonts/glyphicons-halflings-regular.eot?#iefix) format("embedded-opentype"), url(../../wet-boew/fonts/glyphicons-halflings-regular.woff2) format("woff2"), url(../../wet-boew/fonts/glyphicons-halflings-regular.woff) format("woff"), url(../../wet-boew/fonts/glyphicons-halflings-regular.ttf) format("truetype"), url(../../wet-boew/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format("svg")
+    src: url(https://wet-boew.github.io/wet-boew/fonts/glyphicons-halflings-regular.eot);
+    src: url(https://wet-boew.github.io/wet-boew/fonts/glyphicons-halflings-regular.eot?#iefix) format("embedded-opentype"), url(https://wet-boew.github.io/wet-boew/fonts/glyphicons-halflings-regular.woff2) format("woff2"), url(https://wet-boew.github.io/wet-boew/fonts/glyphicons-halflings-regular.woff) format("woff"), url(https://wet-boew.github.io/wet-boew/fonts/glyphicons-halflings-regular.ttf) format("truetype"), url(https://wet-boew.github.io/wet-boew/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format("svg")
 }
 
 .glyphicon {
@@ -13171,7 +13171,7 @@ html {
 
 main {
     font-size: 20px;
-    line-height: 1.35em
+    line-height: 1.65em /* correction from 1.35 em */
 }
 
 main .pagedetails {
@@ -13295,7 +13295,8 @@ h1 {
 
 .gc-drmt p,
 .gc-srvinfo p {
-    font-size: 19px
+    font-size: 17px; /* correction from 19px */
+    line-height: 1.65em /* correction - not specified when it needed to be */
 }
 
 .gc-drmt h3,
