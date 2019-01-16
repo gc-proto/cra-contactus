@@ -2,6 +2,17 @@
   font-size: 1.2em;
 }
 
+ul.feeds-cont li {
+
+ font-size: 17px !important;
+ line-height: 1.5em !important;
+}
+
+
+ul.feeds-cont li a {
+
+ text-decoration: underline !important;
+}
 
 @media screen and (max-width: 1200px) {
 
