@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin,latin-ext');
+
+
+
+
+.mr-home {
+
+	font-size: 17px !important;
+	font-weight: 600 !important;
+	padding-bottom: 6px ;
+	font-family: 'Lato', sans-serif !important;
+
+}
+
+
+
+/* font size in li of breadcrumb */
+
+.cust-breadcrumb {
+
+	font-size: 16px !important;
+
+
+
+}
+
+
+
+/* removing padding that pushes content down a lot */
+
+
+
+.breadcrumb {
+
+	margin-top: 0px !important;
+}
+
+
+
+
+.text-banner {
+
+	color: white;
+	margin-top: 8px;
+
+
+}
+
+.text-background-1 {
+
+
+		padding-top: 25px !important;
+		text-shadow: 2px 2px 4px #111;
+
+		/* opacity: .95; */
+
+}
+
+
+.text-background-2 {
+
+
+		padding-bottom: 20px;
+		text-shadow: 2px 2px 4px #111;
+		/* opacity: .95; */
+}
+
+
+
+.edge-color {
+    background-color: #f0f0f0;
+    display: inline-block;
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 15px;
+
+}
+
+.homeborder {
+
+	font-weight: 500 !important;
+	font-family: 'Lato', sans-serif;
+	border-bottom: 4px solid #af3c43;
+
+
+}
+
+.canadamenu {
+
+	display: inline-block;
+	width: 100%;
+	max-height: 100px;
+	/* border-bottom: 1px solid #38414d; */
+	border-top: 3px solid #38414d;
+		margin-top: 10px;
+}
+
+.homemenu {
+
+	display: inline-block;
+	width: 100%;
+	max-height: 100px;
+	/* border-bottom: 1px solid #38414d; */
+	border-top: 1px solid #ddd;
+	margin-top: 10px;
+}
+
+
+.img-banner {
+
+	background-image: url("../../scenarioA/img/CRAHQexterior.jpg");
+	background-color: #26374a;
+  background-repeat: no-repeat;
+  background-size:100% auto;
+  width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+
+}
+
+.content-restrict {
+
+	display: inline-block !important;
+	position: relative;
+	max-width: 70em;
+
+}
+
+
+.footer-text {
+
+	color: white !important;
+
+}
+
+
+.brand {
+
+	background: white !important;
+	border-top: none !important;
+}
+
+section.lnkbx ul {
+
+	padding-top: 15px;
+	padding-bottom: 18px;
+}
+
+
+
+
+.init-box {
+
+	padding: 15px;
+	min-height: 135px;
+	background-color: #f9f9f9 !important;
+	border: 1px #ddd solid;
+
+}
+
+.init {
+	margin-top: 0px;
+	margin-left: 15px;
+	margin-right: 15px;
+	font-size: 20px !important;
+
+}
+
+
+/*  tablet/mobile fonts customizations and scaling */
+
+@media screen and (max-width: 1200px) {
+
+	.init-box {
+
+		padding: 15px;
+		min-height: 155px;
+		max-height: 185px;
+		background-color: #f9f9f9 !important;
+		border: 1px #ddd solid;
+
+	}
+
+	p, ul, li {
+
+
+		font-size: 19px !important;
+		line-height: 26px !important;
+
+	}
+
+	h1 {
+			font-size: 34px !important;
+
+		}
+
+	h2 {
+				font-size: 32px !important;
+
+			}
+
+
+
+
+	.ch5 {
+
+				font-size: 21px !important;
+
+							}
+
+		.mr-home {
+
+								font-size: 19px !important;
+
+							}
+
+			.breadcrumb {
+
+
+			}
+
+}
