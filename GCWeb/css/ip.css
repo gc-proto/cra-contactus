@@ -63,9 +63,9 @@
 
 .text-background-1 {
 
-
+		background-color: #26374a;
 		padding-top: 25px !important;
-		text-shadow: 2px 2px 4px #111;
+	/*	text-shadow: 2px 2px 4px #111; */
 
 		/* opacity: .95; */
 
@@ -74,9 +74,9 @@
 
 .text-background-2 {
 
-
-		padding-bottom: 0px;
-		text-shadow: 2px 2px 4px #111;
+		background-color: #26374a;
+		padding-bottom: 15px;
+	/*	text-shadow: 2px 2px 4px #111; */
 		/* opacity: .95; */
 }
 
