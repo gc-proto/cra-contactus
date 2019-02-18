@@ -47,7 +47,7 @@
 
 .breadcrumb {
 
-	margin-top: 0px !important;
+/*	margin-top: 0px !important; */
 }
 
 
@@ -61,10 +61,13 @@
 
 }
 
+.mini-h2s {
+	font-size: 1.2em !important;
+}
 .text-background-1 {
 
 		background-color: #26374a;
-		padding-top: 25px !important;
+		padding-top: 20px !important;
 	/*	text-shadow: 2px 2px 4px #111; */
 
 		/* opacity: .95; */
@@ -75,7 +78,7 @@
 .text-background-2 {
 
 		background-color: #26374a;
-		padding-bottom: 25px;
+		padding-bottom: 20px;
 	/*	text-shadow: 2px 2px 4px #111; */
 		/* opacity: .95; */
 }
@@ -128,8 +131,8 @@
   background-repeat: no-repeat;
   background-size:100% auto;
   width: 100%;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 30px;
+	padding-bottom: 30px;
 
 
 }
