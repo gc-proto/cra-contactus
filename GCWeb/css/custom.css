@@ -23,6 +23,11 @@ main section.lnkbx ul li a {
   line-height: .8em !important;  /* not targetting properly, being overrideen by main line-height... need to look at again later */
 }
 
+.active {
+  background-color: #333 !important;
+border-color: #8f8f8f  !important;
+}
+
 @media screen and (max-width: 1200px) {
 
   .promo {
