@@ -14,6 +14,10 @@ ul.feeds-cont li a {
  text-decoration: underline !important;
 }
 
+ul.toc {
+
+  font-size: 17px !important;
+}
 
 main section.lnkbx ul li a {
   line-height: .8em !important;  /* not targetting properly, being overrideen by main line-height... need to look at again later */
