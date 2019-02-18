@@ -13296,7 +13296,7 @@ h1 {
 .gc-drmt p,
 .gc-srvinfo p {
     font-size: 17px; /* correction from 19px */
-    line-height: 1.65em /* correction - not specified when it needed to be */
+    line-height: 1.5em /* correction - not specified when it needed to be */
 }
 
 .gc-drmt h3,
