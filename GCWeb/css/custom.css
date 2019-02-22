@@ -62,11 +62,18 @@ main section.lnkbx ul li a {
 		font-family: "Glyphicons Halflings";
 		font-size: 1.5em;
 }
+
+.mobile-breadcrumb {
+  padding-top: 0px !important;
+}
+
 }
 @media screen and (min-width: 737px) {
 .no-break-breadcrumb {
 	display: inline-block!important;
 }
+
+
 }
 
 /* end breadcrumb */
