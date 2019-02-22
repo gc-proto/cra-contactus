@@ -30,8 +30,8 @@ table td {
 }
 
 table th {
-  font-size: .85em;
-  letter-spacing: .1em;
+  font-size: 1em;
+/*  letter-spacing: .1em; */
 }
 
 @media screen and (max-width: 600px) {
@@ -40,7 +40,7 @@ table th {
   }
 
   table caption {
-    font-size: .85em;
+    font-size: 1.1em;
   }
 
   table thead {
@@ -63,7 +63,7 @@ table th {
   table td {
     border-bottom: 1px solid #ddd;
     display: block;
-    font-size: .8em;
+    font-size: 1em;
     text-align: right;
   }
 
@@ -83,22 +83,22 @@ table th {
 }
 
 tr.d0 th {
-  font-size: .8em;
+  font-size: 1em;
   font-weight: bold;
   background-color: #FFFFFF;
-  color: black;
+/*  color: black; */
 }
 
 tr.d1 td {
-  font-size: .8em;
+  font-size: 1em;
 	background-color: #F5F5F5;
-  color: black;
+/*   color: black; */
 }
 
 tr.d2 td {
-  font-size: .8em;
+  font-size: 1em;
 	background-color: #FFFFFF;
-  color: black;
+/*  color: black; */
 }
 
 
