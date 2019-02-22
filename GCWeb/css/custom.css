@@ -35,7 +35,18 @@ main section.lnkbx ul li a {
     margin-top: -8px !important;
 }
 
+.btn-login {
 
+
+	background-color: #318000 !important;
+	border: 1px solid #455E82 !important;
+	font-weight: 600 !important;
+	font-family: "Lato";
+	padding-top: 8px;
+	padding-bottom: 8px;
+	margin-top: 5px;
+
+}
 
 
 @media screen and (max-width: 1200px) {
