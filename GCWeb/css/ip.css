@@ -200,4 +200,14 @@ section.lnkbx ul {
 
 			}
 
+
+}
+
+@media screen and (max-width: 800px) {
+
+.btn-call-to-action {
+
+	font-size: 19px !important;
+}
+
 }
