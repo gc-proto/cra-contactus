@@ -48,7 +48,7 @@ main section.lnkbx ul li a {
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 760px) {
 
   .mobile-left {
     float: left !important;
