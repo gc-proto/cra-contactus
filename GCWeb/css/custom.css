@@ -28,6 +28,14 @@ main section.lnkbx ul li a {
 border-color: #8f8f8f  !important;
 }
 
+.cra-contacts div.col-md-4 {
+
+    margin-top: -8px !important;
+}
+
+
+
+
 @media screen and (max-width: 1200px) {
 
   .promo {
