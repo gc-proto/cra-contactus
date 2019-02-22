@@ -19,14 +19,16 @@ ul.toc {
   font-size: 17px !important;
 }
 
+ul.toc .active {
+  background-color: #333 !important;
+  border-color: #8f8f8f  !important;
+}
+
 main section.lnkbx ul li a {
   line-height: .8em !important;  /* not targetting properly, being overrideen by main line-height... need to look at again later */
 }
 
-ul.toc.active {
-  background-color: #333 !important;
-  border-color: #8f8f8f  !important;
-}
+
 
 .cra-contacts div.col-md-4 {
 
