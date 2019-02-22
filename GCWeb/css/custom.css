@@ -44,4 +44,14 @@ main section.lnkbx ul li a {
   	padding-left: 1em;
 
 }
+
+}
+
+
+@media screen and (max-width: 800px) {
+
+  .mobile-left {
+    float: left !important;
+  }
+
 }
