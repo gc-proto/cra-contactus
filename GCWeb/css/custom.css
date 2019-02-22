@@ -52,6 +52,20 @@ main section.lnkbx ul li a {
 /* start custom breadcrumb  */
 
 
+@media screen and (max-width: 737px) {
+#wb-bc li:before {
+		color: #333;
+		content: "<"!important;
+		font-family: "Glyphicons Halflings";
+		font-size: 1.5em;
+}
+}
+@media screen and (min-width: 737px) {
+.no-break-breadcrumb {
+	display: inline-block!important;
+}
+}
+
 /* end breadcrumb */
 
 @media screen and (max-width: 1200px) {
