@@ -19,14 +19,61 @@ ul.toc {
   font-size: 17px !important;
 }
 
+ul.toc .active {
+  background-color: #333 !important;
+  border-color: #8f8f8f  !important;
+}
+
 main section.lnkbx ul li a {
   line-height: .8em !important;  /* not targetting properly, being overrideen by main line-height... need to look at again later */
 }
 
-.active {
-  background-color: #333 !important;
-border-color: #8f8f8f  !important;
+
+
+.cra-contacts div.col-md-4 {
+
+    margin-top: -8px !important;
 }
+
+.btn-login {
+
+
+	background-color: #318000 !important;
+	border: 1px solid #455E82 !important;
+	font-weight: 600 !important;
+	font-family: "Lato";
+	padding-top: 8px;
+	padding-bottom: 8px;
+	margin-top: 5px;
+
+}
+
+
+/* start custom breadcrumb  */
+
+
+@media screen and (max-width: 737px) {
+#wb-bc li:before {
+		color: #333;
+		content: "<"!important;
+		font-size: 1.5em;
+}
+
+.gcweb-v2~#wb-bc ol {
+
+  margin-top: 5px !important;
+}
+
+}
+@media screen and (min-width: 737px) {
+.no-break-breadcrumb {
+	display: inline-block!important;
+}
+
+
+}
+
+/* end breadcrumb */
 
 @media screen and (max-width: 1200px) {
 
@@ -34,4 +81,14 @@ border-color: #8f8f8f  !important;
   	padding-left: 1em;
 
 }
+
+}
+
+
+@media screen and (max-width: 760px) {
+
+  .mobile-left {
+    float: left !important;
+  }
+
 }

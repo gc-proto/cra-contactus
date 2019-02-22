@@ -88,7 +88,7 @@
 <nav class="gcweb-v2" typeof="SiteNavigationElement">
 
 <div class="container">
-  <div class="pull-right" style="padding-right: 10px;"><span class="btn btn-primary btn-login">Sign in</span></div>
+  <div class="pull-right" style="padding-right: 10px;"><a class="btn btn-primary btn-login" href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/services/e-services/cra-login-services.html">Sign in</a></div>
 
 <h2 class="wb-inv">Menu</h2>
 <button type="button" aria-haspopup="true" aria-expanded="false"><span class="wb-inv">Main </span>Menu <span class="expicon glyphicon glyphicon-chevron-down"></span></button>
@@ -111,16 +111,33 @@
 </ul>
 </div>
 
-</nav>
-<nav id="wb-bc" property="breadcrumb">
-<h2>You are here:</h2>
-<div class="container">
+<style>
+
+.mobile-breadcrumb {
+  padding-top: 15px;
+}
+
+@media screen and (max-width: 737px) {
+  .mobile-breadcrumb {
+    padding-top: 5px;
+  }
+
+}
+
+</style>
+
+<nav role="navigation" id="wb-bc" property="breadcrumb">
+<h2 class="wb-inv">You are here:</h2>
+<div class="container-fluid mobile-breadcrumb">
+<div class="row">
+<div class="container" style="padding-left:2px!important;">
 <ol class="breadcrumb">
-<li><a href="./en.html">Home (Canada.ca)</a></li>
-<li><a href="https://www.canada.ca/en/government/dept.html">Departments and agencies</a></li>
+<li class="visible-md visible-lg no-break-breadcrumb cust-breadcrumb"><a href='./en.html'>Home (Canada.ca)</a></li>
+<li class="cust-breadcrumb"><a href="https://www.canada.ca/en/government/dept.html">Departments and agencies</a></li>
 </ol>
-</div>
+</div></div></div>
 </nav>
+
 
 </header>
 
@@ -130,22 +147,22 @@
 
   <main role="main" property="mainContentOfPage" class="container">
 
-
-
-<div class="text-background-1 col-lg-9 col-md-9 col-sm-8 col-xs-12">
+<div class="text-background-1 col-lg-9 col-md-9 col-sm-10 col-xs-12">
 
    <div class="col-lg-10 col-md-12 col-sm-10 col-xs-12">
 
-<h1 class="text-banner homeborder" style="">Canada Revenue Agency</h1>
+<h1 class="text-banner homeborder">Canada Revenue Agency</h1>
 
 </div>
 </div>
 <div class="clearfix"></div>
-<div class="text-background-2 col-lg-9 col-md-9 col-sm-8">
-   <p class="text-banner" style="margin-left: 15px !important; font-size: 18px !important; line-height: 1.5em !important;">The Canada Revenue Agency (CRA) administers tax laws for the Government of Canada and for most provinces and territories, and administers various social and economic benefit and incentive programs delivered through the tax system.</p>
+<div class="text-background-2 col-lg-9 col-md-9 col-sm-10">
+   <p class="text-banner" style="margin-left: 15px !important; font-size: 18px !important; line-height: 1.5em !important; padding-bottom: 8px;">Administering tax laws for the Government of Canada and for most provinces and territories.</p>
 
    <div class="col-lg-12 col-md-12" >
-     <span class="btn btn-call-to-action" style="margin-right: 20px !important; margin-bottom: 5px !important; padding-top: 10px !important;">Sign in to a CRA account</span><span><a href="#" style="color: white !important; font-size: 16px !important;">Register for an account</span></a>
+     <a class="btn btn-call-to-action" href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/services/e-services/cra-login-services.html" style="margin-right: 20px !important; margin-bottom: 5px !important; padding-top: 9px !important; margin-top: 7px !important;">Sign in to a CRA account</a>
+
+     <a href="#" style="color: white !important; font-size: 16px !important;">Register for an account</a>
    </div>
 
 
@@ -159,32 +176,6 @@
   </div>
 </div>
 
-</div>
-
-
-<div class="edge">
-  <main role="main" property="mainContentOfPage" class="container">
- <div class="wb-eqht">
-
-<!--  <h2 class="wb-inv">Sign into an online account</h2>
-
-  <div class="col-lg-4 mrgn-bttm-lg">
-    <h3 class="">Sign in to a CRA online account</h3>
-    <div class="" style="padding-right: 10px; "><span class="btn btn-call-to-action">Login</span><a style="margin-left:15px;" href="#">Register</a></div>
-  </div> -->
-<!--
-  <div class="col-lg-4 mrgn-bttm-lg">
-    <h3 class="">My Business Account</h3>
-    <div class="" style="padding-right: 10px; "><span class="btn btn-default">Login</span><a style="margin-left:15px;" href="#">Register</a></div>
-  </div>
-
-  <div class="col-lg-4 mrgn-bttm-lg">
-    <h3 class="">Represent a Client</h3>
-    <div class="" style="padding-right: 10px; "><span class="btn btn-default">Login</span><a style="margin-left:15px;" href="#">Register</a></div>
-  </div> -->
-
- </div>
-</main>
 </div>
 
 
@@ -216,7 +207,7 @@
 <section class="col-lg-4 col-md-6 col-sm-6">
   <ul class="list-unstyled" style="">
 
-<li class="mr-home"><a href="https://www.canada.ca/en/revenue-agency/services/make-a-payment-canada-revenue-agency.html" rel="external">Make a payment to the CRA</a></li>  </section>
+<li class="mr-home"><a href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/services/make-a-payment-canada-revenue-agency.html" rel="external">Make a payment to the CRA</a></li>  </section>
 <section class="col-lg-4 col-md-6 col-sm-6">
   <ul class="list-unstyled" style="">
 <li class="mr-home">  <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/frequently-asked-questions-individuals/canadian-income-tax-rates-individuals-current-previous-years.html" rel="external">Check income tax rates</a></li></ul>
@@ -239,47 +230,15 @@
 
 
 
-<div class="mwstext section"><div class="row profile">
-
-</div>
-
-<!--
-<div class="row">
-  <div class="col-md-4 mrgn-tp-lg text-left pull-right">
-      <section class="lnkbx">
-        <h2 class="mrgn-tp-0">Most requested</h2>
-   <ul class="lst-spcd">
-       <li><a href="./services/e-services/e-services-individuals/account-individuals.html" rel="external">My Account</a></li>
-       <li><a href="./services/e-services/e-services-businesses/business-account.html" rel="external">My Business Account</a></li>
-       <li><a href="https://www.canda.ca/en/revenue-agency/services/e-services/represent-a-client.html" rel="external">Represent a Client</a></li>
-       <li><a href="https://www.canada.ca/en/revenue-agency/services/e-services.html" rel="external">All online services</a></li>
-       <li><a href="https://www.canda.ca/en/revenue-agency/services/e-services/e-services-businesses/gst-hst-netfile.html" rel="external">NETFILE</a></li>
-       <li><a href="https://www.canda.ca/en/revenue-agency/services/e-services/e-services-businesses/payroll-deductions-online-calculator.html" rel="external">Payroll deductions online calculator</a></li>
-       <li><a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/netfile-overview/certified-software-2017-netfile-program.html" rel="external">Tax software</a></li>
-       <li><a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package.html" rel="external">General income tax and benefit package</a></li>
-       <li><a href="https://www.canada.ca/en/revenue-agency/services/make-a-payment-canada-revenue-agency.html" rel="external">Payments</a></li>
-      </ul>
-      <!- - <h3 class="mrgn-tp-1">Contact us</h3>
-      <ul class="lst-spcd">
-       <li><a href="https://www.canda.ca/en/revenue-agency/corporate/contact-information.html">Tax enquiries</a></li>
-       <li><a href="https://www.canda.ca/en/revenue-agency/corporate/contact-information/tax-services-offices-tax-centres.html">Tax services offices and tax centres</a></li>
-       <li><a href="https://www.canda.ca/en/revenue-agency/programs/about-canada-revenue-agency-cra/voluntary-disclosures-program-overview.html">Voluntary disclosures</a></li>
-       <li><a href="https://www.canda.ca/en/revenue-agency/programs/about-canada-revenue-agency-cra/informant-leads-program.html">Informant leads</a></li>
-       <li><a href="https://www.canda.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/complaints-disputes.html">Complaints and disputes</a></li>
-      </ul> -->
-    <!--  </section>
-  </div> -->
+<div class="mwstext section">
 
 
-<!--  <section class="alert alert-info">
-   <p><a href="/en/revenue-agency/news/newsroom/tax-tips/tax-tips-2018/what-to-expect-cra-contacts-you.html">Beware of scammers posing as CRA employees</a>.</p>
- </section>  -->
 <section class="col-md-12 mrgn-bttm-lg row">
 <h2 class="wb-inv">Services and information</h2>
 <div class="row">
   <div class="wb-eqht">
     <section class="col-md-4 gc-drmt">
-     <h3 ><a href="https://www.canada.ca/en/services/taxes/income-tax.html" class="ch5">Income tax</a></h3>
+     <h3 ><a href="https://gc-proto.github.io/cra-contactus/scenarioA/services/taxes/income-tax.html" class="ch5">Income tax</a></h3>
      <p>Personal, corporation, and trust income tax</p>
     </section>
     <section class="col-md-4 gc-drmt">
@@ -301,7 +260,7 @@
      <p>Tax-free savings accounts, registered savings plans, pooled pension plans, and plan administrators</p>
     </section>
     <section class="col-md-4 gc-drmt">
-     <h3><a href="https://www.canada.ca/en/services/taxes/child-and-family-benefits.html" class="ch5">Child and family benefits</a></h3>
+     <h3><a href="https://gc-proto.github.io/cra-contactus/scenarioA/services/taxes/child-and-family-benefits.html" class="ch5">Child and family benefits</a></h3>
      <p>Apply for child and family benefits, including the Canada child benefit, and find benefit payment dates</p>
     </section>
 
@@ -323,8 +282,8 @@
       <section class="">
     <h3 class="mrgn-tp-1">Contact us</h3>
       <ul class="lst-spcd">
-       <li><a href="./revenue-agency/corporate/contact-information.html">Tax enquiries</a></li>
-       <li><a href="./revenue-agency/corporate/contact-information/find-tax-centres-offices.html">Find your tax services office or tax centre</a></li>
+       <li><a href="./revenue-agency/corporate/contact-us.html">Tax enquiries</a></li>
+       <li><a href="./revenue-agency/corporate/contact-us/find-tax-centres-offices.html">Find your tax services office or tax centre</a></li>
        <li><a href="https://www.canda.ca/en/revenue-agency/programs/about-canada-revenue-agency-cra/voluntary-disclosures-program-overview.html">Voluntary disclosures</a></li>
        <li><a href="https://www.canda.ca/en/revenue-agency/programs/about-canada-revenue-agency-cra/informant-leads-program.html">Informant leads</a></li>
        <li><a href="https://www.canda.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/complaints-disputes.html">Complaints and disputes</a></li>
@@ -381,49 +340,50 @@
 <div class="edge-color">
   <main role="main" property="mainContentOfPage" class="container">
 
+
     <div class="row">
 
-    		<div class="col-md-4 pull-right" style="margin-top: 38px !important;">
+      <!-- start contact us, mobile-left class now fixes pull-right issue causing a gap on mobile -->
 
 
-
-
-
+    		<div class="col-md-4 col-sm-5 pull-right mobile-left" style="margin-top: 38px !important; padding-right: 100px;">
+          <div class="visible-sm" style="margin-top: 50px !important;"></div>
         <section class="lnkbx">
-            <h2 class="mrgn-tp-0 mini-h2s">Contact us</h2>
+            <h2 class="mrgn-tp-0 mini-h2s wb-inv">Contact us</h2>
 
             <ul>
-
                     <li>
-                        <a href="#">Telephone numbers<br>
-    </a>
+                        <a href="./revenue-agency/corporate/contact-us.html">Contact the CRA</a>
                     </li>
 
                     <li>
-                        <a href="#">Find a mailing address<br>
-    </a>
+                        <a href="https://gc-proto.github.io/business-tasks/scenarioB/mvp/revenue-agency/corporate/contact-information/find-tax-centres-offices.html">Find a mailing address</a> <!-- need to move into new proto -->
                     </li>
 
+                    <li>
+                        <a href="./corporate/contact-us/report-scam.html">Report a scam</a>
+                    </li>
 
+                    <li>
+                        <a href="#">X</a>
+                    </li>
 
-            </ul>
+                    <li>
+                        <a href="#">XX</a>
+                    </li>
+              </ul>
             <h2 class="mrgn-tp-0 mini-h2s">Follow us</h2>
 
-            <div class="" style="margin-left: 25px !important; margin-top: 15px !important;">
+            <div class="" style="margin-left: 5px !important; margin-top: 10px !important;">
             <img src="./img/social.png" />
             </div>
 
-
-
-
-
-      </ul>
-
-
         </section>
+      </div>
 
+      <!--end of contact us section -->
 
-    		</div>
+      <!--start about CRA -->
 
         <section class="col-md-8 pull-left mrgn-bttm-lg">
 
@@ -537,13 +497,13 @@
 </div>
 </section>
 <section class="container">
-<h2 class="mini-h2s">Features</h2>
+<h2 style="font-size: 26px !important;">Features</h2>
 <div class="row">
 <div class="col-sm-6">
 <a class="figcaption" href="#">
 <figure class="well well-sm brdr-rds-0">
 <img class="img-responsive full-width" src="https://www.canada.ca/content/dam/canada/activities/20190130-1-520x200-en.jpg" alt="">
-<figcaption class="h5">GST/HST credit</figcaption>
+<figcaption class="h5" style="font-size: 20px; font-weight: bold !important;">GST/HST credit</figcaption>
 <p>“Receiving that credit really helps take pressure off.” – Shazeal T.</p>
 </figure>
 </a>
@@ -552,7 +512,7 @@
 <a class="figcaption" href="#">
 <figure class="well well-sm brdr-rds-0">
 <img class="img-responsive full-width" src="./img/ft-181129c-360x203.jpg" alt="">
-<figcaption class="h5">Online mail</figcaption>
+<figcaption class="h5" style="font-size: 20px; font-weight: bold !important;">Online mail</figcaption>
 					<p>“Declutter your desk – register for online mail!</p>
 </figure>
 </a>
@@ -641,7 +601,7 @@
 <nav class="container wb-navcurr">
 <h2 class="wb-inv">About government</h2>
 <ul class="list-unstyled colcount-sm-2 colcount-md-3">
-<li><a href="./contact.html">Contact us</a></li>
+<li><a href="./revenue-agency/corporate/contact-us.html">Contact the CRA</a></li>
 <li><a href="https://www.canada.ca/en/government/dept.html">Departments and agencies</a></li>
 <li><a href="https://www.canada.ca/en/government/publicservice.html">Public service and military</a></li>
 <li><a href="https://www.canada.ca/en/news.html">News</a></li>

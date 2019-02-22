@@ -14,20 +14,6 @@
 
 }
 
-.btn-login {
-
-
-	background-color: #318000 !important;
-	border: 1px solid #455E82 !important;
-	font-weight: 600 !important;
-	font-family: "Lato";
-	padding-top: 8px;
-	padding-bottom: 8px;
-	margin-top: 5px;
-
-}
-
-
 
 /* font size in li of breadcrumb */
 
@@ -131,8 +117,8 @@
   background-repeat: no-repeat;
   background-size:100% auto;
   width: 100%;
-	padding-top: 40px;
-	padding-bottom: 40px;
+	padding-top: 25px;
+	padding-bottom: 25px;
 
 
 }
@@ -199,5 +185,15 @@ section.lnkbx ul {
 
 
 			}
+
+
+}
+
+@media screen and (max-width: 800px) {
+
+.btn-call-to-action {
+
+	font-size: 19px !important;
+}
 
 }
