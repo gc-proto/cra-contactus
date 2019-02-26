@@ -6,14 +6,14 @@
 <meta charset="utf-8">
 <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
 		wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
-    <title>Tax refunds: Check the status of your refund - Canada.ca</title>
+    <title>Direct deposit - set up or change online</title>
 
 <meta content="width=device-width,initial-scale=1" name="viewport">
 <meta name="description">
 <!--[if gte IE 9 | !IE ]><!-->
 <link href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
 <link rel="stylesheet" href="https://gc-proto.github.io/cra-contactus/GCWeb/css/theme.css">
-<link rel="stylesheet" href="https://gc-proto.github.io/cra-contactus/GCWeb/css/custom.css">
+<link rel="stylesheet" href="../../../../GCWeb/css/custom.css">
 <!--<![endif]-->
 <!--[if lt IE 9]>
 		<link href="./GCWeb/assets/favicon.ico" rel="shortcut icon" />
@@ -51,7 +51,7 @@
 </div>
 <section id="wb-srch" class="col-lg-8 text-right">
 <h2>Search</h2>
-<form action="../../../search-results.html" method="get" name="cse-search-box" role="search" class="form-inline">
+<form action="#" method="get" name="cse-search-box" role="search" class="form-inline">
 
   <style>
 
@@ -107,83 +107,259 @@
 </ul>
 </div>
 </nav>
-
-<nav role="navigation" id="wb-bc" property="breadcrumb">
-<h2 class="wb-inv">You are here:</h2>
-<div class="container-fluid mobile-breadcrumb">
-<div class="row">
-<div class="container" style="padding-left:15px!important;">
-<ol class="breadcrumb">
-<li class="visible-md visible-lg no-break-breadcrumb cust-breadcrumb"><a href='https://gc-proto.github.io/cra-contactus/scenarioA/en.html'>Home</a></li>
-<li class="visible-md visible-lg no-break-breadcrumb cust-breadcrumb"><a href='https://gc-proto.github.io/cra-contactus/scenarioA/services/taxes.html'>Taxes</a></li>
-<li class="visible-md visible-lg no-break-breadcrumb cust-breadcrumb"><a href='https://gc-proto.github.io/cra-contactus/scenarioA/services/taxes/income-tax.html'>Income tax</a></li>
-<li class="visible-md visible-lg no-break-breadcrumb cust-breadcrumb"><a href='https://gc-proto.github.io/cra-contactus/scenarioA/services/taxes/income-tax/personal-income-tax.html'>Personal income tax</a></li>
-<li class="cust-breadcrumb"><a href='https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/services/tax/individuals/topics/about-your-tax-return.html'>All about your tax return</a></li>
-</ol>
-</div></div></div>
-</nav>
+<nav role="navigation" id="wb-bc" property="breadcrumb"><h2 class="wb-inv">You are here:</h2><div class="container"><ol class="breadcrumb">
+<li><a href='https://gc-proto.github.io/cra-contactus/scenarioA/en.html'>Home</a></li>
+<li><a href='https://gc-proto.github.io/cra-contactus/scenarioA/services/taxes.html'>Taxes</a></li>
+<li><a href='https://gc-proto.github.io/cra-contactus/scenarioA/services/taxes/income-tax.html'>Income tax</a></li>
+<li><a href='https://gc-proto.github.io/cra-contactus/scenarioA/services/taxes/income-tax/personal-income-tax.html'>Personal income tax</a></li>
+<li><a href='https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/services/tax/individuals/topics/about-your-tax-return.html'>All about your tax return</a></li>
+</ol></div></nav>
 
 </header>
 
-<!-- class="gc-theme" is doing some weird stuff with the first h2... -->
 
     <main property="mainContentOfPage" class="container">
 
 
-    <h1 property="name" id="wb-cont" dir="ltr">
-Tax refunds: Check the status of your refund</h1>
+    <h1 property="name" id="wb-cont" dir="ltr">Direct deposit - set up or change online</h1>
+
+    <div class="wb-frmvld">
+      <form method="get">
+    		<!--Smart question!-->
+    		<div id="question1" class="wb-fieldflow" data-wb-fieldflow='{
+    			"renderas":"radio",
+    			"noForm": true,
+    			"base": { "live": true },
+    			"noreqlabel": true,
+    			"default": { "action": "addClass", "source":"#personal,#business,#non-resident,#trusts", "class": "hidden" }
+    			}'>
+    			<p>What/who are you setting up direct deposit for?</p>
+    			<ul>
+    				<li data-wb-fieldflow='{"action": "removeClass", "source":"#personal", "class": "hidden"}'>personal taxes, benefits or refunds</li> <!--result-->
+    				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#business", "class": "hidden" }'>a business</li>
+            <li data-wb-fieldflow='{ "action": "removeClass", "source":"#trusts", "class": "hidden"}'>a trust</li>
+            <li data-wb-fieldflow='{ "action": "removeClass", "source":"#non-resident", "class": "hidden" }'>a non-resident account holder or NR7-R refund applicant</li>
+    			</ul>
+    		</div>
+      </form>
+    </div>
+
+    <div class="hidden" id="personal">
+      <h2>Personal</h2>
+      <h3>CRA payments that you can sign up to receive by direct deposit</h3>
+      <ul>
+        <li>income tax refund</li>
+        <li>GST/HST credit and any similar provincial and territorial payments</li>
+        <li>Canada child benefit and any similar provincial and territorial payments</li>
+        <li>working income tax benefit</li>
+        <li>deemed overpayment of tax</li>
+      </ul>
+      <div>
+        <h3>Online</h3>
+        <p>Sign up or update direct deposit and bank details for personal taxes in My Account</p>
+        <div class="mrgn-tp-lg">
+          <span class="btn btn-default">Sign in to My Account</span>  <span><a href="">Register</a></span>
+        </div>
+        <p class="mrgn-tp-lg"><b>Alternative:</b> <a href="">MyCRA mobile application</a></p>
+      </div>
+      <p class="h3">Other ways to set up direct deposit or change your banking details</p>
+      <details>
+        <summary><h3>By phone</h3></summary>
+        <dl class="dl-horizontal">
+          <dt>Telephone number</dt>
+          <dd><p>1-800-959-8281</p><p>Outside Canada and US: 613-940-8495</p><p>Yukon, Northwest Territories and Nunavut: 1-866-426-1527</p></dd>
+          <dt>Hours</dt>
+          <dd>
+            <p>Monday to Friday (except holidays) from 9 am to 5 pm (local time)</p>
+            <details>
+              <summary><h3>Avoid waiting on the phone line</h3></summary>
+              <ul>
+                <li><a href="">Benefits of signing up for an online account</a></li>
+                <li><a href="">When our lines are less busy</a></li>
+              </ul>
+            </details>
+          </dd>
+          <dt>What you'll need</dt>
+          <dd>
+            <p>To verify your identity and to set up the direct deposit, you'll need</p>
+            <ul>
+              <li>social insurance number</li>
+              <li>current address, including postal code</li>
+              <li>most recent income tax and benefit return and information about the most recent payments you got from the Canada Revenue Agency</li>
+              <li>three-digit bank (financial institution) number, five-digit transit number, and your account number</li>
+            </ul>
+          </dd>
+        </dl>
+      </details>
+
+      <details>
+        <summary><h3>In person</h3></summary>
+        <p>Some banks and financial institutions in Canada will be able to assist you in completing a direct deposit enrolment for one or several of your Government of Canada payments. This service is currently offered by:</p>
+        <ul>
+          <li><a href="https://www.desjardins.com/ca/personal/accounts-services/ways-to-bank/online/have-money-deposited-into-account/index.jsp">Desjardins</a></li>
+          <li><a href="https://www.td.com/ca/en/personal-banking/how-to/bank-accounts/manage-my-accounts/">TD Canada Trust</a></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary><h3>By mail</h3></summary>
+        <ol>
+          <li>Complete the <a href="https://www.tpsgc-pwgsc.gc.ca/recgen/form/inscription-enrolment-eng.html">Canada Direct Deposit enrolment form</a></li>
+          <li>Mail the completed form to the address on the form</li>
+        </ol>
+
+        <p>Note that it might take up to 3 months to process the mailed form</p>
+      </details>
+    </div>
 
 
+    <div class="hidden" id="business">
+      <h2>Businesses</h2>
+      <h3>CRA payments that you can sign up to receive by direct deposit</h3>
+      <ul>
+        <li>income tax refund</li>
+        <li>GST/HST credit</li>
+        <li>refund of excise tax or other levies</li>
+        <li>refund of payroll deductions</li>
+      </ul>
+      <div>
+        <h3>Online</h3>
+        <p>Sign up or update direct deposit and bank details for business taxes in My Business Account</p>
+        <div class="mrgn-tp-lg">
+          <span class="btn btn-default">Sign in to My Business Account</span>  <span><a href="">Register</a></span>
+        </div>
+        <p class="mrgn-tp-lg"><b>Alternative:</b> <a href="">Sign in to Represent a Client</a></p>
+      </div>
+      <p class="h3">Other ways to set up direct deposit or change your banking details</p>
+      <details>
+        <summary><h3>By mail</h3></summary>
+        <ol>
+          <li>Complete the <a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc366.html">Direct deposit request for businesses (RC366)</a></li>
+          <li>Mail the completed form to any of the <a href="https://www.canada.ca/en/revenue-agency/corporate/contact-information/tax-centres.html">tax centres</a></li>
+        </ol>
+      </details>
+      <details>
+        <summary><h3>By phone (if you need more information)</h3></summary>
+        <dl class="dl-horizontal">
+          <dt>Telephone number</dt>
+          <dd><p>1-800-959-5525</p><p>Outside Canada and US: 613-940-8497</p><p>Yukon, Northwest Territories and Nunavut: 1-866-841-1876</p></dd>
+          <dt>Hours</dt>
+          <dd>
+            <p>Monday to Friday (except holidays) from 9 am to 6 pm (local time)</p>
+            <details>
+              <summary><h3>Avoid waiting on the phone line</h3></summary>
+              <ul>
+                <li><a href="">Benefits of signing up for an online account</a></li>
+                <li><a href="">When our lines are less busy</a></li>
+              </ul>
+            </details>
+          </dd>
+        </dl>
+      </details>
+    </div>
 
+    <div class="hidden" id="trusts">
+      <h2>Trusts</h2>
+      <h3>CRA payments that you can sign up to receive by direct deposit</h3>
+      <p>Sign up for direct deposit as a trust if you are the trustee, custodian, executor, or other type of legal representative for a trust receiving a payment.</p>
+      <div>
+        <h3>By mail</h3>
+        <ol>
+          <li>Complete the <a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/t3-dd.html">Direct deposit request for T3 (T3-DD)</a></li>
+          <li>Mail the completed form to the address on the form</li>
+        </ol>
+        <p><b>Alternative:</b> You can complete the direct deposit area of the applicable <a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/nr7-r.html">T3 Trust Income Tax and Information Return (T3RET)</a></p>
+      </div>
+      <p class="h3">Other ways to set up direct deposit or change your banking details</p>
+      <details>
+        <summary><h3>By phone (if you need more information)</h3></summary>
+        <dl class="dl-horizontal">
+          <dt>Telephone number</dt>
+          <dd><p>1-800-959-8281</p><p>Outside Canada and US: 613-940-8495</p><p>Yukon, Northwest Territories and Nunavut: 1-866-426-1527</p></dd>
+          <dt>Hours</dt>
+          <dd>
+            <p>Monday to Friday (except holidays) from 9 am to 5 pm (local time)</p>
+            <details>
+              <summary><h3>Avoid waiting on the phone line</h3></summary>
+              <ul>
+                <li><a href="">Benefits of signing up for an online account</a></li>
+                <li><a href="">When our lines are less busy</a></li>
+              </ul>
+            </details>
+          </dd>
+        </dl>
+      </details>
+    </div>
 
-        <div><div class="mwsbodytext text parbase section">
+    <div class="hidden" id="non-resident">
+      <h2>Non-resident account holders and NR7-R refund applicants</h2>
+      <h3>CRA payments that you can sign up to receive by direct deposit</h3>
+      <ul>
+        <li>income tax refund</li>
+        <li>GST/HST credit and any similar provincial and territorial payments</li>
+        <li>Canada child benefit and any similar provincial and territorial payments</li>
+        <li>working income tax benefit</li>
+        <li>deemed overpayment of tax</li>
+      </ul>
+      <div>
+        <h3>Online</h3>
+        <p>Sign up or update direct deposit and bank details for personal taxes in My Account</p>
+        <div class="mrgn-tp-lg">
+          <span class="btn btn-default">Sign in to My Account</span>  <span><a href="">Register</a></span>
+        </div>
+        <p class="mrgn-tp-lg"><b>Alternative:</b> <a href="">MyCRA mobile application</a></p>
+      </div>
+      <h3>Other ways to set up direct deposit or change your banking details</h3>
+      <details>
+        <summary><h3>By phone</h3></summary>
+        <dl class="dl-horizontal">
+          <dt>Telephone number</dt>
+          <dd><p>1-800-959-8281</p><p>Outside Canada and US: 613-940-8495</p><p>Yukon, Northwest Territories and Nunavut: 1-866-426-1527</p></dd>
+          <dt>Hours</dt>
+          <dd>
+            <p>Monday to Friday (except holidays) from 9 am to 5 pm (local time)</p>
+            <details>
+              <summary><h3>Avoid waiting on the phone line</h3></summary>
+              <ul>
+                <li><a href="">Benefits of signing up for an online account</a></li>
+                <li><a href="">When our lines are less busy</a></li>
+              </ul>
+            </details>
+          </dd>
+          <dt>What you'll need</dt>
+          <dd>
+            <p>To verify your identity and to set up the direct deposit, you'll need</p>
+            <ul>
+              <li>social insurance number</li>
+              <li>current address, including postal code</li>
+              <li>most recent income tax and benefit return and information about the most recent payments you got from the Canada Revenue Agency</li>
+              <li>three-digit bank (financial institution) number, five-digit transit number, and your account number</li>
+            </ul>
+          </dd>
+        </dl>
+      </details>
 
-          <div class="mrgn-tp-sm mrgn-bttm-sm brdr-bttm">
-          	<div class="row">
-          		<ul class="toc lst-spcd col-md-12">
-					<li class="col-md-4"><a href="./refunds.html" class="list-group-item">When will you get your refund</a></li>
-          			<li class="col-md-4"><a href="./refunds-2.html" class="list-group-item active">Check the status of your refund</a></li>
-          			<li class="col-md-4"><a href="./refunds-3.html" class="list-group-item">Transfer your refund</a></li>
-          			<li class="col-md-4"><a href="./refunds-4.html" class="list-group-item">Get your refund by direct deposit</a> </li>
-					<li class="col-md-4"><a href="./refunds-5.html" class="list-group-item">After you receive your refund</a> </li>
-           		</ul>
-          	</div>
-          </div>
-          <section>
+      <details>
+        <summary><h3>In person</h3></summary>
+        <p>Some banks and financial institutions in Canada will be able to assist you in completing a direct deposit enrolment for one or several of your Government of Canada payments. This service is currently offered by:</p>
+        <ul>
+          <li><a href="https://www.desjardins.com/ca/personal/accounts-services/ways-to-bank/online/have-money-deposited-into-account/index.jsp">Desjardins</a></li>
+          <li><a href="https://www.td.com/ca/en/personal-banking/how-to/bank-accounts/manage-my-accounts/">TD Canada Trust</a></li>
+        </ul>
+      </details>
 
+      <details>
+        <summary><h3>By mail</h3></summary>
+        <ol>
+          <li>Complete the <a href="https://www.tpsgc-pwgsc.gc.ca/recgen/form/inscription-enrolment-eng.html">Canada Direct Deposit enrolment form</a></li>
+          <li>Mail the completed form to the address on the form</li>
+        </ol>
 
-
-
+        <p>Note that it might take up to 3 months to process the mailed form</p>
+      </details>
+    </div>
 </div>
-<div class="mwsbodytext text parbase section">
 
-
-
-
-<h2 id="hwcnchckthsttsfrrfnd">How you can check the status of your refund</h2>
-<h3>Go online</h3>
-<ul>
-<li>Use <a href="/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html">My Account</a></li>
-<li>Use the <a href="/en/revenue-agency/services/e-services/cra-mobile-apps.html">MyCRA</a> mobile application</li>
-</ul>
-<h3>Call</h3>
-<ul>
-<li>Telerefund <span class="nowrap">at <strong>1-800-959-1956</strong></span></li>
-</ul>
-<p>To use <strong>Telerefund</strong> be ready to give:</p>
-<ul>
-<li>your social insurance number</li>
-<li>your month and year of birth</li>
-<li>the total income you entered on line 150 of your 2017 return (if you are calling before May 1)</li>
-<li>the total income you entered on line 150 of your 2018 return (if you are calling on or after May 1)</li>
-</ul>
-<p>After you filed your return, wait 8 weeks to call&nbsp;the CRA&nbsp;for an update on the receipt of your return or status of your refund if you reside in Canada. If you reside outside of Canada please wait 16 weeks before you call the CRA.</p>
-
-
-
-</div>
-
-</div>
         <div class="pagedetails ">
 <div class="row">
 <div class="col-sm-6 col-md-5 col-lg-4">
@@ -321,6 +497,7 @@ Tax refunds: Check the status of your refund</h1>
   </footer>
   <!--[if gte IE 9 | !IE ]><!-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+  <script src="https://gc-proto.github.io/tax-filing-2/validation/en/assets/wb-fieldflow.min.js"></script>
   <script src="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/js/wet-boew.min.js"></script>
   <!--<![endif]-->
   <!--[if lt IE 9]>
