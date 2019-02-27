@@ -2,9 +2,25 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin,latin-ext');
 
 
+
+
 /* still working to clean up unnecessary code */
 
 
+.learnmore, .admin {
+
+	font-weight: bold !important;
+	text-decoration: underline !important;
+}
+
+.admin {
+
+	font-size: 18px !important;
+}
+
+ul.feeds-cont li a {
+	font-weight: bold;
+}
 .mr-home {
 
 	font-size: 17px !important;
