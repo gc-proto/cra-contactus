@@ -69,9 +69,9 @@ border: 1px solid #26374a !important;
   display: block;
   position: relative;
   padding-left: 35px;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 19px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -98,12 +98,12 @@ border: 1px solid #26374a !important;
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+.container-checks:hover input ~ .checkmark {
   background-color: #ccc;
 }
 
 
-.container input:checked ~ .checkmark {
+.container-checks input:checked ~ .checkmark {
   background-color: #318000;
 }
 
@@ -115,16 +115,16 @@ border: 1px solid #26374a !important;
 }
 
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.container-checks input:checked ~ .checkmark:after {
   display: block;
 }
 
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+.container-checks .checkmark:after {
   left: 9px;
   top: 5px;
-  width: 5px;
-  height: 10px;
+  width: 6px;
+  height: 12px;
   border: solid white;
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
