@@ -37,8 +37,11 @@ main section.lnkbx ul li a {
 
 .btn-login {
 
-background-color: #904114 !important;
-border: 1px solid #7D3912 !important;
+background-color: #26374a !important;
+border: 1px solid #26374a !important;
+
+/* background-color: #904114 !important; */
+/* border: 1px solid #7D3912 !important; */
 
 /*	background-color: #318000 !important; */
 /*	border: 1px solid #455E82 !important; */
