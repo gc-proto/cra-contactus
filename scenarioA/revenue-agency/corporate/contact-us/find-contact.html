@@ -128,39 +128,42 @@
 
   <h1 property="name" id="wb-cont" dir="ltr">Check if a caller is the CRA or a scam</h1>
   <p>Scammers posing as Canada Revenue Agency (CRA) employees continue to contact Canadians, misleading them into paying false debt.</p>
+  <div id='speebly'>
+  </div>
+  </div>
 
-  <script src="../../../../js/app-widget.js"></script>
 
-        <script>
-        AppWidget.mount({
-                dialogFlowAccessToken: '2774344ae9d54ab893b73a1c75dc97af',
-                language: 'en-US',
-                voiceId: 'Joanna',
-                welcomeIntent: 'welcome'
-        });
+  <script src="https://voice.speebly.co/cra/app-widget.js"></script>
 
-        </script>
+          <script>
+          AppWidget.mount({
+                  dialogFlowAccessToken: '5999028cae3c4f35894c3c03deae4cfd',
+                  language: 'en',
+                  voiceId: 'Joanna',
+                  welcomeIntent: 'welcome'
+          });
 
-<script src="../../../../js/speably-widget.js"></script>
-    <script>
-        SpeablyWidget.mount({
-            debug: true,
-            buttonVisible: false,
-            dialogFlowAccessToken: '2774344ae9d54ab893b73a1c75dc97af',
-            dialogStyleOverride: 'https://s3.amazonaws.com/gcweb/gcweb/gctheme.css',
-            language: 'en-US',
-            voiceId: 'Joanna',
-            mode: 'text',
-        });
+          </script>
 
-      function openWidget(){
-          SpeablyWidget.open();
-        }
+  <script src="https://voice.speebly.co/live/speably-widget.js"></script>
+      <script>
+          SpeablyWidget.mount({
+              debug: true,
+              buttonVisible: false,
+              dialogFlowAccessToken: '5999028cae3c4f35894c3c03deae4cfd',
+              dialogStyleOverride: 'https://s3.amazonaws.com/gcweb/gcweb/gctheme.css',
+              language: 'en',
+              voiceId: 'Joanna',
+              mode: 'text',
+          });
 
-    </script>
+        function openWidget(){
+            SpeablyWidget.open();
+          }
 
-    <a onclick="openWidget()"><img src="https://s3.amazonaws.com/css-examples/ContactUsBot.png" alt="" style="widows:266px;px;height:49px;position:absolute;right:30px;bottom:30px;"></a>
+      </script>
 
+      <a onclick="openWidget()"><img src="https://s3.amazonaws.com/css-examples/ContactUsBot.png" alt="" style="widows:266px;px;height:49px;position:absolute;right:30px;bottom:30px;"></a>
 
 <div class="pagedetails">
 <div class="row">
