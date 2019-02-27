@@ -37,14 +37,19 @@ main section.lnkbx ul li a {
 
 .btn-login {
 
+background-color: #904114 !important;
+border: 1px solid #7D3912 !important;
 
 /*	background-color: #318000 !important; */
 /*	border: 1px solid #455E82 !important; */
 	font-weight: 600 !important;
 	font-family: "Lato";
-	padding-top: 8px;
-	padding-bottom: 8px;
-	margin-top: 5px;
+  font-size: 17px !important;
+	padding-top: 7px;
+	padding-bottom: 7px;
+  padding-left: 16px;
+  padding-right: 16px;
+	margin-top: 3px;
 
 }
 
