@@ -1,7 +1,25 @@
+
+main table tbody {
+  font-size: 19px !important;
+  line-height: 1.4em !important;
+}
+
 details summary {
 
   font-weight: bold !important;
 }
+
+
+
+.dataTables_wrapper {
+  margin-left: -1.1em !important;
+  margin-right: -1.1em !important;
+}
+
+.dataTables_filter, .dataTables_length {
+  margin-left: 1.1em !important;
+}
+
 
 body {
 /*  font-family: "Open Sans", sans-serif; */
