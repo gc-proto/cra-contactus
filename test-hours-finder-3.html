@@ -19,13 +19,13 @@
 
 
 	<details open>
-         <summary><h3>By phone</h3></summary>
+         <summary><h3>Individual Tax line</h3></summary>
          <dl class="dl-horizontal">
            <dt>Telephone number</dt>
            <dd><p>1-800-959-8281</p><p>Outside Canada and US: 613-940-8495</p><p>Yukon, Northwest Territories and Nunavut: 1-866-426-1527</p></dd>
            <dt>Hours</dt>
            <dd>
-             <p><span id="oc">text</span> | Expected wait time: 1 hour or less</p>
+             <p><span id="is-individual-open-or-closed">text</span> | Expected wait time: 1 hour or less</p>
       <!--   not important yet    <details>
                <summary>Opening hours</summary>
                <div class="row">
@@ -88,6 +88,17 @@
 
 </details>
 
+<details open>
+			 <summary><h3>Alberta Benefit Enquiries (Mountain time)</h3></summary>
+			 <dl class="dl-horizontal">
+				 <dt>Telephone number </dt>
+				 <dd><p>1-800-959-2809</p></dd>
+				 <dt>Hours</dt>
+				 <dd>
+					 <p><span id="is-alberta-open-or-closed">text</span> | Expected wait time: 1 hour or less</p>
+
+</details>
+
 </main>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
@@ -135,26 +146,26 @@ var hour = date.getHours();
 var day = date.getDay();
 
 if(day === 0 ) {
-  document.getElementById("oc").innerHTML = '<label class="label label-danger">Closed until Monday</label>'; 	// day of the week
+  document.getElementById("is-individual-open-or-closed").innerHTML = '<label class="label label-danger">Closed until Monday</label>'; 	// day of the week
 }
 
 if(day === 6) {
-  document.getElementById("oc").innerHTML = '<label class="label label-danger">Closed until Monday</label>'; 	// day of the week
+  document.getElementById("is-individual-open-or-closed").innerHTML = '<label class="label label-danger">Closed until Monday</label>'; 	// day of the week
 }
 
 
 if(day === 1 && (hour >= 9 && hour <= 17)) {
-	document.getElementById("oc").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
+	document.getElementById("is-individual-open-or-closed").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
 } else if(day === 2 && (hour >= 9 && hour <= 17)) {
-	document.getElementById("oc").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
+	document.getElementById("is-individual-open-or-closed").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
 } else if(day === 3 && (hour >= 9 && hour <= 17)) {
-	document.getElementById("oc").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
+	document.getElementById("is-individual-open-or-closed").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
 } else if(day === 4 && (hour >= 9 && hour <= 17)) {
-	document.getElementById("oc").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
+	document.getElementById("is-individual-open-or-closed").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
 } else if(day === 5 && (hour >= 9 && hour <= 17)) {
-	document.getElementById("oc").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
+	document.getElementById("is-individual-open-or-closed").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
 } else {
-	document.getElementById("oc").innerHTML = "<label class='label label-danger'>Closed until 9am</label>" // closed
+	document.getElementById("is-individual-open-or-closed").innerHTML = "<label class='label label-danger'>Closed until 9am</label>" // closed
 
 }
 
