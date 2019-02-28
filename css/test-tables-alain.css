@@ -12,10 +12,6 @@ main table tbody {
   line-height: 1.4em !important;
 }
 
-details summary {
-
-  font-weight: bold !important;
-}
 
 
 
@@ -65,7 +61,7 @@ table th {
 /*  letter-spacing: .1em; */
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 991px) {
   table {
     border: 0;
   }
@@ -111,6 +107,11 @@ table th {
   table td:last-child {
     border-bottom: 0;
   }
+
+  .right-mobile {
+          text-align: left !important;
+
+      }
 }
 
 tr.d0 th {
