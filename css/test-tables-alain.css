@@ -1,4 +1,12 @@
 
+/* style lists inside the table */
+
+td ul li {
+ margin-left: -18px !important;
+ margin-top: 10px !important;
+}
+
+
 main table tbody {
   font-size: 19px !important;
   line-height: 1.4em !important;
