@@ -533,11 +533,12 @@ table.dataTable td {
 
 
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 992px) {
     .dataTables_wrapper .dataTables_info,
     .dataTables_wrapper .dataTables_paginate {
         float: none;
-        text-align: center
+        text-align: center;
+        margin-left: 20px !important;
     }
     .dataTables_wrapper .dataTables_paginate {
         margin-top: 0.5em
