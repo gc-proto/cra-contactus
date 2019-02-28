@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Date</title>
+<link href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="https://gc-proto.github.io/cra-contactus/GCWeb/css/theme.css">
+<link rel="stylesheet" href="https://gc-proto.github.io/cra-contactus/GCWeb/css/custom.css">
+</head>
+
+<body>
+
+	<h1>Dates</h1>
+
+
+
+<main class="container">
+
+	<details>
+         <summary><h3>By phone</h3></summary>
+         <dl class="dl-horizontal">
+           <dt>Telephone number</dt>
+           <dd><p>1-800-959-8281</p><p>Outside Canada and US: 613-940-8495</p><p>Yukon, Northwest Territories and Nunavut: 1-866-426-1527</p></dd>
+           <dt>Hours</dt>
+           <dd>
+             <p><span id="oc">text</span> | Expected wait time: 1 hour or less</p>
+             <details>
+               <summary>Opening hours</summary>
+               <div class="row">
+                 <div class="col-lg-6">
+                   <table class="table">
+                     <thead>
+                       <tr>
+                         <th class="wb-inv">Day</th>
+                         <th class="wb-inv">Hours</th>
+                         <th class="wb-inv">Wait times</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr>
+                         <td>Mon</td>
+                         <td>9 am to 5 pm</td>
+                         <td>Long wait times</td>
+                       </tr>
+                       <tr>
+                         <td>Tue</td>
+                         <td>9 am to 5 pm</td>
+                         <td>Long wait times</td>
+                       </tr>
+                       <tr>
+                         <td>Wed</td>
+                         <td>9 am to 5 pm</td>
+                         <td>Medium wait times</td>
+                       </tr>
+                       <tr>
+                         <td>Thu</td>
+                         <td>9 am to 5 pm</td>
+                         <td>Short wait times</td>
+                       </tr>
+                       <tr>
+                         <td>Fri</td>
+                         <td>9 am to 5 pm</td>
+                         <td>Short wait times</td>
+                       </tr>
+                       <tr>
+                         <td>Sat</td>
+                         <td>Closed</td>
+                         <td></td>
+                       </tr>
+                       <tr>
+                         <td>Sun</td>
+                         <td>Closed</td>
+                         <td></td>
+                       </tr>
+                     </tbody>
+                   </table>
+                 </div>
+               </div>
+               <h4>Next 3 holiday closures:</h4>
+               <ul>
+                 <li>March 30 (Volunteering)</li>
+                 <li>April 2 (Bunny rabbits)</li>
+                 <li>May 21 (Mayday)</li>
+               </ul>
+             </details>
+
+</main>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+  <script src="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/js/wet-boew.min.js"></script>
+
+	<script>
+
+	var myDate = new Date();
+
+		document.write("<p>" + myDate + "</p>");
+		document.write("<p>It's day " + (myDate.getDay() + 1) + " of the week.</p>");
+		document.write("<p>" + myDate.getFullYear() + "</p>");
+		document.write("<p>" + (myDate.getMonth() + 1) + "</p>");
+		document.write("<p>" + myDate.getDate() + "</p>");
+		document.write("<p>" + myDate.getHours() + "</p>");
+		document.write("<p>" + myDate.getMinutes() + "</p>");
+		document.write("<p>" + myDate.getSeconds() + "</p>");
+
+
+		var weekday = new Array(7);
+
+		weekday[0] = "Sunday";
+		weekday[1] = "Monday";
+		weekday[2] = "Tuesday";
+		weekday[3] = "Wednesday";
+		weekday[4] = "Thursday";
+		weekday[5] = "Friday";
+		weekday[6] = "Saturday";
+
+
+		console.log(today);
+
+		document.write("<p>Today is " + weekday[myDate.getDay()] + "</p>")
+
+// start
+
+		var today = new Date().getHours(); // identify hour from browser
+		var day = new Date().getDay(); // identify day from browser
+
+
+		if(day == 4){
+			document.getElementById("oc").innerHTML = '<label class="label label-danger">Closed until Monday</label>'; 	// day of the week
+		} else if (today >= 9 && today <= 17){
+			document.getElementById("oc").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
+		}	else {
+			document.write("<label class='label label-danger'>Closed until 9am</label>") // closed
+		}
+
+
+
+
+
+	</script>
+
+</html>
