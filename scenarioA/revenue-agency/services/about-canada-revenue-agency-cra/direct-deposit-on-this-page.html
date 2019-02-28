@@ -121,48 +121,36 @@
     <main property="mainContentOfPage" class="container">
 
 
-    <h1 property="name" id="wb-cont" dir="ltr">Direct deposit - set up or change online</h1>
+    <h1 property="name" id="wb-cont" dir="ltr">Set up direct deposit or update bank details with CRA</h1>
 
-    <div class="wb-frmvld">
-      <form method="get">
-    		<!--Smart question!-->
-    		<div id="question1" class="wb-fieldflow" data-wb-fieldflow='{
-    			"renderas":"radio",
-    			"noForm": true,
-    			"base": { "live": true },
-    			"noreqlabel": true,
-    			"default": { "action": "addClass", "source":"#personal,#business,#non-resident,#trusts", "class": "hidden" }
-    			}'>
-    			<p>What/who are you setting up direct deposit for?</p>
-    			<ul>
-    				<li data-wb-fieldflow='{"action": "removeClass", "source":"#personal", "class": "hidden"}'>personal <abbr title="Telecommunications Accessubukuty X Enablement Service">taxes</abbr>, benefits or refunds</li> <!--result-->
-    				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#business", "class": "hidden" }'>a business</li>
-            <li data-wb-fieldflow='{ "action": "removeClass", "source":"#trusts", "class": "hidden"}'>a trust</li>
-            <li data-wb-fieldflow='{ "action": "removeClass", "source":"#non-resident", "class": "hidden" }'>a non-resident account holder or NR7-R refund applicant</li>
-    			</ul>
-    		</div>
-      </form>
+    <h2>On this page</h2>
+    <ul>
+      <li><a href="#personal">Personal</a></li>
+      <li><a href="#business">Business</a></li>
+      <li><a href="#trusts">Trusts</a></li>
+      <li><a href="#non-resident">Non-resident account holders and NR7-R refund applicants</a></li>
+    </ul>
+
+    <h2 id="personal">Personal</h2>
+    <h3>CRA payments that you can sign up to receive by direct deposit</h3>
+    <ul>
+      <li>income tax refund</li>
+      <li>GST/HST credit and any similar provincial and territorial payments</li>
+      <li>Canada child benefit and any similar provincial and territorial payments</li>
+      <li>working income tax benefit</li>
+      <li>deemed overpayment of tax</li>
+    </ul>
+    <div>
+      <h3>Online</h3>
+      <p>Sign up or update direct deposit and bank details for personal taxes in My Account</p>
+      <div class="mrgn-tp-lg">
+        <a href="#" class="btn btn-default">Sign in to My Account</a>  <span><a href="">Register</a></span>
+      </div>
+      <p class="mrgn-tp-lg"><b>Alternative:</b> <a href="">MyCRA mobile application</a></p>
     </div>
 
-    <div class="hidden" id="personal">
-      <h2>Personal</h2>
-      <h3>CRA payments that you can sign up to receive by direct deposit</h3>
-      <ul>
-        <li>income tax refund</li>
-        <li>GST/HST credit and any similar provincial and territorial payments</li>
-        <li>Canada child benefit and any similar provincial and territorial payments</li>
-        <li>working income tax benefit</li>
-        <li>deemed overpayment of tax</li>
-      </ul>
-      <div>
-        <h3>Online</h3>
-        <p>Sign up or update direct deposit and bank details for personal taxes in My Account</p>
-        <div class="mrgn-tp-lg">
-          <span class="btn btn-default">Sign in to My Account</span>  <span><a href="">Register</a></span>
-        </div>
-        <p class="mrgn-tp-lg"><b>Alternative:</b> <a href="">MyCRA mobile application</a></p>
-      </div>
-      <p class="h3">Other ways to set up direct deposit or change your banking details</p>
+    <p class="h3">Other ways to set up direct deposit or change your banking details</p>
+    <div class="mrgn-lft-sm">
       <details>
         <summary><h3>By phone</h3></summary>
         <dl class="dl-horizontal">
@@ -170,12 +158,71 @@
           <dd><p>1-800-959-8281</p><p>Outside Canada and US: 613-940-8495</p><p>Yukon, Northwest Territories and Nunavut: 1-866-426-1527</p></dd>
           <dt>Hours</dt>
           <dd>
-            <p>Monday to Friday (except holidays) from 9 am to 5 pm (local time)</p>
+            <p><label class="label label-success">Open until 5 pm</label> | Expected wait time: 1 hour or less</p>
             <details>
-              <summary><h3>Avoid waiting on the phone line</h3></summary>
+              <summary>Opening hours</summary>
+              <div class="row">
+                <div class="col-lg-6">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th class="wb-inv">Day</th>
+                        <th class="wb-inv">Hours</th>
+                        <th class="wb-inv">Wait times</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Mon</td>
+                        <td>9 am to 5 pm</td>
+                        <td>Long wait times</td>
+                      </tr>
+                      <tr>
+                        <td>Tue</td>
+                        <td>9 am to 5 pm</td>
+                        <td>Long wait times</td>
+                      </tr>
+                      <tr>
+                        <td>Wed</td>
+                        <td>9 am to 5 pm</td>
+                        <td>Medium wait times</td>
+                      </tr>
+                      <tr>
+                        <td>Thu</td>
+                        <td>9 am to 5 pm</td>
+                        <td>Short wait times</td>
+                      </tr>
+                      <tr>
+                        <td>Fri</td>
+                        <td>9 am to 5 pm</td>
+                        <td>Short wait times</td>
+                      </tr>
+                      <tr>
+                        <td>Sat</td>
+                        <td>Closed</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>Sun</td>
+                        <td>Closed</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <h4>Next 3 holiday closures:</h4>
+              <ul>
+                <li>March 30 (Volunteering)</li>
+                <li>April 2 (Bunny rabbits)</li>
+                <li>May 21 (Mayday)</li>
+              </ul>
+            </details>
+            <details>
+              <summary>Tired of waiting on the phone line?</summary>
               <ul>
                 <li><a href="">Benefits of signing up for an online account</a></li>
-                <li><a href="">When our lines are less busy</a></li>
+                <li><a href="">Get help recovering your account</a></li>
               </ul>
             </details>
           </dd>
@@ -212,9 +259,9 @@
       </details>
     </div>
 
-
-    <div class="hidden" id="business">
-      <h2>Businesses</h2>
+    <h2>Businesses</h2>
+    <details class="mrgn-tp-lg">
+      <summary><span id="business">Set up or update direct deposit and bank details for your business</span></summary>
       <h3>CRA payments that you can sign up to receive by direct deposit</h3>
       <ul>
         <li>income tax refund</li>
@@ -245,7 +292,7 @@
           <dd><p>1-800-959-5525</p><p>Outside Canada and US: 613-940-8497</p><p>Yukon, Northwest Territories and Nunavut: 1-866-841-1876</p></dd>
           <dt>Hours</dt>
           <dd>
-            <p>Monday to Friday (except holidays) from 9 am to 6 pm (local time)</p>
+            <p><label class="label label-danger">Closed until 9 am</label></p>
             <details>
               <summary><h3>Avoid waiting on the phone line</h3></summary>
               <ul>
@@ -256,10 +303,11 @@
           </dd>
         </dl>
       </details>
-    </div>
+    </details>
 
-    <div class="hidden" id="trusts">
-      <h2>Trusts</h2>
+    <h2>Trusts</h2>
+    <details class="mrgn-tp-lg">
+      <summary><span id="trusts">Set up or update direct deposit and bank details for your trust</span></summary>
       <h3>CRA payments that you can sign up to receive by direct deposit</h3>
       <p>Sign up for direct deposit as a trust if you are the trustee, custodian, executor, or other type of legal representative for a trust receiving a payment.</p>
       <div>
@@ -289,10 +337,11 @@
           </dd>
         </dl>
       </details>
-    </div>
+    </details>
 
-    <div class="hidden" id="non-resident">
-      <h2>Non-resident account holders and NR7-R refund applicants</h2>
+    <h2>Non-resident account holders and NR7-R refund applicants</h2>
+    <details class="mrgn-tp-lg">
+      <summary><span id="non-resident">Set up or update direct deposit and bank details as a non-resident account holder</span></summary>
       <h3>CRA payments that you can sign up to receive by direct deposit</h3>
       <ul>
         <li>income tax refund</li>
@@ -357,7 +406,7 @@
 
         <p>Note that it might take up to 3 months to process the mailed form</p>
       </details>
-    </div>
+    </details>
 </div>
 
         <div class="pagedetails ">
@@ -497,7 +546,6 @@
   </footer>
   <!--[if gte IE 9 | !IE ]><!-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
-  <script src="https://gc-proto.github.io/tax-filing-2/validation/en/assets/wb-fieldflow.min.js"></script>
   <script src="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/js/wet-boew.min.js"></script>
   <!--<![endif]-->
   <!--[if lt IE 9]>
