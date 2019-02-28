@@ -550,8 +550,8 @@ table.dataTable td {
     }
 
     .right-mobile {
-            float: left;
-            text-align: right !important;
+            text-align: left !important;
+    
         }
 
     .dataTables_wrapper .dataTables_filter {
