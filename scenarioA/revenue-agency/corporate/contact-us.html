@@ -785,11 +785,17 @@
     $.noConflict();
     $('#myTable3').dataTable( {
     "dom": '<"wrapper"fitlp>',
-    "ordering": false
+    "ordering": false,
+    "columnDefs": [
+      { "width": "500%", "targets": 0 }
+    ]
     });
     $('#myTable4').dataTable( {
     "dom": '<"wrapper"fitlp>',
-    "ordering": false
+    "ordering": false,
+    "columnDefs": [
+      { "width": "500%", "targets": 0 }
+    ]
     });
   </script>
 </body>
