@@ -30,25 +30,25 @@
         }
 
         function db(a) {
-        /*    w(a, "ordering", "bSort"); */
-        /*     w(a, "orderMulti", "bSortMulti"); */
-        /*    w(a, "orderClasses", "bSortClasses"); */
-        /*    w(a, "orderCellsTop", "bSortCellsTop"); */
-      /*      w(a, "order", "aaSorting"); */
-          /*  w(a, "orderFixed", "aaSortingFixed"); */
+         w(a, "ordering", "bSort");
+         w(a, "orderMulti", "bSortMulti");
+         w(a, "orderClasses", "bSortClasses");
+         w(a, "orderCellsTop", "bSortCellsTop");
+         w(a, "order", "aaSorting");
+          w(a, "orderFixed", "aaSortingFixed");
             w(a, "paging", "bPaginate");
             w(a, "pagingType", "sPaginationType");
             w(a, "pageLength", "iDisplayLength");
-      /*      w(a, "searching", "bFilter"); */
+            w(a, "searching", "bFilter");
             if (a = a.aoSearchCols)
                 for (var b = 0, c = a.length; b < c; b++) a[b] && G(p.models.oSearch, a[b])
         }
 
         function eb(a) {
-      /*   w(a, "orderable", "bSortable"); */
-        /*    w(a, "orderData", "aDataSort"); */
-        /*    w(a, "orderSequence", "asSorting"); */
-        /*    w(a, "orderDataType", "sortDataType") */
+        w(a, "orderable", "bSortable");
+        w(a, "orderData", "aDataSort");
+         w(a, "orderSequence", "asSorting");
+         w(a, "orderDataType", "sortDataType")
         }
 
         function fb(a) {
