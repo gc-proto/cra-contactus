@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Date</title>
+<link href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="https://gc-proto.github.io/cra-contactus/GCWeb/css/theme.css">
+<link rel="stylesheet" href="https://gc-proto.github.io/cra-contactus/GCWeb/css/custom.css">
+</head>
+
+<body>
+
+	<h1>Dates</h1>
+
+
+
+<main class="container">
+
+	<details open>
+         <summary><h3>By phone</h3></summary>
+         <dl class="dl-horizontal">
+           <dt>Telephone number</dt>
+           <dd><p>1-800-959-8281</p><p>Outside Canada and US: 613-940-8495</p><p>Yukon, Northwest Territories and Nunavut: 1-866-426-1527</p></dd>
+           <dt>Hours</dt>
+           <dd>
+             <p><span id="oc">text</span> | Expected wait time: 1 hour or less</p>
+             <details>
+               <summary>Opening hours</summary>
+               <div class="row">
+                 <div class="col-lg-6">
+                   <table class="table">
+                     <thead>
+                       <tr>
+                         <th class="wb-inv">Day</th>
+                         <th class="wb-inv">Hours</th>
+                         <th class="wb-inv">Wait times</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr>
+                         <td>Mon</td>
+                         <td>9 am to 5 pm</td>
+                         <td>Long wait times</td>
+                       </tr>
+                       <tr>
+                         <td>Tue</td>
+                         <td>9 am to 5 pm</td>
+                         <td>Long wait times</td>
+                       </tr>
+                       <tr>
+                         <td>Wed</td>
+                         <td>9 am to 5 pm</td>
+                         <td>Medium wait times</td>
+                       </tr>
+                       <tr>
+                         <td>Thu</td>
+                         <td>9 am to 5 pm</td>
+                         <td>Short wait times</td>
+                       </tr>
+                       <tr>
+                         <td>Fri</td>
+                         <td>9 am to 5 pm</td>
+                         <td>Short wait times</td>
+                       </tr>
+                       <tr>
+                         <td>Sat</td>
+                         <td>Closed</td>
+                         <td></td>
+                       </tr>
+                       <tr>
+                         <td>Sun</td>
+                         <td>Closed</td>
+                         <td></td>
+                       </tr>
+                     </tbody>
+                   </table>
+                 </div>
+               </div>
+               <h4>Next 3 holiday closures:</h4>
+               <ul>
+                 <li>March 30 (Volunteering)</li>
+                 <li>April 2 (Bunny rabbits)</li>
+                 <li>May 21 (Mayday)</li>
+               </ul>
+             </details>
+
+</main>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+  <script src="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/js/wet-boew.min.js"></script>
+
+	<script>
+
+// start
+
+// Individual tax line (local time) 1-800-959-8281 - check extended tax season? same number (EST time if calling outside Canada)
+// Sunday - closed
+// Monday - 9-5
+// Tuesday - 9-5
+// Wednesday - 9-5
+// Thursday - 9-5
+// Friday - 9-5
+// Saturday - Closed - extended hours 9-5
+// holidays need to be set
+
+// Provincial programs for Ontario (PPO) (EST) 1-877-627-6645
+// Sunday - closed
+// Monday - 8:15-5
+// Tuesday - 8:15-5
+// Wednesday - 8:15-5
+// Thursday - 8:15-5
+// Friday - 8:15-5
+// Saturday - Closed
+// holidays need to be set
+
+// Alberta Benefit Enquiries (Mountain time)) 1-800-959-2809
+// Sunday - closed
+// Monday - 9-5
+// Tuesday - 9-5
+// Wednesday - 9-5
+// Thursday - 9-5
+// Friday - 9-5
+// Saturday - Closed
+// holidays need to be set
+
+
+
+
+var date = new Date();
+var hour = date.getHours();
+var day = date.getDay();
+
+if(day === 0 ) {
+  document.getElementById("oc").innerHTML = '<label class="label label-danger">Closed until Monday</label>'; 	// day of the week
+}
+
+if(day === 6) {
+  document.getElementById("oc").innerHTML = '<label class="label label-danger">Closed until Monday</label>'; 	// day of the week
+}
+
+
+if(day === 1 && (hour >= 9 && hour <= 17)) {
+	document.getElementById("oc").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
+} else if(day === 2 && (hour >= 9 && hour <= 17)) {
+	document.getElementById("oc").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
+} else if(day === 3 && (hour >= 9 && hour <= 17)) {
+	document.getElementById("oc").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
+} else if(day === 4 && (hour >= 9 && hour <= 17)) {
+	document.getElementById("oc").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
+} else if(day === 5 && (hour >= 9 && hour <= 17)) {
+	document.getElementById("oc").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
+} else {
+	document.write("<label class='label label-danger'>Closed until 9am</label>") // closed
+
+}
+
+
+
+
+
+
+
+
+	</script>
+
+</html>
