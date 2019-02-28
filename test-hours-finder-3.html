@@ -150,7 +150,7 @@ if(day === 1 && (hour >= 9 && hour <= 17)) {
 } else if(day === 5 && (hour >= 9 && hour <= 17)) {
 	document.getElementById("oc").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
 } else {
-	document.write("<label class='label label-danger'>Closed until 9am</label>") // closed
+	document.getElementById("oc").innerHTML = "<label class='label label-danger'>Closed until 9am</label>" // closed
 
 }
 
