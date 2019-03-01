@@ -19,7 +19,7 @@
 
 
 	<details open>
-         <summary><h3>Individual Tax line (based on local time)</h3></summary>
+         <summary><h3>First test - javascript </h3></summary>
          <dl class="dl-horizontal">
            <dt>Telephone number</dt>
            <dd><p>1-800-959-8281</p><p>Outside Canada and US: 613-940-8495</p><p>Yukon, Northwest Territories and Nunavut: 1-866-426-1527</p></dd>
@@ -88,14 +88,81 @@
 
 </details>
 
-<details open>
+<details open
+	class="need-date"
+	data-day0-open=null
+  data-day0-close=null
+	data-day1-open=9
+	data-day1-close=17
+	data-day2-open=9
+	data-day2-close=17
+	data-day3-open=9
+	data-day3-close=17
+  data-day4-open=9
+  data-day4-close=17
+	data-day5-open=9
+	data-day5-close=17
+	data-day6-open=9
+	data-day6-close=17>
+			 <summary><h3>Individual tax line (local time)</h3></summary>
+			 <dl class="dl-horizontal">
+				 <dt>Telephone number </dt>
+				 <dd><p>1-800-959-8281</p></dd>
+				 <dt>Hours</dt>
+				 <dd>
+					 <p><span class="open-or-closed">I'm supposed to say open/closed based on brower time matching the set hours of operations that needs to be defined somewhere</span> | Expected wait time: 1 hour or less</p>
+
+</details>
+
+<details open
+	class="need-date"
+	data-day0-open=null
+  data-day0-close=null
+	data-day1-open=9
+	data-day1-close=17
+	data-day2-open=9
+	data-day2-close=17
+	data-day3-open=9
+	data-day3-close=17
+  data-day4-open=9
+  data-day4-close=17
+	data-day5-open=9
+	data-day5-close=17
+	data-day6-open=null
+	data-day6-close=null>
 			 <summary><h3>Alberta Benefit Enquiries (Mountain time)</h3></summary>
 			 <dl class="dl-horizontal">
 				 <dt>Telephone number </dt>
 				 <dd><p>1-800-959-2809</p></dd>
 				 <dt>Hours</dt>
 				 <dd>
-					 <p><span id="is-alberta-open-or-closed">I'm supposed to say open/closed based on brower time matching the set hours of operations that needs to be defined somewhere</span> | Expected wait time: 1 hour or less</p>
+					 <p><span class="open-or-closed">I'm supposed to say open/closed based on brower time matching the set hours of operations that needs to be defined somewhere</span> | Expected wait time: 1 hour or less</p>
+
+</details>
+
+<details open
+	class="need-date"
+	data-day0-open=null
+  data-day0-close=null
+	data-day1-open=8
+	data-day1-close=17
+	data-day2-open=8
+	data-day2-close=17
+	data-day3-open=8
+	data-day3-close=17
+  data-day4-open=8
+  data-day4-close=17
+	data-day5-open=8
+	data-day5-close=17
+	data-day6-open=null
+	data-day6-close=null>
+			 <summary><h3>Provincial programs for Ontario (EST)</h3></summary>
+			 <dl class="dl-horizontal">
+				 <dt>Telephone number </dt>
+				 <dd><p>1-800-959-2809</p></dd>
+				 <dt>Hours</dt>
+				 <dd>
+					 <p><span class="open-or-closed">I'm supposed to say open/closed based on brower time matching the set hours of operations that needs to be defined somewhere</span> | Expected wait time: 1 hour or less</p>
 
 </details>
 
@@ -139,6 +206,38 @@
 // holidays need to be set
 
 
+$(document).ready(function() {
+	var holidays = {};
+  holidays["4-19"] = true;
+	holidays["4-21"] = true;
+	holidays["4-22"] = true;
+
+
+  $(".need-date").each(function(index, element) {
+		var el = $(element);
+    var date = new Date();
+    var hour = date.getHours();
+    var day = date.getDay();
+    var month = date.getMonth();
+    var dayOfMonth = date.getDate();
+
+    var lineOpen = Number(el.data("day" + day + "-open"));
+    var lineClose = Number(el.data("day" + day + "-close"));
+    console.log(lineOpen, lineClose);
+    var isHoliday = holidays["" + month + "-" + dayOfMonth + ""];
+    if (!isHoliday && hour >= lineOpen && hour <= lineClose) {
+			el.find(".open-or-closed").html('<label class="label label-success">Open</label>');
+    }
+    else {
+    	el.find(".open-or-closed").html('<label class="label label-danger">Closed</label>');
+    }
+  });
+});
+
+// each phone line will need data- attributes for each day's working times, for the sake of a prototype you can hardcode them but eventually you'll probably also want to embed them in UTC format
+
+
+
 
 
 var date = new Date();
@@ -168,10 +267,6 @@ if(day === 1 && (hour >= 9 && hour <= 17)) {
 	document.getElementById("is-individual-open-or-closed").innerHTML = "<label class='label label-danger'>Closed until 9am</label>" // closed
 
 }
-
-
-
-
 
 
 
