@@ -18,6 +18,76 @@
 	<h1>Dates</h1>
 
 
+	<details open>
+         <summary><h3>First test - javascript </h3></summary>
+         <dl class="dl-horizontal">
+           <dt>Telephone number</dt>
+           <dd><p>1-800-959-8281</p><p>Outside Canada and US: 613-940-8495</p><p>Yukon, Northwest Territories and Nunavut: 1-866-426-1527</p></dd>
+           <dt>Hours</dt>
+           <dd>
+             <p><span id="is-individual-open-or-closed">I'm supposed to say open/closed based on brower time matching the set hours of operations that needs to be defined somewhere</span> | Expected wait time: 1 hour or less</p>
+      <!--   not important yet, though it sounds like we could pull this directly from meta-data?    <details>
+               <summary>Opening hours</summary>
+               <div class="row">
+                 <div class="col-lg-6">
+                   <table class="table">
+                     <thead>
+                       <tr>
+                         <th class="wb-inv">Day</th>
+                         <th class="wb-inv">Hours</th>
+                         <th class="wb-inv">Wait times</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr>
+                         <td>Mon</td>
+                         <td>9 am to 5 pm</td>
+                         <td>Long wait times</td>
+                       </tr>
+                       <tr>
+                         <td>Tue</td>
+                         <td>9 am to 5 pm</td>
+                         <td>Long wait times</td>
+                       </tr>
+                       <tr>
+                         <td>Wed</td>
+                         <td>9 am to 5 pm</td>
+                         <td>Medium wait times</td>
+                       </tr>
+                       <tr>
+                         <td>Thu</td>
+                         <td>9 am to 5 pm</td>
+                         <td>Short wait times</td>
+                       </tr>
+                       <tr>
+                         <td>Fri</td>
+                         <td>9 am to 5 pm</td>
+                         <td>Short wait times</td>
+                       </tr>
+                       <tr>
+                         <td>Sat</td>
+                         <td>Closed</td>
+                         <td></td>
+                       </tr>
+                       <tr>
+                         <td>Sun</td>
+                         <td>Closed</td>
+                         <td></td>
+                       </tr>
+                     </tbody>
+                   </table>
+                 </div>
+               </div>
+               <h4>Next 3 holiday closures:</h4>
+               <ul>
+                 <li>March 30 (Volunteering)</li>
+                 <li>April 2 (Bunny rabbits)</li>
+                 <li>May 21 (Mayday)</li>
+               </ul>
+             </details> -->
+
+</details>
+
 <details open
 	class="need-date"
 	data-day0-open=null
@@ -80,8 +150,8 @@
 	data-day2-close=17
 	data-day3-open=8
 	data-day3-close=17
-  data-day4-open=17
-  data-day4-close=24
+  data-day4-open=8
+  data-day4-close=17
 	data-day5-open=8
 	data-day5-close=17
 	data-day6-open=null
@@ -147,21 +217,19 @@ $(document).ready(function() {
 		var el = $(element);
     var date = new Date();
     var hour = date.getHours();
-		var minutes = date.getMinutes();
     var day = date.getDay();
     var month = date.getMonth();
     var dayOfMonth = date.getDate();
 
     var lineOpen = Number(el.data("day" + day + "-open"));
     var lineClose = Number(el.data("day" + day + "-close"));
-		var closeTwelve = (lineClose - 12);
     console.log(lineOpen, lineClose);
     var isHoliday = holidays["" + month + "-" + dayOfMonth + ""];
     if (!isHoliday && hour >= lineOpen && hour <= lineClose) {
-			el.find(".open-or-closed").html('<label class="label label-success">Open until ' + closeTwelve +'PM</label>');
+			el.find(".open-or-closed").html('<label class="label label-success">Open</label>');
     }
     else {
-    	el.find(".open-or-closed").html('<label class="label label-danger">Closed until ' + lineOpen + 'AM</label>');
+    	el.find(".open-or-closed").html('<label class="label label-danger">Closed</label>');
     }
   });
 });
