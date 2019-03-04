@@ -5,7 +5,41 @@
 
 
 /* still working to clean up unnecessary code */
+aside.feature {
+	float:right;
+	max-width: 300px;
+	box-shadow: 0 0 10px #ddd;
+	border:0;
+	position: absolute;
+  bottom: 0;
 
+	}
+aside.feature .pstn-tp-xs {background:#fff; padding:4px;}
+
+.featured {
+	margin-top:1em;
+  margin-bottom: 0em;
+	padding-top:25px;
+  padding-bottom:25px;
+	color:#fff;
+	background: #3F5E8D;
+	opacity:.9;
+/* opacity doesn't actually work in this prototype, but it is meant to be there */
+
+
+}
+.featured  h2 {margin-top:15px; }
+.featured img {float:left; margin-right: 15px;}
+.featured a {color:#fff}
+.home .home-banner {padding-bottom:0;}
+
+@media screen and (max-width: 1200px) {
+
+  .featured {
+  	padding-left:.8em;
+}
+
+}
 
 .learnmore, .admin {
 
@@ -134,7 +168,7 @@ ul.feeds-cont li a {
   background-size:100% auto;
   width: 100%;
 	padding-top: 25px;
-	padding-bottom: 25px;
+	padding-bottom: 0px;
 
 
 }
