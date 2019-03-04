@@ -469,8 +469,97 @@
               <tr valign="top" class="d2">
 
               <td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Help with online services such as My Account, NETFILE and Represent a Client or family member</li><li>Get a security code for My Account</li><li>Help if you are locked out of your online account</li></ul></td>
+<style>
 
-              <td data-label="Hours">Monday to Friday (except holidays) from 9 am to 5 pm (local time)</td>
+.small-tbl td {
+font-size: 17px !important;
+padding: 8px 5px !important;
+}
+
+label {
+  font-size: 18px !important;
+}
+</style>
+              <td data-label="Hours"
+	class="need-date"
+	data-day0-open=null
+  data-day0-close=null
+	data-day1-open=9
+	data-day1-close=17
+	data-day2-open=9
+	data-day2-close=17
+	data-day3-open=9
+	data-day3-close=17
+  data-day4-open=9
+  data-day4-close=17
+	data-day5-open=9
+	data-day5-close=17
+	data-day6-open=9
+	data-day6-close=17>
+
+					 <p><span class="open-or-closed">I'm supposed to say open/closed based on brower time matching the set hours of operations that needs to be defined somewhere</span></p><p>Expected wait time: 1 hour or less</p>
+<details class="right-mobile">
+  <summary>Opening hours</summary>
+  <div class="row ">
+                <div>
+                  <table class="table small-tbl">
+                    <thead>
+                      <tr>
+                        <th class="wb-inv">Day</th>
+                        <th class="wb-inv">Hours</th>
+                        <th class="wb-inv">Wait times</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td data-label="Day">Mon</td>
+                        <td data-label="Hours">9am-5pm</td>
+                        <td data-label="Wait times">Long wait times</td>
+                      </tr>
+                      <tr>
+                        <td data-label="Day">Tue</td>
+                        <td data-label="Hours">9am-5pm</td>
+                        <td data-label="Wait times">Long wait times</td>
+                      </tr>
+                      <tr>
+                        <td data-label="Day">Wed</td>
+                        <td data-label="Hours">9am-5pm</td>
+                        <td data-label="Wait times">Medium wait times</td>
+                      </tr>
+                      <tr>
+                        <td data-label="Day">Thu</td>
+                        <td data-label="Hours">9am-5pm</td>
+                        <td data-label="Wait times">Short wait times</td>
+                      </tr>
+                      <tr>
+                        <td data-label="Day">Fri</td>
+                        <td data-label="Hours">9am-5pm</td>
+                        <td data-label="Wait times">Short wait times</td>
+                      </tr>
+                      <tr>
+                        <td data-label="Day">Sat</td>
+                        <td data-label="Hours">Closed</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td data-label="Day">Sun</td>
+                        <td data-label="Hours">Closed</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p><strong>Next 3 holiday closures:</strong></p>
+              <ul>
+                <li style="font-size: 17px !important; line-height: 1.65em !important;">March 30 (Volunteering)</li>
+                <li style="font-size: 17px !important; line-height: 1.65em !important;">April 22 (Bunny rabbits)</li>
+                <li style="font-size: 17px !important; line-height: 1.65em !important;">May 21 (Mayday)</li>
+              </ul>
+
+</details>
+
+<!-- Monday to Friday (except holidays) from 9 am to 5 pm (local time) --></td>
 
               <td data-label="Number">1-800-959-8281<br /><br />Outside Canada and US: <br />613-940-8495<br /><br />Yukon, Northwest Territories and Nunavut: <br />1-866-426-1527</td></tr>
 
@@ -856,7 +945,7 @@
     "dom": '<"wrapper"fitlp>',
     "ordering": false,
     "columnDefs": [
-      { "width": "425%", "targets": 0 }
+      { "width": "420%", "targets": 0 }
     ],
     "paging": false
     });
@@ -864,10 +953,46 @@
     "dom": '<"wrapper"fitlp>',
     "ordering": false,
     "columnDefs": [
-      { "width": "25em", "targets": 0 },
+      { "width": "420%", "targets": 0 },
     ],
     "paging": false
     });
+
+    $(document).ready(function() {
+	var holidays = {};
+  holidays["4-19"] = true;
+	holidays["4-21"] = true;
+	holidays["4-22"] = true;
+
+
+  $(".need-date").each(function(index, element) {
+		var el = $(element);
+    var date = new Date();
+    var hour = date.getHours();
+		var minutes = date.getMinutes();
+    var day = date.getDay();
+    var month = date.getMonth();
+    var dayOfMonth = date.getDate();
+
+    var lineOpen = Number(el.data("day" + day + "-open"));
+    var lineClose = Number(el.data("day" + day + "-close"));
+
+		var closeClock = (lineClose - 12);
+		var nextDay = Number(el.data("day" + (day + 1) + "-open"));
+
+
+    console.log(lineOpen, lineClose);
+    var isHoliday = holidays["" + month + "-" + dayOfMonth + ""];
+
+    if (!isHoliday && hour >= lineOpen && hour <= lineClose) {
+			el.find(".open-or-closed").html('<label class="label label-success">Open until ' + closeClock +'PM</label>');
+    } else {
+    	el.find(".open-or-closed").html('<label class="label label-danger">Closed until ' + nextDay + 'AM</label>');
+    }
+  });
+});
+
+
   </script>
 </body>
 </html>
