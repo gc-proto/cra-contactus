@@ -1,0 +1,302 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Date</title>
+<link href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="https://gc-proto.github.io/cra-contactus/GCWeb/css/theme.css">
+<link rel="stylesheet" href="https://gc-proto.github.io/cra-contactus/GCWeb/css/custom.css">
+</head>
+
+<body>
+
+
+
+
+<main class="container">
+
+	<h1>Dates</h1>
+
+<!--note that day0 is Sunday cycling through the other days of the week-->
+<details open
+	class="need-date"
+	data-day0-open=null
+  data-day0-close=null
+	data-day1-open=9
+	data-day1-close=17
+	data-day2-open=9
+	data-day2-close=17
+	data-day3-open=9
+	data-day3-close=17
+  data-day4-open=9
+  data-day4-close=17
+	data-day5-open=9
+	data-day5-close=17
+	data-day6-open=null
+	data-day6-close=null>
+			 <summary><h3>Individual tax line (local time)</h3></summary>
+			 <dl class="dl-horizontal">
+				 <dt>Telephone number </dt>
+				 <dd><p>1-800-959-8281</p></dd>
+				 <dt>Hours</dt>
+				 <dd>
+					 <p><span class="open-or-closed">I'm supposed to say open/closed based on brower time matching the set hours of operations that needs to be defined somewhere</span> | Expected wait time: 1 hour or less</p>
+
+</details>
+
+<details open
+	class="need-date"
+	data-extended-hours-start="dd/mm/yy"
+	data-extended-hours-end="dd/mm/yy"
+	data-day0-open=null
+  data-day0-close=null
+	data-day1-open="9:00"
+	data-day1-close="17:00"
+	data-day2-open="9:00"
+	data-day2-close="17:00"
+	data-day3-open="9:00"
+	data-day3-close="17:00"
+  data-day4-open="9:00"
+  data-day4-close="17:00"
+	data-day5-open="9:00"
+	data-day5-close="17:00"
+	data-day6-open=null
+	data-day6-close=null
+	data-day0-ext-open=null
+  data-day0-ext-close=null
+	data-day1-ext-open="9:00"
+	data-day1-ext-close="17:00"
+	data-day2-ext-open="9:00"
+	data-day2-ext-close="17:00"
+	data-day3-ext-open="9:00"
+	data-day3-ext-close="17:00"
+  data-day4-ext-open="9:00"
+  data-day4-ext-close="17:00"
+	data-day5-ext-open="9:00"
+	data-day5-ext-close="17:00"
+	data-day6-ext-open=null
+	data-day6-ext-close=null>
+			 <summary><h3>Alberta Benefit Enquiries (Mountain time)</h3></summary>
+			 <dl class="dl-horizontal">
+				 <dt>Telephone number </dt>
+				 <dd><p>1-800-959-2809</p></dd>
+				 <dt>Hours</dt>
+				 <dd>
+					 <p><span class="open-or-closed">I'm supposed to say open/closed based on brower time matching the set hours of operations that needs to be defined somewhere</span> | Expected wait time: 1 hour or less</p>
+
+</details>
+
+<details open
+	class="need-date"
+	data-day0-open=null
+  data-day0-close=null
+	data-day1-open=8
+	data-day1-close=17
+	data-day2-open=8
+	data-day2-close=17
+	data-day3-open=8
+	data-day3-close=17
+  data-day4-open=8
+  data-day4-close=17
+	data-day5-open=8
+	data-day5-close=17
+	data-day6-open=null
+	data-day6-close=null
+	data-extended-period="Jan 5 to March 6">
+			 <summary><h3>Provincial programs for Ontario (EST)</h3></summary>
+			 <dl class="dl-horizontal">
+				 <dt>Telephone number </dt>
+				 <dd><p>1-800-959-2809</p></dd>
+				 <dt>Hours</dt>
+				 <dd>
+					 <p><span class="open-or-closed">I'm supposed to say open/closed based on brower time matching the set hours of operations that needs to be defined somewhere</span> | Expected wait time: 1 hour or less</p>
+
+</details>
+
+</main>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+  <script src="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/js/wet-boew.min.js"></script>
+
+	<script>
+
+// conditions for the phone lines - 3 examples
+
+// Individual tax line (local time) 1-800-959-8281 - check extended tax season? same number (EST time if calling outside Canada)
+// Sunday - closed
+// Monday - 9-5
+// Tuesday - 9-5
+// Wednesday - 9-5
+// Thursday - 9-5
+// Friday - 9-5
+// Saturday - Closed - extended hours 9-5
+// holidays need to be set
+
+// Provincial programs for Ontario (PPO) (EST) 1-877-627-6645
+// Sunday - closed
+// Monday - 8:15-5
+// Tuesday - 8:15-5
+// Wednesday - 8:15-5
+// Thursday - 8:15-5
+// Friday - 8:15-5
+// Saturday - Closed
+// holidays need to be set
+
+// Alberta Benefit Enquiries (Mountain time)) 1-800-959-2809
+// Sunday - closed
+// Monday - 9-5
+// Tuesday - 9-5
+// Wednesday - 9-5
+// Thursday - 9-5
+// Friday - 9-5
+// Saturday - Closed
+// holidays need to be set
+
+
+$(document).ready(function() {
+	var holidays = {};
+  holidays["4-19"] = true;
+	holidays["4-21"] = true;
+	holidays["4-22"] = true;
+
+
+//Parse the data attributes for both day of week + time
+//
+
+  $(".need-date").each(function(index, element) {
+		var weekday = new Array(7);
+			weekday[0] =  "Sunday";
+			weekday[1] = "Monday";
+			weekday[2] = "Tuesday";
+			weekday[3] = "Wednesday";
+			weekday[4] = "Thursday";
+			weekday[5] = "Friday";
+			weekday[6] = "Saturday";
+
+		var el = $(element);
+    var date = new Date();
+		var tomorrow = new Date();
+    var hour = date.getHours();
+		var minutes = date.getMinutes();
+    var day = date.getDay();
+    var month = date.getMonth();
+    var dayOfMonth = date.getDate();
+
+		//Match the current date with data attr holidays
+		var isHoliday = holidays["" + month + "-" + dayOfMonth + ""];
+
+		//Get the data attributes for today's opening hours
+		var lineOpen = Number(el.data("day" + day + "-open"));
+    var lineClose = Number(el.data("day" + day + "-close"));
+
+		//*************instring of the opening time 9:00 to get before : and after :
+
+
+		var closeClock = (lineClose - 12);
+		var nextDay = Number(el.data("day" + (day + 1) + "-open"));
+
+		//During extended hours
+		//*****************What happens if there is no data attribute for ext???*************************
+		var lineOpenExt = Number(el.data("day" + day + "-ext-open"));
+		var lineCloseExt = Number(el.data("day" + day + "-ext-close"));
+
+		var closeClockExt = (lineCloseExt - 12);
+
+		console.log(hour);
+		console.log(day);
+		console.log(dayOfMonth);
+		console.log(lineOpen, lineClose);
+
+
+		//***********************To do***********************
+		//1. whenever a date falls into an extended period, use the extended hours...
+		//2. hour segments, 8:15 opening syntax - how does javascript encode hour/minutes and display types?
+
+
+		if (el.data("extended-hours-start") >= day && day <= el.data("extended-hours-end")) {
+			bExtendedHours = true;
+		} else {
+			bExtendedHours = false;
+		}
+		//add 'ext-' to number(e.data if bExtendedHours is true
+		tomorrow.setDate(tomorrow.getDate() + 1); //defined as date, set to tomorrow to start
+		//Evaluate if holiday or has no opening hour (weekend), or after opening hours
+		if (isHoliday || lineOpen == null || (bExtendedHours == false && hour >=lineClose) || (bExtendedHours == true && hour >=lineCloseExt)) {
+			//Evaluate following days until one is not a holiday and has opening hours
+			if (el.data("extended-hours-start") >= tomorrow.getDate() && tomorrow.getDate() <= el.data("extended-hours-end")) {
+				sExtOpen = "-ext-open"
+			} else {
+				sExtOpen = "-open"
+			}
+			while (Number(el.data("day" + (day + tomorrow.getDay()) + sExtOpen)) == null && holidays["" + tomorrow.getMonth() + "-" + tomorrow.getDate() + ""]) {
+				tomorrow.setDate(tomorrow.getDate() + 1);
+				if (el.data("extended-hours-start") >= tomorrow.getDate() && tomorrow.getDate() <= el.data("extended-hours-end")) {
+					sExtOpen = "-ext-open"
+				}
+			}
+			//next work day of week at opening time
+			el.find(".open-or-closed").html('<label class="label label-danger">Closed until ' + weekday[tomorrow.getDay()] + ' at ' + Number(el.data("day" + (day + tomorrow.getDay()) + sExtOpen)) + 'AM</label>');
+			//Then evaluate if before opening hours
+		} else if (bExtendedHours = false) {
+			if (hour <= lineOpen) {
+				el.find(".open-or-closed").html('<label class="label label-danger">Closed until ' + lineOpen + 'AM</label>');
+			//Else say open until closing hour
+			} else {
+				el.find(".open-or-closed").html('<label class="label label-success">Open until ' + closeClock +'PM</label>');
+			}
+		} else { //extendedhours = true
+			if (hour <= lineOpenExt) {
+				el.find(".open-or-closed").html('<label class="label label-danger">Closed until ' + lineOpenExt + 'AM</label>');
+			//Else say open until closing hour
+			} else {
+				el.find(".open-or-closed").html('<label class="label label-success">Open until ' + closeClockExt +'PM</label>');
+			}
+		}
+
+
+  });
+});
+
+// need a value for null  "Closed until (next day open)"
+// way to get 8:15 opening time...
+
+// each phone line will need data- attributes for each day's working times, for the sake of a prototype you can hardcode them but eventually you'll probably also want to embed them in UTC format
+
+
+
+
+
+var date = new Date();
+var hour = date.getHours();
+var day = date.getDay();
+
+if(day === 0 ) {
+  document.getElementById("is-individual-open-or-closed").innerHTML = '<label class="label label-danger">Closed until Monday</label>'; 	// day of the week
+}
+
+if(day === 6) {
+  document.getElementById("is-individual-open-or-closed").innerHTML = '<label class="label label-danger">Closed until Monday</label>'; 	// day of the week
+}
+
+
+if(day === 1 && (hour >= 9 && hour <= 17)) {
+	document.getElementById("is-individual-open-or-closed").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
+} else if(day === 2 && (hour >= 9 && hour <= 17)) {
+	document.getElementById("is-individual-open-or-closed").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
+} else if(day === 3 && (hour >= 9 && hour <= 17)) {
+	document.getElementById("is-individual-open-or-closed").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
+} else if(day === 4 && (hour >= 9 && hour <= 17)) {
+	document.getElementById("is-individual-open-or-closed").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
+} else if(day === 5 && (hour >= 9 && hour <= 17)) {
+	document.getElementById("is-individual-open-or-closed").innerHTML = '<label class="label label-success">Open until 5pm</label>'; // open time
+} else {
+	document.getElementById("is-individual-open-or-closed").innerHTML = "<label class='label label-danger'>Closed until 9am</label>" // closed
+
+}
+
+
+
+
+	</script>
+
+</html>
