@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
 		wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
-    <title>Register for an online account - Get a security code - Canada.ca</title>
+    <title>Accounts and registration - How to register - Canada.ca</title>
 
 <meta content="width=device-width,initial-scale=1" name="viewport">
 <meta name="description">
@@ -128,7 +128,18 @@
 <main property="mainContentOfPage" class="container">
 
 
-  <h1 property="name" id="wb-cont" dir="ltr">Recover your account or get a security code</h1>
+  <h1 property="name" id="wb-cont" dir="ltr">Accounts and registration - How to register</h1>
+
+  <div class="mrgn-tp-sm mrgn-bttm-sm brdr-bttm">
+    <div class="row">
+      <ul class="toc lst-spcd col-md-12">
+        <li class="col-md-4"><a href="get-security-code.html" class="list-group-item active">How to register</a></li>
+        <li class="col-md-4"><a href="get-security-code-2.html" class="list-group-item">Recover your account or security code</a></li>
+        <li class="col-md-4"><a href="get-security-code-3.html" class="list-group-item">Trouble using an online account</a></li>
+
+      </ul>
+    </div>
+  </div>
 
   <h2>On this page</h2>
   <ul>
@@ -143,8 +154,8 @@
     <li><a href="https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/recover/password/start">Recover your password</a></li>
   </ul>
 
-  <h2 id="lost-password">Lost your User ID</h2>
-  <p>If you forgot your User ID, you might need to get a new security code to recover your account.</p>
+  <h2 id="lost-password">Lost your User ID or security code (or never received one)</h2>
+  <p>If you lost your User ID or security code, you might need to get a new security code to recover your account.</p>
 
   <div class="wb-frmvld">
     <form method="get">
@@ -157,10 +168,25 @@
         "default": [{ "action": "addClass", "source":"#personal,#business,#non-resident,#trusts", "class": "hidden" },
           { "action": "addClass", "source": "#wb-auto-12", "class": "checked"}]
         }'>
-        <p>Do you have online banking credentials?</p>
+        <p>Are you doing online banking with one of these banks?</p>
         <ul>
-          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#personal", "class": "hidden"}'>yes</li> <!--result-->
-          <li data-wb-fieldflow='{ "action": "append", "source":"#question2" }'>no</li>
+          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Affinity Credit Union</li>
+          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>ATB Financial</li>
+          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>BMO</li>
+          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>CIBC</li>
+          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Choice Rewards Master Card</li>
+          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Caisses Populaires</li>
+          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Connexus Credit Union</li>
+          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Desjardins</li>
+          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>National Bank</li>
+          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>RBC Royal Bank</li>
+          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>ScotiaBank</li>
+          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Servus Credit Union</li>
+          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Tangerine</li>
+          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>TD Canada Trust</li>
+          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>UNI</li>
+          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Vancity</li>
+          <li data-wb-fieldflow='{ "action": "append", "source":"#question2" }'>None of the above</li>
         </ul>
       </div>
 
@@ -181,76 +207,12 @@
   <div id="banking" class="hidden">
     <h2>Use your online banking credentials</h2>
 
-
-    <p>If you are already signed up for online banking with one of sign in partners, you do not need a security code. You can use your online banking credentials to immediately register for:
+    <p>You should be able to login with your online bank credentials using the "Sign-in partners login". You should not need a security code.</p>
     <ul>
-      <li>Register for My Account with online banking credentials</li>
-      <li>Register for My Business Account with online banking credentials</li>
-      <li>Register for Represent a Client with online banking credentials</li>
+      <li><a href="">Sign in to My Account</a></li>
+      <li><a href="">Sign in to My Business Account</a></li>
+      <li><a href="">Sign in to Represent a client</a></li>
     </ul>
-    <details>
-      <summary><h3>Our sign-in partners</h3></summary>
-      <p>We currently accept online banking credentials from the following sign in partners:</p>
-      <div class="row">
-        <div class="col-xs-6 text-center">
-          <ul class="list-unstyled lst-spcd">
-            <li>
-              <img class="img-responsive center-block" alt="Affinity Credit Union" src="https://services.securekeyconcierge.com/cbscont/images/en/affinity.gif">
-            </li>
-            <li>
-               <img class="img-responsive center-block" alt="ATB Financial" src="https://services.securekeyconcierge.com/cbscont/images/en/atb.gif">
-            </li>
-            <li>
-              <img class="img-responsive center-block" alt="BMO Financial Group - Debit Card" src="https://services.securekeyconcierge.com/cbscont/images/en/bmo_dc.gif">
-            </li>
-            <li>
-              <img class="img-responsive center-block" alt="CIBC-Banking that fits your life." src="https://services.securekeyconcierge.com/cbscont/images/en/cibc.gif">
-            </li>
-            <li>
-              <img class="img-responsive center-block" alt="Choice Rewards Mastercard" src="https://services.securekeyconcierge.com/cbscont/images/en/cuets_dev.gif">
-            </li>
-            <li>
-              <img class="img-responsive center-block" alt="Caisses Populaires" src="https://services.securekeyconcierge.com/cbscont/images/en/acpol.gif">
-            </li>
-             <li>
-              <img class="img-responsive center-block" alt="Conexus" src="https://services.securekeyconcierge.com/cbscont/images/en/conexus.gif">
-            </li>
-            <li>
-              <img class="img-responsive center-block" alt="Desjardins" src="https://services.securekeyconcierge.com/cbscont/images/en/desjardins.gif">
-            </li>
-
-          </ul>
-        </div>
-        <div class="col-xs-6 text-center">
-          <ul class="list-unstyled lst-spcd">
-            <li>
-              <img class="img-responsive center-block" alt="National Bank" src="https://services.securekeyconcierge.com/cbscont/images/en/nbc.gif">
-            </li>
-            <li>
-              <img class="img-responsive center-block" alt="RBC Royal Bank" src="https://services.securekeyconcierge.com/cbscont/images/en/rbc.gif">
-            </li>
-            <li>
-              <img class="img-responsive center-block" alt="Scotiabank" src="https://services.securekeyconcierge.com/cbscont/images/en/sc.gif">
-            </li>
-            <li>
-              <img class="img-responsive center-block" alt="Servus Credit Union" src="https://services.securekeyconcierge.com/cbscont/images/en/servus.gif">
-            </li>
-            <li>
-              <img class="img-responsive center-block" alt="Tangerine - Forward Banking" src="https://services.securekeyconcierge.com/cbscont/images/en/tangerine.gif">
-            </li>
-            <li>
-              <img class="img-responsive center-block" alt="TD Canada Trust EasyWeb" src="https://services.securekeyconcierge.com/cbscont/images/en/td.gif">
-            </li>
-            <li>
-              <img class="img-responsive center-block" alt="UNI FINANCIAL COOPERATION" src="https://services.securekeyconcierge.com/cbscont/images/en/acadie.gif">
-            </li>
-             <li>
-              <img class="img-responsive center-block" alt="Vancity" src="https://services.securekeyconcierge.com/cbscont/images/en/vancity.gif">
-            </li>
-          </ul>
-        </div>
-      </div>
-    </details>
   </div>
 
   <div id="personal" class="hidden">
