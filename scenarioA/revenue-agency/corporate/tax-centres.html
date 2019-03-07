@@ -12,8 +12,8 @@
 <meta name="description">
 <!--[if gte IE 9 | !IE ]><!-->
 <link href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="https://gc-proto.github.io/cra-contactus/GCWeb/css/theme.css">
-<link rel="stylesheet" href="https://gc-proto.github.io/cra-contactus/GCWeb/css/custom.css">
+<link rel="stylesheet" href="../../../GCWeb/css/theme.css">
+<link rel="stylesheet" href="../../../GCWeb/css/custom.css">
 <!--<![endif]-->
 <!--[if lt IE 9]>
 		<link href="./GCWeb/assets/favicon.ico" rel="shortcut icon" />
@@ -112,7 +112,9 @@
 <div class="container" style="padding-left:15px!important;">
 <ol class="breadcrumb">
 <li class="visible-md visible-lg no-break-breadcrumb cust-breadcrumb"><a href="https://gc-proto.github.io/cra-contactus/scenarioA/en.html">Canada.ca</a></li></li>
-<li class="cust-breadcrumb"><a href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency.html">Canada Revenue Agency</a></li>
+<li class="visible-md visible-lg no-break-breadcrumb cust-breadcrumb"><a href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency.html">Canada Revenue Agency</a></li>
+<li class="cust-breadcrumb"><a href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/corporate/contact-us.html">Contact information – Canada Revenue Agency</a></li>
+
 </ol>
 </div>
 </nav>
@@ -124,8 +126,11 @@
 
   <h1 property="name" id="wb-cont" dir="ltr">Tax Centres</h1>
 
+<div class="row col-lg-7">
+<h2>Find your Tax Centre</h2>
   <div class="wb-frmvld">
   	 <form method="get">
+
 
   		<!--Question 1-->
   		<div id="question1" class="wb-fieldflow" data-wb-fieldflow='{
@@ -133,14 +138,12 @@
   			"noForm": true,
   			"base": { "live": true },
   			"noreqlabel": true,
-  			"default": { "action": "addClass", "source":"#question1,#question1button,#question2button,#question2abutton,#question3buttona,#question3buttonb,#question3buttonc,#question4buttona,#question4buttonb,#question4buttonc,#question2,#question2a,#question3,#question4,#result1,#result2,#result-si-bc-tso,#result-jonq,#result-winn-1,#result-winn-2,#result-sud-1,#result-sud-2,#result-pei,#result-int", "class": "hidden" }
+  			"default": { "action": "addClass", "source":"#question1,#question2,#question2b,#result-jon-tc,#result-wpg-tc,#result-sud-tc,#result-int,#result-pei-tc,#result-int", "class": "hidden" }
   			}'>
-  			<p>What kind of documents/forms/returns are you mailing or faxing?</p>
+  			<p>What/who are you mailing or faxing as?</p>
   			<ul>
   				<li data-wb-fieldflow='{"action": "append", "source":"#question2" }'>personal taxes, benefits or refunds</li>
-  				<li data-wb-fieldflow='{ "action": "append", "source":"#question2b" }'>business</li> <!-- same next step -->
-  				<li data-wb-fieldflow='{ "action": "append", "source":"#question2c" }'>trust</li> <!-- same next step -->
-          <li data-wb-fieldflow='{ "action": "append", "source":"#question2d" }'>non-resident</li> <!-- same next step -->
+  				<li data-wb-fieldflow='{ "action": "append", "source":"#question2b" }'>a business</li> <!-- same next step -->
 
 
   			</ul>
@@ -152,19 +155,21 @@
   		<div id="question2" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"", "noreqlabel": true}'>
   			<p>Choose your province</p>
   			<ul>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Alberta</li>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>British Columbia</li>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Manitoba</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-wpg-tc", "class": "hidden" }'>Alberta</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-wpg-tc", "class": "hidden" }'>British Columbia</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-wpg-tc", "class": "hidden" }'>Manitoba</li>
   				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-jon-tc", "class": "hidden" }'>New Brunswick</li>
   				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-jon-tc", "class": "hidden" }'>Newfoundland and Labrador</li>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Northwest Territories</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-wpg-tc", "class": "hidden" }'>Northwest Territories</li>
   				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-jon-tc", "class": "hidden" }'>Nova Scotia</li>
   				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-sud-tc", "class": "hidden" }'>Nunavut</li>
   				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-sud-tc", "class": "hidden" }'>Ontario</li>
   				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-jon-tc", "class": "hidden" }'>Prince Edward Island</li>
   				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-jon-tc", "class": "hidden" }'>Quebec</li>
-  				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Saskatchewan</li>
-  				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Yukon</li>
+  				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#result-wpg-tc", "class": "hidden" }'>Saskatchewan</li>
+  				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#result-wpg-tc", "class": "hidden" }'>Yukon</li>
+          <li data-wb-fieldflow='{"action": "removeClass", "source":"#result-int", "class": "hidden" }'>Outside Canada</li>
+
   			</ul>
   		</div>
 
@@ -176,60 +181,28 @@
   		<div id="question2b" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"", "noreqlabel": true}'>
   			<p>Choose your province</p>
   			<ul>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-2", "class": "hidden" }'>Alberta</li>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei", "class": "hidden" }'>British Columbia</li>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-2", "class": "hidden" }'>Manitoba</li>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei", "class": "hidden" }'>New Brunswick</li>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei", "class": "hidden" }'>Newfoundland and Labrador</li>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei", "class": "hidden" }'>Northwest Territories</li>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei", "class": "hidden" }'>Nova Scotia</li>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei", "class": "hidden" }'>Nunavut</li>
-  				<li data-wb-fieldflow='{ **needs a postal code lookup**}'>Ontario</li>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei", "class": "hidden" }'>Prince Edward Island</li>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei", "class": "hidden" }'>Quebec</li>
-  				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#result-winn-2", "class": "hidden" }'>Saskatchewan</li>
-  				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#result-pei", "class": "hidden" }'>Yukon</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei-tc", "class": "hidden" }'>Alberta</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei-tc", "class": "hidden" }'>British Columbia</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei-tc", "class": "hidden" }'>Manitoba</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei-tc", "class": "hidden" }'>New Brunswick</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei-tc", "class": "hidden" }'>Newfoundland and Labrador</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei-tc", "class": "hidden" }'>Northwest Territories</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei-tc", "class": "hidden" }'>Nova Scotia</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-sud-tc", "class": "hidden" }'>Nunavut</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-sud-tc", "class": "hidden" }'>Ontario</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei-tc", "class": "hidden" }'>Prince Edward Island</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei-tc", "class": "hidden" }'>Quebec</li>
+  				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#result-pei-tc", "class": "hidden" }'>Saskatchewan</li>
+  				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#result-pei-tc", "class": "hidden" }'>Yukon</li>
   				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-int", "class": "hidden" }'>Outside Canada</li>
   			</ul>
   		</div>
 
 
-  		<!--Question 3 t2 forms-->
-  		<div id="question3c" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"", "noreqlabel": true}'>
-  			<p>Choose your province</p>
-  			<ul>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Alberta</li>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>British Columbia</li>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Manitoba</li>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>New Brunswick</li>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Newfoundland and Labrador</li>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Northwest Territories</li>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Nova Scotia</li>
-  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Nunavut</li>
-  				<li data-wb-fieldflow='{ "action": "append", "source":"#question4" }'>Ontario</li>
-  				<li data-wb-fieldflow='{ "action": "append", "source":"#question3" }'>Prince Edward Island</li>
-  				<li data-wb-fieldflow='{ "action": "append", "source":"#question3" }'>Quebec</li>
-  				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Saskatchewan</li>
-  				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Yukon</li>
-  				<li data-wb-fieldflow='{ "action": "append", "source":"#result-int }'>Outside Canada</li>
-  			</ul>
-  		</div>
-
-  <!-- Tax offices -->
-
-  		<div id="result-si-bc-tso" class="hidden">
-  		<h3>Southern Interior B.C. Tax Services Office</h3>
-
-  					<p><b>Office address:</b>
-  					<br>277 Winnipeg Street
-  					<br>Penticton BC  V2A 1N6</p>
-  					<p><b>Fax number:</b> 250-492-8346</p>
-  		</div>
-
   <!-- Tax centres -->
 
-  		<div id="result-jonq" class="hidden">
-  		<h3>Mail or fax your documents to:</h3>
+  		<div id="result-jon-tc" class="hidden">
+  		<h3>Mail or fax to:</h3>
 
   					<p><b>Jonquière Tax Centre</b>
   					<br>2251 René-Lévesque Boulevard
@@ -240,53 +213,31 @@
   		</div>
 
 
-  		<div id="result-winn-1" class="hidden"> <!-- income tax and benefits -->
-  		<h3>Mail or fax your documents to:</h3>
+  		<div id="result-wpg-tc" class="hidden">
+  		<h3>Mail or fax to:</h3>
 
   					<p><b>Winnipeg Tax Centre</b>
-  					<br>Post Office Box 14001, Station Main
+  					<br>66 Stapon Road
   					<br>Winnipeg MB R3C 3M3</p>
 
   					<p><b>Fax number:</b> 204-984-5164</p>
 
   		</div>
 
-  		<div id="result-winn-2" class="hidden"> <!-- all other correspondence -->
-  		<h3>Mail or fax your documents to:</h3>
+  		<div id="result-sud-tc" class="hidden">
+  		<h3>Mail or fax to:</h3>
 
-  					<p><b>Winnipeg Tax Centre</b>
-  					<br>66 Stapon Road
-  					<br>Winnipeg MB R3C 3M2</p>
+      <p><b>Sudbury Tax Centre</b>
+      <br>1050 Notre Dame Avenue
+      <br>Sudbury ON  P3A 5C2</p>
 
-  					<p><b>Fax number:</b> 204-984-5164</p>
-
-  		</div>
-
-  		<div id="result-sud-1" class="hidden"> <!-- income tax and benefits -->
-  		<h3>Mail or fax your documents to:</h3>
-
-  					<p><b>Sudbury Tax Centre</b>
-  					<br>1050 Notre Dame Avenue
-  					<br>Sudbury ON  P3A 5C2</p>
-
-  					<p><b>Fax number:</b> 705-671-3994 and 1-855-276-1529</p>
-
-  		</div>
-
-  		<div id="result-sud-2" class="hidden"> <!-- all other correspondence -->
-  		<h3>Mail or fax your documents to:</h3>
-
-  					<p><b>Sudbury Tax Centre</b>
-  					<br>Post Office Box 20000, Station A
-  					<br>Sudbury ON  P3A 5C1</p>
-
-  					<p><b>Fax number:</b> 705-671-3994 and 1-855-276-1529</p>
+      <p><b>Fax number:</b> 705-671-3994 and 1-855-276-1529</p>
 
   		</div>
 
 
-  		<div id="result-pei" class="hidden">
-  		<h3>Mail or fax your documents to:</h3>
+  		<div id="result-pei-tc" class="hidden">
+  		<h3>Mail or fax to:</h3>
 
   					<p><b>Prince Edward Island Tax Centre</b>
   					<br>275 Pope Road
@@ -297,8 +248,16 @@
   		</div>
 
 
+      <div id="result-int" class="hidden">
+  		<h3>Mail or fax to:</h3>
 
+      <p><b>Sudbury Tax Centre</b>
+      <br>1050 Notre Dame Avenue
+      <br>Sudbury ON  P3A 5C2</p>
 
+      <p><b>Fax number:</b> 705-671-3994 and 1-855-276-1529</p>
+
+  		</div>
 
 
   		<!--buttons-->
@@ -328,9 +287,13 @@
   </div>
 
 
+  <div class="col-lg-5" style="padding:0px;">
+  <h2>Mail a form</h2>
+  <p>Look up a a specific mailing addresses for a form.</p>
+    <a href="contact-us/find-address.html" class="btn btn-default btn-cust mrgn-bttm-md">Find an address</a>
+  </div>
 
-
-
+<div class="clearfix"></div>
 
 <div class="pagedetails">
 <div class="row">

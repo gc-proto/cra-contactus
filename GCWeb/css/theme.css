@@ -13338,8 +13338,8 @@ h6 {
 .radio-inline,
 :not(#wb-srch) form,
 form .btn:not(.btn-call-to-action) {
-    font-size: 16px;
-    line-height: 23px
+    font-size: 19px;
+    line-height: 25px
 }
 
 .form-control,
