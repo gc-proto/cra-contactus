@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html class="no-js" lang="en" dir="ltr">
 <!--<![endif]-->
@@ -7,7 +6,7 @@
 <meta charset="utf-8">
 <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
 		wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
-    <title>Doing your taxes - Canada.ca</title>
+    <title>Tax Centres - Canada.ca</title>
 
 <meta content="width=device-width,initial-scale=1" name="viewport">
 <meta name="description">
@@ -110,163 +109,228 @@
 </nav>
 <nav id="wb-bc" property="breadcrumb">
 <h2>You are here:</h2>
-<div class="container">
+<div class="container" style="padding-left:15px!important;">
 <ol class="breadcrumb">
-<li><a href="https://gc-proto.github.io/cra-contactus/scenarioA/en.html">Canada.ca</a></li></li>
-<li><a href="https://gc-proto.github.io/cra-contactus/scenarioA/services/taxes.html">Taxes</a></li>
-<li><a href="https://gc-proto.github.io/cra-contactus/scenarioA/services/taxes/income-tax.html">Income tax</a></li>
-<li><a href="https://gc-proto.github.io/cra-contactus/scenarioA/services/taxes/income-tax/personal-income-tax.html">Personal income tax</a></li>
-
-
+<li class="visible-md visible-lg no-break-breadcrumb cust-breadcrumb"><a href="https://gc-proto.github.io/cra-contactus/scenarioA/en.html">Canada.ca</a></li></li>
+<li class="cust-breadcrumb"><a href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency.html">Canada Revenue Agency</a></li>
 </ol>
 </div>
 </nav>
 </header>
 
 <!-- class="gc-theme" is doing some weird stuff with the first h2... -->
-
-
 <main property="mainContentOfPage" class="container">
 
 
-<h1 property="name" id="wb-cont" dir="ltr">
-Doing your taxes</h1>
+  <h1 property="name" id="wb-cont" dir="ltr">Tax Centres</h1>
+
+  <div class="wb-frmvld">
+  	 <form method="get">
+
+  		<!--Question 1-->
+  		<div id="question1" class="wb-fieldflow" data-wb-fieldflow='{
+  			"renderas":"radio",
+  			"noForm": true,
+  			"base": { "live": true },
+  			"noreqlabel": true,
+  			"default": { "action": "addClass", "source":"#question1,#question1button,#question2button,#question2abutton,#question3buttona,#question3buttonb,#question3buttonc,#question4buttona,#question4buttonb,#question4buttonc,#question2,#question2a,#question3,#question4,#result1,#result2,#result-si-bc-tso,#result-jonq,#result-winn-1,#result-winn-2,#result-sud-1,#result-sud-2,#result-pei,#result-int", "class": "hidden" }
+  			}'>
+  			<p>What kind of documents/forms/returns are you mailing or faxing?</p>
+  			<ul>
+  				<li data-wb-fieldflow='{"action": "append", "source":"#question2" }'>personal taxes, benefits or refunds</li>
+  				<li data-wb-fieldflow='{ "action": "append", "source":"#question2b" }'>business</li> <!-- same next step -->
+  				<li data-wb-fieldflow='{ "action": "append", "source":"#question2c" }'>trust</li> <!-- same next step -->
+          <li data-wb-fieldflow='{ "action": "append", "source":"#question2d" }'>non-resident</li> <!-- same next step -->
+
+
+  			</ul>
+  		</div>
+
+
+
+  		<!--Question 2 TC by province individuals -->
+  		<div id="question2" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"", "noreqlabel": true}'>
+  			<p>Choose your province</p>
+  			<ul>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Alberta</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>British Columbia</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Manitoba</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-jon-tc", "class": "hidden" }'>New Brunswick</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-jon-tc", "class": "hidden" }'>Newfoundland and Labrador</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Northwest Territories</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-jon-tc", "class": "hidden" }'>Nova Scotia</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-sud-tc", "class": "hidden" }'>Nunavut</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-sud-tc", "class": "hidden" }'>Ontario</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-jon-tc", "class": "hidden" }'>Prince Edward Island</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-jon-tc", "class": "hidden" }'>Quebec</li>
+  				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Saskatchewan</li>
+  				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Yukon</li>
+  			</ul>
+  		</div>
 
 
 
 
-    <div><div class="mwsbodytext text parbase section">
+
+  		<!--Question 3 business tax centre-->
+  		<div id="question2b" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"", "noreqlabel": true}'>
+  			<p>Choose your province</p>
+  			<ul>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-2", "class": "hidden" }'>Alberta</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei", "class": "hidden" }'>British Columbia</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-2", "class": "hidden" }'>Manitoba</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei", "class": "hidden" }'>New Brunswick</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei", "class": "hidden" }'>Newfoundland and Labrador</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei", "class": "hidden" }'>Northwest Territories</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei", "class": "hidden" }'>Nova Scotia</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei", "class": "hidden" }'>Nunavut</li>
+  				<li data-wb-fieldflow='{ **needs a postal code lookup**}'>Ontario</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei", "class": "hidden" }'>Prince Edward Island</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-pei", "class": "hidden" }'>Quebec</li>
+  				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#result-winn-2", "class": "hidden" }'>Saskatchewan</li>
+  				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#result-pei", "class": "hidden" }'>Yukon</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-int", "class": "hidden" }'>Outside Canada</li>
+  			</ul>
+  		</div>
+
+
+  		<!--Question 3 t2 forms-->
+  		<div id="question3c" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"", "noreqlabel": true}'>
+  			<p>Choose your province</p>
+  			<ul>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Alberta</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>British Columbia</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Manitoba</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>New Brunswick</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Newfoundland and Labrador</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Northwest Territories</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Nova Scotia</li>
+  				<li data-wb-fieldflow='{"action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Nunavut</li>
+  				<li data-wb-fieldflow='{ "action": "append", "source":"#question4" }'>Ontario</li>
+  				<li data-wb-fieldflow='{ "action": "append", "source":"#question3" }'>Prince Edward Island</li>
+  				<li data-wb-fieldflow='{ "action": "append", "source":"#question3" }'>Quebec</li>
+  				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Saskatchewan</li>
+  				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#result-winn-1", "class": "hidden" }'>Yukon</li>
+  				<li data-wb-fieldflow='{ "action": "append", "source":"#result-int }'>Outside Canada</li>
+  			</ul>
+  		</div>
+
+  <!-- Tax offices -->
+
+  		<div id="result-si-bc-tso" class="hidden">
+  		<h3>Southern Interior B.C. Tax Services Office</h3>
+
+  					<p><b>Office address:</b>
+  					<br>277 Winnipeg Street
+  					<br>Penticton BC  V2A 1N6</p>
+  					<p><b>Fax number:</b> 250-492-8346</p>
+  		</div>
+
+  <!-- Tax centres -->
+
+  		<div id="result-jonq" class="hidden">
+  		<h3>Mail or fax your documents to:</h3>
+
+  					<p><b>Jonquière Tax Centre</b>
+  					<br>2251 René-Lévesque Boulevard
+  					<br>Jonquière QC  G7S 5J2</p>
+
+  					<p><b>Fax number:</b> 418-548-0846</p>
+
+  		</div>
+
+
+  		<div id="result-winn-1" class="hidden"> <!-- income tax and benefits -->
+  		<h3>Mail or fax your documents to:</h3>
+
+  					<p><b>Winnipeg Tax Centre</b>
+  					<br>Post Office Box 14001, Station Main
+  					<br>Winnipeg MB R3C 3M3</p>
+
+  					<p><b>Fax number:</b> 204-984-5164</p>
+
+  		</div>
+
+  		<div id="result-winn-2" class="hidden"> <!-- all other correspondence -->
+  		<h3>Mail or fax your documents to:</h3>
+
+  					<p><b>Winnipeg Tax Centre</b>
+  					<br>66 Stapon Road
+  					<br>Winnipeg MB R3C 3M2</p>
+
+  					<p><b>Fax number:</b> 204-984-5164</p>
+
+  		</div>
+
+  		<div id="result-sud-1" class="hidden"> <!-- income tax and benefits -->
+  		<h3>Mail or fax your documents to:</h3>
+
+  					<p><b>Sudbury Tax Centre</b>
+  					<br>1050 Notre Dame Avenue
+  					<br>Sudbury ON  P3A 5C2</p>
+
+  					<p><b>Fax number:</b> 705-671-3994 and 1-855-276-1529</p>
+
+  		</div>
+
+  		<div id="result-sud-2" class="hidden"> <!-- all other correspondence -->
+  		<h3>Mail or fax your documents to:</h3>
+
+  					<p><b>Sudbury Tax Centre</b>
+  					<br>Post Office Box 20000, Station A
+  					<br>Sudbury ON  P3A 5C1</p>
+
+  					<p><b>Fax number:</b> 705-671-3994 and 1-855-276-1529</p>
+
+  		</div>
+
+
+  		<div id="result-pei" class="hidden">
+  		<h3>Mail or fax your documents to:</h3>
+
+  					<p><b>Prince Edward Island Tax Centre</b>
+  					<br>275 Pope Road
+  					<br>Summerside PE  C1N 6A2</p>
+
+  					<p><b>Fax number:</b> 902-432-6287</p>
+
+  		</div>
 
 
 
-    <p>Doing your taxes does not need to be difficult. Follow this guide to help make the process easier, so you can get all the benefits and credits you are entitled to.<br>
-</p>
+
+
+
+  		<!--buttons-->
+  		<div id="question3buttona" class="hidden" >
+  			<a href="charities-en.html" class="btn btn-primary">Continue</a>
+  		</div>
+  		<div id="question3buttonb" class="hidden" >
+  			<a href="public-service-bodies-en.html" class="btn btn-primary">Continue</a>
+  		</div>
+  		<div id="question3buttonc" class="hidden" >
+  			<a href="findout-taxi-en.html" class="btn btn-primary">Continue</a>
+  		</div>
+  		<div id="question3buttond" class="hidden" >
+  			<a href="findout-business.html" class="btn btn-primary">Continue</a>
+  		</div>
+
+
+
+    </form>
+
+  </div>
+
+  </div>
+
+  </div>
+
+  </div>
 
 
 
 
-</div>
-<div class="mwsgeneric-base-html parbase section">
 
-
-<h3>On this page:</h3>
-<ul>
-<li><a href="#h_1">Deadline</a></lo>
-<li><a href="#h_2">Gather your tax information</a></li>
-<li><a href="#h_3">Methods for completing your tax return</a></li>
-<li><a href="#h_4">Fill out your tax return</a></li>
-<li><a href="#h_5">Send in (file) your tax return</a></li>
-<li><a href="#h_6">What to do after filing your taxes</a></li>
-<li><a  href="#h_7">Pay a balance owed</a></li>
-</div>
-
-
-</div>
-<div class="col-md-8">
-
-
-
-    <h2 id="h_1">Deadline</h2>
-<p>The deadline for most individuals to file their 2018 tax return and for all individuals to pay any amounts due is <strong>April 30, 2019</strong>.</p>
-<h3>Self-employed</h3>
-<p>For those who are self-employed, or who have a spouse or common-law partner who is self-employed, the deadline to file your tax return is <strong>June 15, 2019</strong>. Since June 15, 2018 is a Saturday, we will consider that you filed your return on time if we receive it, or it is postmarked, no later than June 17, 2019.</p>
-<p>To avoid interest or penalties, make sure you pay any amount you owe by <strong>April 30, 2019</strong>. After this date, the CRA will charge interest on any amount you owe until your balance is paid.</p>
-<h3>Deceased persons</h3>
-<p>When filing a tax return for <a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4011/preparing-returns-deceased-persons-2016.html">someone who has passed away</a>, the due date for their return will depend on the date of death, and if the person owned a business in 2018.</p>
-<p>The due date for filing the return of a surviving spouse, or common-law partner who was living with the deceased, is the same as the due date for filing the deceased person’s final return. However, any balance owing on the surviving spouse or common-law partner, still has to be paid on or before April 30 of the following year to avoid interest charges.</p>
-<h2 id="h_2">Gather your tax information</h2>
-<p>Get everything you need to calculate your income and support any credits, deductions and expenses you’ll claim.</p>
-<p>If you were employed or had an investment income in 2018, your employer or financial institution will send you statements commonly referred to as ‘’slips’’. Here are some common examples:</p>
-<ul>
-<li>T3 Statement of Trust Income Allocation and Designations</li>
-<li>T4 Statement of Remuneration Paid</li>
-<li>T5 Statement of Investment Income</li>
-</ul>
-<p>If you have not received a tax slip for the current year, or you misplaced it, you can ask the issuer of the slip for a copy. You can also get copies of your slips by logging into the Canada Revenue Agency’s <a href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/services/e-services/e-services-individuals/account-individuals.html">My Account</a> service.</p>
-<h2 id="h_3">Methods for completing your tax return</h2>
-<p>Choose one of the following secure options for filing your tax return.</p>
-<h3>Electronically by software:</h3>
-<p>You will find a list of certified desktop, online, and mobile software products at <a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/netfile-overview/certified-software-netfile-program.html">canada.ca/netfile-software</a>. Some of these products are free of charge.</p>
-<h3>On paper</h3>
-<p>You can print the 2018 income tax and benefit package online or you can order a copy from the CRA. If you filed your taxes on paper last year, the CRA will automatically mail the T1 Income Tax package to your home by February 11, 2019.</p>
-<h3>By phone</h3>
-<p>Those who are eligible will receive an invitation letter in the mail in mid-February, to use our automated phone service called File my Return, you may be able to complete and file your return for free by phone. The personalized invitation is sent to eligible Canadians who have low or fixed incomes, and whose situation doesn’t change from year-to year.</p>
-<h3>The Community Volunteer Income Tax Program</h3>
-<p>If you have a modest income and a simple tax situation, volunteers at a free tax clinic may be able to complete your tax return for you. Free tax clinics are generally offered between February and April across Canada, while some are open year-round. To learn more, or to find a tax clinic near you, go to <a href="https://www.canada.ca/en/revenue-agency/campaigns/free-tax-help.html">Canada.ca/taxes-help</a>.</p>
-<p>Program volunteers will complete your income tax and benefit return for you.</p>
-<h2 id="h_4">Fill out your tax return</h2>
-<p>If you decide to complete your tax return using a certified software, you may be able to use a feature called Auto-fill my return. This service makes it easier to do your taxes by automatically filling in parts of your tax return with information the CRA has on file. All you need to do to use this service is register for <a href="https://gc-proto.github.io/cra-contactus/scenarioA/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html">My Account</a>.</p>
-<h3>Step 1: Provide and update your personal information</h3>
-<p>Keeping your personal information up-to-date with the CRA can save you time when doing your taxes. Tell the CRA if any of the following has changed:</p>
-<ul>
-<li>your marital status</li>
-<li>the number of children in your care</li>
-<li>your banking information</li>
-<li>your home address</li>
-</ul>
-<p>It is important to let the CRA know about these changes as soon as possible, to make sure you get the right benefit and credits you are entitled to.</p>
-<h3>Step 2: Report your income</h3>
-<p>Income is money you earn through employment, self-employment, and investments you have, or benefits you receive. On your return, you must report income from all sources, both inside and outside Canada. This is true even if you were paid in cash, which includes money you earn as a side job or tips you have received.</p>
-<h3>Step 3: Claim your deductions, tax credits and expenses</h3>
-<p>Reduce the amount of tax you pay by claiming your deductions, expenses and tax credits. You’ll have to use the receipts and records you kept during the year to support your claims.</p>
-
-<h2 id="h_5">Send in (file) your tax return</h2>
-<p>There are several ways to send your tax return to the CRA. Ultimately, this may be dependent on how you decided to complete your return.</p>
-
-  <h3>Electronically by software:</h3>
-<p>If you selected a NETFILE certified software, it will communicate directly with the NETFILE application servers and transmit all required information on your behalf directly to the CRA via the web service.</p>
-  <h3>By mail</h3>
-<p>Choose the province you are filing in.</p>
-
-<details>
-  <summary>Tax returns for residents of Ontario or Nunavut</summary>
-  <p><b>Mail your return to:</b></p>
-  <p>Sudbury Tax Centre<br>1050 Notre Dame Avenue<br>Sudbury ON P3A 5C2</p>
-</details>
-<details>
-  <summary>Tax returns for residents of New Brunswick, Newfoundland and Labrador, Nova Scotia, Prince Edward Island, or Quebec</summary>
-  <p><b>Mail your return to:</b></p>
-<p>Jonquière Tax Centre<br>2251 René-Lévesque Boulevard<br>Jonquière QC G7S 5J2</p>
-</details>
-<details>
-  <summary>Tax returns for residents of Alberta, British Columbia, Manitoba, Saskatchewan, Northwest Territories, or Yukon</summary>
-  <p><b>Mail your return to:</b></p>
-<p>Winnipeg Tax Centre<br>Post Office Box 14001<br>Winnipeg MB R3C 3M3</p>
-</details>
-
-
-<h4>By mail for non-resident individuals</h4>
-<details><summary>Mailing addresses for non-residents</summary>
-
-  <p><b>Mail your return to:</b></p>
-  <p>Sudbury Tax Centre<br>1050 Notre Dame Avenue<br>Sudbury ON P3A 5C2</p>
-
-
-</details>
-
-  <h3>By phone</h3>
-<p>Follow the instructions in the invitation letter for File my Return that you received from the CRA.</p>
-<br>
-<p><strong>IMPORTANT: Remember to keep all your receipts</strong></p>
-<p>Regardless of how you submit your tax return, you must keep all your tax documents for at least six years. If you claimed expenses, deductions or tax credits, make sure you keep all your receipts and any related documents in case the CRA asks to see them.</p>
-<h2>What to do after filing your taxes</h2>
-<p>If you file online and are registered for online mail, you could get your notice of assessment (NOA) shortly after you file your tax return using the <a href="https://www.canada.ca/en/revenue-agency/services/e-services/about-express-noa.html">Express NOA</a> service.</p>
-<h2 id="h_6">When to expect your refund</h2>
-<p>If you file your tax return online and choose direct deposit, you could receive your refund in as little as eight business days. If you send us a paper tax return, it generally takes eight weeks before the CRA issue your notice of assessment and any refund.</p>
-<h2 id="h_7">Pay a balance owed</h2>
-<p>There are many <a href="https://www.canada.ca/en/revenue-agency/services/make-a-payment-canada-revenue-agency/make-payment/general-payment.html">ways to make a payment to the CRA</a>. To avoid interest or penalties, make sure you pay any amount you owe by <strong>April 30, 2019</strong>. After this date, the CRA will charge interest on any amount you owe until your balance is paid. Interest applies after April 30, even if you are self-employed.</p>
-<h3>If you cannot pay the balance you owe in full</h3>
-<p>You can make a <a href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/services/about-canada-revenue-agency-cra/when-you-money-collections-cra/you-cannot-pay-full.html">payment arrangement</a> with the CRA. The CRA can grant <a href="https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/complaints-disputes/cancel-waive-penalties-interest.html">relief from penalty or interest</a>, in certain circumstances.</p>
-<h3>Need to make a change to your return?</h3>
-<p>If you forgot to include information or made a mistake on your tax return, wait until you get your notice of assessment from the CRA. Then, you can <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/change-your-return.html">change your return</a>.</p>
-
-
-
-
-</div>
-
-</div>
-<div class="clearfix"></div>
 
 <div class="pagedetails">
 <div class="row">
