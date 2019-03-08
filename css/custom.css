@@ -255,3 +255,25 @@ ol.vertical-steps {
 }
 
 } 
+
+.alert-success, .alert-info, .alert-warning, .alert-danger {
+	background: #fff !important;
+}
+.alert {
+	border-width: 1px 1px 1px 4px !important;
+	margin-left: 12px;
+	padding-left: 20px;
+	border-width: 0px 0px 0px 6px!important
+}
+.alert-success > :first-child::before, .alert-info > :first-child::before, .alert-warning > :first-child::before, .alert-danger > :first-child::before {
+	font-size: 26px;
+	margin-left: -1.48em;
+	background: #fff;
+	padding: 2px
+}
+.alert > :first-child {
+	margin-left: 0em;
+}
+.alert >:first-child::before {
+	margin-right: 0.4em
+}
