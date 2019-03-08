@@ -2,7 +2,58 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin,latin-ext');
 
 
-
+.followus {
+	float: none;
+	margin-left: 0
+}
+}
+.followus h2 {
+	margin: 5px 4px 0 0;
+	font-size: 16px !important;
+	display: block;
+	float: left;
+}
+.followus ul li a {
+	padding: 15px 22px 0;
+	border: none;
+}
+.followus ul li a:hover, .followus ul li a:focus {
+	opacity: .6;
+	border: none;
+}
+.followus .email {
+	background: url(../images/email.png) no-repeat
+}
+.followus .facebook {
+	background: url(../images/facebook.png) no-repeat
+}
+.followus .flickr {
+	background: url(../images/flickr.png) no-repeat
+}
+.followus .googleplus {
+	background: url(../images/googleplus.png) no-repeat
+}
+.followus .instagram {
+	background: url(../images/instagram.png) no-repeat
+}
+.followus .linkedin {
+	background: url(../images/linkedin.png) no-repeat
+}
+.followus .periscope {
+	background: url(../images/periscope.png) no-repeat
+}
+.followus .pinterest {
+	background: url(../images/pinterest.png) no-repeat
+}
+.followus .rss {
+	background: url(../images/rss.png) no-repeat
+}
+.followus .twitter {
+	background: url(../images/twitter.png) no-repeat
+}
+.followus .youtube {
+	background: url(../images/youtube.png) no-repeat
+}
 
 /* still working to clean up unnecessary code */
 aside.feature {
