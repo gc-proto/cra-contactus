@@ -34,7 +34,7 @@
 	    </tr>
 
 	</table>
-	<p><span id="check-message"></span></p>
+	<p><span id="check-message"><label class="label label-danger">You need all of the above to call</label></span></p>
 
 	<br />
 
@@ -54,14 +54,14 @@
 
 	// need to figure out how to make it refresh as things get checked
 
-	$(document).ready(function() {
-		if ($('.tblFruits input[type="checkbox"]').not(':checked').length == 0) {
-				document.getElementById("check-message").innerHTML = '<label class="label label-success">You are ready to call</label>';
-    } else {
-				document.getElementById("check-message").innerHTML = '<label class="label label-danger">You need all of the above to call</label>';
-
-    }
-});
+// 	$(document).ready(function() {
+// 		if ($('.tblFruits input[type="checkbox"]').not(':checked').length == 0) {
+// 				document.getElementById("check-message").innerHTML = '<label class="label label-success">You are ready to call</label>';
+//     } else {
+// 				document.getElementById("check-message").innerHTML = '<label class="label label-danger">You need all of the above to call</label>';
+//
+//     }
+// });
 
 
 
