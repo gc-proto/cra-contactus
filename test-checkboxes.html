@@ -18,19 +18,19 @@
 
  <table class="tblFruits">
 	    <tr>
-	        <td><input type="checkbox" value="1"/><label for="chkMango">Mango</label></td>
+	        <td><input class="btnCheck" type="checkbox" value="1"/><label for="chkMango">Mango</label></td>
 	    </tr>
 	    <tr>
-	        <td><input type="checkbox" value="2"/><label for="chkApple">Apple</label></td>
+	        <td><input class="btnCheck" type="checkbox" value="2"/><label for="chkApple">Apple</label></td>
 	    </tr>
 	    <tr>
-	        <td><input type="checkbox" value="3"/><label for="chkBanana">Banana</label></td>
+	        <td><input class="btnCheck"  type="checkbox" value="3"/><label for="chkBanana">Banana</label></td>
 	    </tr>
 	    <tr>
-	        <td><input type="checkbox" value="4"/><label for="chkGuava">Guava</label></td>
+	        <td><input class="btnCheck"  type="checkbox" value="4"/><label for="chkGuava">Guava</label></td>
 	    </tr>
 	    <tr>
-	        <td><input type="checkbox" value="5"/><label for="chkOrange">Orange</label></td>
+	        <td><input class="btnCheck"  type="checkbox" value="5"/><label for="chkOrange">Orange</label></td>
 	    </tr>
 
 	</table>
@@ -38,7 +38,7 @@
 
 	<br />
 
-	<input type="button" id="btnCheck" value="Check" />
+	<!-- <input type="button" class="btnCheck" value="Check" /> -->
 
 
 
@@ -66,7 +66,7 @@
 
 
 
-	$("#btnCheck").click(function(event) {
+	$(".btnCheck").click(function(event) {
     if ($('.tblFruits input[type="checkbox"]').not(':checked').length == 0) {
         // $(this).tblFruits('form').submit();
 				// alert('You can call');
