@@ -16,7 +16,7 @@
 
 <main class="container">
 
-	<!-- <table id="tblFruits">
+ <table class="tblFruits">
 	    <tr>
 	        <td><input id="chkMango" type="checkbox" value="1"/><label for="chkMango">Mango</label></td>
 	    </tr>
@@ -36,7 +36,7 @@
 	<br />
 	<p><span class="check-message">Hello</span></p>
 
-	<input type="button" id="btnCheck" value="Check" /> -->
+	<input type="button" id="btnCheck" value="Check" />
 
 
 	<!-- <table id="testFruits">
@@ -66,7 +66,7 @@ Mobile<input type="checkbox" value="mobile" name="contactMethod" checked/><br>
 Post<input type="checkbox" value="post" name="contactMethod" checked/><br> -->
 
 
-<form
+<!-- <form
 name="myform"
 method="POST"
 action="#">
@@ -81,7 +81,7 @@ value="yes2">
 <input
 type="submit"
 onClick="DoTheCheck()">
-</form>
+</form> -->
 
 
 
@@ -93,17 +93,26 @@ onClick="DoTheCheck()">
 
 	<script>
 
+	$("#btnCheck").click(function(event) {
+    if ($('.tblFruits input[type="checkbox"]').not(':checked').length == 0) {
+        $(this).tblFruits('form').submit();
+    } else {
+        alert('Please accept all the Terms and Conditions');
+    }
+});
 
-	function DoTheCheck() {
-	if(document.myform.box1.checked == true)
-	{ alert('box1 is checked'); }
-	if(document.myform.box1.checked == false)
-	{ alert('box1 is not checked'); }
-	if(document.myform.box2.checked == true)
-	{ alert('box2 is checked'); }
-	if(document.myform.box2.checked == false)
-	{ alert('box2 is not checked'); }
-	}
+
+	//
+	// function DoTheCheck() {
+	// if(document.myform.box1.checked == true)
+	// { alert('box1 is checked'); }
+	// if(document.myform.box1.checked == false)
+	// { alert('box1 is not checked'); }
+	// if(document.myform.box2.checked == true)
+	// { alert('box2 is checked'); }
+	// if(document.myform.box2.checked == false)
+	// { alert('box2 is not checked'); }
+	// }
 
 
 
