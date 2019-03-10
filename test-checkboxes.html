@@ -18,86 +18,63 @@
 
  <table class="tblFruits">
 	    <tr>
-	        <td><input id="chkMango" type="checkbox" value="1"/><label for="chkMango">Mango</label></td>
+	        <td><input type="checkbox" value="1"/><label for="chkMango">Mango</label></td>
 	    </tr>
 	    <tr>
-	        <td><input id="chkApple" type="checkbox" value="2"/><label for="chkApple">Apple</label></td>
+	        <td><input type="checkbox" value="2"/><label for="chkApple">Apple</label></td>
 	    </tr>
 	    <tr>
-	        <td><input id="chkBanana" type="checkbox" value="3"/><label for="chkBanana">Banana</label></td>
+	        <td><input type="checkbox" value="3"/><label for="chkBanana">Banana</label></td>
 	    </tr>
 	    <tr>
-	        <td><input id="chkGuava" type="checkbox" value="4"/><label for="chkGuava">Guava</label></td>
+	        <td><input type="checkbox" value="4"/><label for="chkGuava">Guava</label></td>
 	    </tr>
 	    <tr>
-	        <td><input id="chkOrange" type="checkbox" value="5"/><label for="chkOrange">Orange</label></td>
+	        <td><input type="checkbox" value="5"/><label for="chkOrange">Orange</label></td>
 	    </tr>
+
 	</table>
+	<p><span id="check-message"></span></p>
+
 	<br />
-	<p><span class="check-message">Hello</span></p>
 
 	<input type="button" id="btnCheck" value="Check" />
-
-
-	<!-- <table id="testFruits">
-			<tr>
-					<td><input id="chkMango" type="checkbox" value="1"/><label for="chkMango">Mango</label></td>
-			</tr>
-			<tr>
-					<td><input id="chkApple" type="checkbox" value="2"/><label for="chkApple">Apple</label></td>
-			</tr>
-			<tr>
-					<td><input id="chkBanana" type="checkbox" value="3"/><label for="chkBanana">Banana</label></td>
-			</tr>
-			<tr>
-					<td><input id="chkGuava" type="checkbox" value="4"/><label for="chkGuava">Guava</label></td>
-			</tr>
-			<tr>
-					<td><input id="chkOrange" type="checkbox" value="5"/><label for="chkOrange">Orange</label></td>
-			</tr>
-	</table>
-	<br />
-	<p class="check-message"></p> -->
-
-<!-- <br>
-	Email<input type="checkbox" value="email" name="contactMethod"/><br>
-Home Phone<input type="checkbox" value="homephone" name="contactMethod"/><br>
-Mobile<input type="checkbox" value="mobile" name="contactMethod" checked/><br>
-Post<input type="checkbox" value="post" name="contactMethod" checked/><br> -->
-
-
-<!-- <form
-name="myform"
-method="POST"
-action="#">
-<input
-type="checkbox"
-name="box1"
-value="yes1">
-<input
-type="checkbox"
-name="box2"
-value="yes2">
-<input
-type="submit"
-onClick="DoTheCheck()">
-</form> -->
 
 
 
 
 </main>
 </body>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
   <script src="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/js/wet-boew.min.js"></script>
 
+
 	<script>
+
+	// need to figure out how to make it refresh as things get checked
+
+	$(document).ready(function() {
+		if ($('.tblFruits input[type="checkbox"]').not(':checked').length == 0) {
+				document.getElementById("check-message").innerHTML = '<label class="label label-success">You are ready to call</label>';
+    } else {
+				document.getElementById("check-message").innerHTML = '<label class="label label-danger">You need all of the above to call</label>';
+
+    }
+});
+
+
+
 
 	$("#btnCheck").click(function(event) {
     if ($('.tblFruits input[type="checkbox"]').not(':checked').length == 0) {
-        $(this).tblFruits('form').submit();
+        // $(this).tblFruits('form').submit();
+				// alert('You can call');
+				// el.find(".check-message").html('<label class="label label-danger">' + lineOpen + 'AM</label>');
+				document.getElementById("check-message").innerHTML = '<label class="label label-success">You are ready to call</label>';
     } else {
-        alert('Please accept all the Terms and Conditions');
+				document.getElementById("check-message").innerHTML = '<label class="label label-danger">You need all of the above to call</label>';
+
     }
 });
 
