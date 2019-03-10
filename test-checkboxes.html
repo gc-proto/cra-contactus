@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Checkbox</title>
+<link href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="https://gc-proto.github.io/cra-contactus/GCWeb/css/theme.css">
+<link rel="stylesheet" href="https://gc-proto.github.io/cra-contactus/GCWeb/css/custom.css">
+</head>
+
+<body>
+
+	<h1>Checkbox</h1>
+
+
+
+<main class="container">
+
+	<!-- <table id="tblFruits">
+	    <tr>
+	        <td><input id="chkMango" type="checkbox" value="1"/><label for="chkMango">Mango</label></td>
+	    </tr>
+	    <tr>
+	        <td><input id="chkApple" type="checkbox" value="2"/><label for="chkApple">Apple</label></td>
+	    </tr>
+	    <tr>
+	        <td><input id="chkBanana" type="checkbox" value="3"/><label for="chkBanana">Banana</label></td>
+	    </tr>
+	    <tr>
+	        <td><input id="chkGuava" type="checkbox" value="4"/><label for="chkGuava">Guava</label></td>
+	    </tr>
+	    <tr>
+	        <td><input id="chkOrange" type="checkbox" value="5"/><label for="chkOrange">Orange</label></td>
+	    </tr>
+	</table>
+	<br />
+	<p><span class="check-message">Hello</span></p>
+
+	<input type="button" id="btnCheck" value="Check" /> -->
+
+
+	<!-- <table id="testFruits">
+			<tr>
+					<td><input id="chkMango" type="checkbox" value="1"/><label for="chkMango">Mango</label></td>
+			</tr>
+			<tr>
+					<td><input id="chkApple" type="checkbox" value="2"/><label for="chkApple">Apple</label></td>
+			</tr>
+			<tr>
+					<td><input id="chkBanana" type="checkbox" value="3"/><label for="chkBanana">Banana</label></td>
+			</tr>
+			<tr>
+					<td><input id="chkGuava" type="checkbox" value="4"/><label for="chkGuava">Guava</label></td>
+			</tr>
+			<tr>
+					<td><input id="chkOrange" type="checkbox" value="5"/><label for="chkOrange">Orange</label></td>
+			</tr>
+	</table>
+	<br />
+	<p class="check-message"></p> -->
+
+<!-- <br>
+	Email<input type="checkbox" value="email" name="contactMethod"/><br>
+Home Phone<input type="checkbox" value="homephone" name="contactMethod"/><br>
+Mobile<input type="checkbox" value="mobile" name="contactMethod" checked/><br>
+Post<input type="checkbox" value="post" name="contactMethod" checked/><br> -->
+
+
+<form
+name="myform"
+method="POST"
+action="#">
+<input
+type="checkbox"
+name="box1"
+value="yes1">
+<input
+type="checkbox"
+name="box2"
+value="yes2">
+<input
+type="submit"
+onClick="DoTheCheck()">
+</form>
+
+
+
+
+</main>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+  <script src="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/js/wet-boew.min.js"></script>
+
+	<script>
+
+
+	function DoTheCheck() {
+	if(document.myform.box1.checked == true)
+	{ alert('box1 is checked'); }
+	if(document.myform.box1.checked == false)
+	{ alert('box1 is not checked'); }
+	if(document.myform.box2.checked == true)
+	{ alert('box2 is checked'); }
+	if(document.myform.box2.checked == false)
+	{ alert('box2 is not checked'); }
+	}
+
+
+
+// $(function () {
+//
+// 	$('#btnCheck').on('click',function(){
+//     var boxes = $('.checkbox[type="checkbox"]');
+//     if ( boxes.length === boxes.filter(':checked').length ) {
+//           el.find(".check-message").html('<label class="label label-danger">Closed until ' + lineOpen + 'AM</label>');
+//     }else{
+//          alert("Please select CheckBoxe(s).");
+//     }
+// });
+// });
+
+
+//
+// 	var contact = $('input[name=contactMethod]:checked').map(function() {
+//     return this.value;
+// }).get();
+//
+//
+// console.log(contact);
+
+
+	// $(function () {
+  //        $("#btnCheck").click(function () {
+  //            //Reference the CheckBoxes and determine Total Count of checked CheckBoxes.
+  //            var checked = $("#tblFruits input[type=checkbox]:checked").length;
+	//
+  //            if (checked = true) {
+	// 						 el.find(".check-message").html('<label class="label label-danger">Closed until ' + lineOpen + 'AM</label>');
+  //            } else {
+  //                alert("Please select CheckBoxe(s).");
+  //                return false;
+  //            }
+  //        });
+  //    });
+
+		 // $( document ).ready(function() {
+		 //
+	   //            //Reference the CheckBoxes and determine Total Count of checked CheckBoxes.
+	   //            var checked = $("#testFruits input[type=checkbox]:checked").length;
+		 //
+	   //            if (checked = 1) {
+			// 						el.find(".check-message").html('<label class="label label-danger">Closed until ' + lineOpen + 'AM</label>');
+	   //                return true;
+	   //            }
+		 //
+	   //    });
+
+
+
+
+
+	</script>
+
+</html>
