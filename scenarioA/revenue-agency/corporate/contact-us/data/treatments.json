@@ -1,0 +1,164 @@
+{
+  "tax-benefits": {
+    "FIXED": "",
+    "ONTARIO": "SUD-TC",
+    "ATLANTIC": "JON-TC",
+    "QUEBEC": "JON-TC",
+    "PRAIRIE": "WPG-TC",
+    "PACIFIC": "WPG-TC",
+    "OTHER": "SUD-TC"
+  },
+  "business": {
+    "FIXED": "",
+    "ONTARIO": "SUD-TC",
+    "ATLANTIC": "PEI-TC",
+    "QUEBEC": "PEI-TC",
+    "PRAIRIE": "PEI-TC",
+    "PACIFIC": "PEI-TC",
+    "OTHER": "SUD-TC"
+  },
+  "corp-tax": {
+    "FIXED": "",
+    "ONTARIO": "SUD-TC",
+    "ATLANTIC": "PEI-TC",
+    "QUEBEC": "PEI-TC",
+    "PRAIRIE": "WPG-TC",
+    "PACIFIC": "WPG-TC",
+    "OTHER": "SUD-TC"
+  },
+  "nvcc": {
+    "FIXED": "",
+    "ONTARIO": "STJ-NVCC",
+    "ATLANTIC": "SHA-NVVCC",
+    "QUEBEC": "SHA-NVVCC",
+    "PRAIRIE": "SUR",
+    "PACIFIC": "SUR",
+    "OTHER": ""
+  },
+  "coe": {
+    "FIXED": "",
+    "ONTARIO": "OTT",
+    "ATLANTIC": "CHAR",
+    "QUEBEC": "JON-TC",
+    "PRAIRIE": "CAL",
+    "PACIFIC": "SUR",
+    "OTHER": ""
+  },
+  "JON-PO-1300": {
+    "FIXED": "JON-PO-1300",
+    "ONTARIO": "",
+    "ATLANTIC": "",
+    "QUEBEC": "",
+    "PRAIRIE": "",
+    "PACIFIC": "",
+    "OTHER": ""
+  },
+  "T3 Return": {
+    "FIXED": "",
+    "ONTARIO": "SUD-TC",
+    "ATLANTIC": "WPG-PO-14003",
+    "QUEBEC": "SUD-TC",
+    "PRAIRIE": "WPG-TC",
+    "PACIFIC": "WPG-TC",
+    "OTHER": "WPG-TC"
+  },
+  "gst-hst-rulings": {
+    "FIXED": "",
+    "ONTARIO": "HAM",
+    "ATLANTIC": "HAL-PO-638",
+    "QUEBEC": "",
+    "PRAIRIE": "WPG",
+    "PACIFIC": "SUR",
+    "OTHER": ""
+  },
+  "excise-regions": {
+    "FIXED": "",
+    "ONTARIO": "HAM",
+    "ATLANTIC": "HAL-PO-638",
+    "QUEBEC": "MON-PO-32",
+    "PRAIRIE": "CAL",
+    "PACIFIC": "SUR",
+    "OTHER": ""
+  },
+  "WPG-TC": {
+    "FIXED": "WPG-TC",
+    "ONTARIO": "",
+    "ATLANTIC": "",
+    "QUEBEC": "",
+    "PRAIRIE": "",
+    "PACIFIC": "",
+    "OTHER": ""
+  },
+  "PEI-TC": {
+    "FIXED": "PEI-TC",
+    "ONTARIO": "",
+    "ATLANTIC": "",
+    "QUEBEC": "",
+    "PRAIRIE": "",
+    "PACIFIC": "",
+    "OTHER": ""
+  },
+  "OTT-QUEEN": {
+    "FIXED": "OTT-QUEEN",
+    "ONTARIO": "",
+    "ATLANTIC": "",
+    "QUEBEC": "",
+    "PRAIRIE": "",
+    "PACIFIC": "",
+    "OTHER": ""
+  },
+  "GST-returns": {
+    "FIXED": "",
+    "ONTARIO": "SUD-TC",
+    "ATLANTIC": "PEI-TC",
+    "QUEBEC": "PEI-TC",
+    "PRAIRIE": "PEI-TC",
+    "PACIFIC": "PEI-TC",
+    "OTHER": ""
+  },
+  "OTT-HERON": {
+    "FIXED": "OTT-HERON",
+    "ONTARIO": "",
+    "ATLANTIC": "",
+    "QUEBEC": "",
+    "PRAIRIE": "",
+    "PACIFIC": "",
+    "OTHER": ""
+  },
+  "OTT-KENT": {
+    "FIXED": "",
+    "ONTARIO": "",
+    "ATLANTIC": "",
+    "QUEBEC": "",
+    "PRAIRIE": "",
+    "PACIFIC": "",
+    "OTHER": ""
+  },
+  "OTT-MACK": {
+    "FIXED": "OTT-MACK",
+    "ONTARIO": "",
+    "ATLANTIC": "",
+    "QUEBEC": "",
+    "PRAIRIE": "",
+    "PACIFIC": "",
+    "OTHER": ""
+  },
+  "OTT-SLATER": {
+    "FIXED": "OTT-SLATER",
+    "ONTARIO": "",
+    "ATLANTIC": "",
+    "QUEBEC": "",
+    "PRAIRIE": "",
+    "PACIFIC": "",
+    "OTHER": ""
+  },
+  "SK-PO-2405": {
+    "FIXED": "SK-PO-2405",
+    "ONTARIO": "",
+    "ATLANTIC": "",
+    "QUEBEC": "",
+    "PRAIRIE": "",
+    "PACIFIC": "",
+    "OTHER": ""
+  }
+}
