@@ -70,12 +70,25 @@ border: 1px solid #26374a !important;
 
 }
 
-.btn-cust {
+/* in page buttons that are not primary call to action */
+
+main .btn {
   font-family: "Lato";
-  font-size: 17px !important;
+  font-size: 20px !important;
   color: #333;
   border: 1px solid #26374a !important;
 }
+
+div.pagedetails .btn {
+
+  font-family: "Lato";
+  font-size: 16px !important;
+  color: #335075;
+  border: 1px solid #dcdee1 !important;
+
+
+}
+
 
 /* custom checkboxes */
 
