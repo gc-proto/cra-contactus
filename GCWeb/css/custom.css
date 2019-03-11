@@ -79,6 +79,10 @@ main .btn {
   border: 1px solid #6e8cad;
 }
 
+main .btn-primary {
+  color: #fff !important;
+}
+
 div.pagedetails .btn {
 
   font-family: "Lato";
