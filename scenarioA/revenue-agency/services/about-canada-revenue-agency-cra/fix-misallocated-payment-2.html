@@ -131,10 +131,9 @@
         </ul>
       </div>
     </div>
-    <p>If you cannot pay what you owe the CRA by your payment due date, make sure to:</p>
-    <ul>
-      <li>contact the CRA in advance of the due date to make a payment arrangement</li>
-    </ul>
+
+    <h2>What is a payment arrangement?</h2>
+
     <p>A <strong>payment arrangement</strong> allows you to make smaller payments over time until you have paid your entire debt including applicable interest.</p>
     <p>To figure out your ability to pay, we may ask you to provide proof of your income, expenses, assets, and liabilities. You may have to do this by telephone or by completing a financial questionnaire. Before you make a payment arrangement, you may need to show that you have tried to pay your debt in full by borrowing money or reducing your expenses.</p>
     <p>To help calculate payment arrangement options before speaking to the CRA, you can use the:
@@ -143,49 +142,66 @@
       <li><a href="https://apps.cra-arc.gc.ca/ebci/recc/pac/showWorksheet?request_locale=en_CA">Income and Expense Worksheet</a> to help you to calculate your available net income to pay your debt</li>
     </ul>
 
-    <h2>On this page</h2>
-    <ul>
-      <li><a href="#personal">Personal payment arrangement</a></li>
-      <li><a href="#business">Business payment arrangement</a></li>
-      <li><a href="#other">Payment arrangement for other government services (such as EI or student loans)</a></li>
-    </ul>
+    <h2>Contact the CRA to make a payment arrangement</h2>
+    <div class="wb-frmvld">
+      <form method="get">
+    		<!--Smart question!-->
+    		<div id="question1" class="wb-fieldflow" data-wb-fieldflow='{
+          "noForm":false,
+    			"renderas":"radio",
+    			"base": { "live": true },
+    			"noreqlabel": true,
+    			"default": [{ "action": "addClass", "source":"#personal,#business,#non-resident,#trusts", "class": "hidden" },
+            { "action": "addClass", "source": "#wb-auto-12", "class": "checked"}]
+    			}'>
+    			<p>For which of these do you need a payment arrangement?</p>
+    			<ul>
+    				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#personal", "class": "hidden"}'>personal taxes</li> <!--result-->
+      			<li data-wb-fieldflow='{ "action": "removeClass", "source":"#business", "class": "hidden" }'>a business</li>
+            <li data-wb-fieldflow='{ "action": "removeClass", "source":"#other", "class": "hidden"}'>a government service unrelated to taxes (such as EI or student loans)</li>
+    			</ul>
+    		</div>
+      </form>
+    </div>
 
-    <h2 id="personal">Personal payment arrangement</h2>
+    <div class="hidden" id="personal">
 
-    <h4>Pre-authorized debit</h4>
-    <p>Paying online is one of the fastest and easiest ways to set up a payment arrangement. You&nbsp;can do this using <a href="https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/pay-authorized-debit.html">Pay by pre-authorized debit</a> through My Account. In most cases, you can make the arrangement on your own without speaking with the CRA.</p>
+      <h2>Personal payment arrangement</h2>
 
-    <h4>TeleArrangement</h4>
-     <p>You can make a payment arrangement through our automated TeleArrangement service by calling 1-866-256-1147. TeleArrangement is available Monday to Friday, 7:00&nbsp;a.m. to 10:00&nbsp;p.m., Eastern time. To use this service, you will need to provide:</p>
-     <ul>
-       <li>your social insurance number</li>
-       <li>your date of birth</li>
-       <li>the amount entered on line 150 from your last assessed return</li>
-     </ul>
+      <h4>Pre-authorized debit</h4>
+      <p>Paying online is one of the fastest and easiest ways to set up a payment arrangement. You&nbsp;can do this using <a href="https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/pay-authorized-debit.html">Pay by pre-authorized debit</a> through My Account. In most cases, you can make the arrangement on your own without speaking with the CRA.</p>
 
-
-
-          <h4>Speak with an agent</h4>
-   <p>Receive a call from a CRA call centre agent by completing an <a href="https://apps.cra-arc.gc.ca/ebci/iesl/clicktotalk/ntr.action?RefNumber=13000e&amp;lp=1">Individual tax debt call request</a> or call 1-888-863-8657.</p>  <p>If you have other questions about your individual account, please call the individual income tax enquiries line at 1-800-959-8281.</p>
-
-
-
-
-
-          <h3>Taxpayer relief provisions for individuals</h3>
-   <p>In some circumstances, you <strong>may</strong> be able to ask for relief from penalties and interest charges and reduce the overall amount you or your business owes. For more information, and to see if your situation qualifies, see <a href="https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/complaints-disputes/taxpayer-relief-provisions.html">Taxpayer relief provisions</a>.</p>
-
-
-
-
-
-          <h3>Insolvency or bankruptcy</h3>
-   <p>If you feel you are <strong>insolvent</strong><strong> </strong>or are considering <strong>bankruptcy</strong>, visit the <a href="http://strategis.ic.gc.ca/eic/site/bsf-osb.nsf/eng/home">Office of the Superintendent of Bankruptcy</a> for more information.</p>
+      <h4>TeleArrangement</h4>
+       <p>You can make a payment arrangement through our automated TeleArrangement service by calling 1-866-256-1147. TeleArrangement is available Monday to Friday, 7:00&nbsp;a.m. to 10:00&nbsp;p.m., Eastern time. To use this service, you will need to provide:</p>
+       <ul>
+         <li>your social insurance number</li>
+         <li>your date of birth</li>
+         <li>the amount entered on line 150 from your last assessed return</li>
+       </ul>
 
 
 
+            <h4>Speak with an agent</h4>
+     <p>Receive a call from a CRA call centre agent by completing an <a href="https://apps.cra-arc.gc.ca/ebci/iesl/clicktotalk/ntr.action?RefNumber=13000e&amp;lp=1">Individual tax debt call request</a> or call 1-888-863-8657.</p>  <p>If you have other questions about your individual account, please call the individual income tax enquiries line at 1-800-959-8281.</p>
 
-          <h2 id="business">Business payment arrangement</h2>
+
+
+
+
+            <h3>Taxpayer relief provisions for individuals</h3>
+     <p>In some circumstances, you <strong>may</strong> be able to ask for relief from penalties and interest charges and reduce the overall amount you or your business owes. For more information, and to see if your situation qualifies, see <a href="https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/complaints-disputes/taxpayer-relief-provisions.html">Taxpayer relief provisions</a>.</p>
+
+
+
+
+
+            <h3>Insolvency or bankruptcy</h3>
+     <p>If you feel you are <strong>insolvent</strong><strong> </strong>or are considering <strong>bankruptcy</strong>, visit the <a href="http://strategis.ic.gc.ca/eic/site/bsf-osb.nsf/eng/home">Office of the Superintendent of Bankruptcy</a> for more information.</p>
+   </div>
+
+
+   <div class="hidden" id="business">
+          <h2>Business payment arrangement</h2>
    <p>If you are an employer, the amounts that you deduct and withhold from the wages of your employees are considered deemed trust amounts. Similarly, if you operate a business as a sole proprietor, partnership, or corporation, the GST/HST amounts that you collect from your customers are also considered deemed trust amounts.</p>  <p>If your business has a tax debt, it may include corporate income tax debt and <a href="https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/when-you-money-collections-cra/information-on-deemed-trust.html">deemed trust amounts</a>.</p>  <p>You cannot use deemed trust amounts as cash flow. Even if you keep these amounts with your personal or business funds, the amounts are considered to be held separate and apart. Deemed trust amounts must be paid in full when owed.</p>  <p>The CRA will work with businesses to help them meet their payment obligations, such as corporate income tax debt or deemed trust amounts. In <strong>extraordinary situations</strong> where your business cannot pay in full, you may qualify for a payment arrangement or taxpayer relief.</p>
 
 
@@ -229,12 +245,10 @@
 
           <h3>Insolvency or bankruptcy</h3>
    <p>If you feel you are <strong>insolvent</strong><strong> </strong>or are considering <strong>bankruptcy</strong>, visit the <a href="http://strategis.ic.gc.ca/eic/site/bsf-osb.nsf/eng/home">Office of the Superintendent of Bankruptcy</a> for more information.</p>
+ </div>
 
-
-
-
-
-          <h2 id="other">Payment arrangement for other government services (such as EI or student loans)</h2>
+         <div class="hidden" id="other">
+          <h2>Payment arrangement for other government services</h2>
           <p>The CRA collects amounts owed for other government programs:</p>
           <ul>
            <li>defaulted Canada Student Loans</li>
@@ -260,7 +274,7 @@
 
           <h3>Insolvency or bankruptcy</h3>
    <p>If you feel you are <strong>insolvent</strong><strong> </strong>or are considering <strong>bankruptcy</strong>, visit the <a href="http://strategis.ic.gc.ca/eic/site/bsf-osb.nsf/eng/home">Office of the Superintendent of Bankruptcy</a> for more information.</p>
-
+ </div>
 
 
 
@@ -431,6 +445,7 @@
   </footer>
   <!--[if gte IE 9 | !IE ]><!-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+  <script src="https://gc-proto.github.io/tax-filing-2/validation/en/assets/wb-fieldflow.min.js"></script>
   <script src="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/js/wet-boew.min.js"></script>
   <!--<![endif]-->
   <!--[if lt IE 9]>
