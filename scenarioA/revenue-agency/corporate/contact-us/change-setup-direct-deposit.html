@@ -154,6 +154,7 @@
       </form>
     </div>
 
+<div class="col-md-8">
     <div class="hidden" id="personal">
       <h2>Personal</h2>
       <h3>CRA payments that you can sign up to receive by direct deposit</h3>
@@ -179,27 +180,31 @@
           <dt>Before you call</dt>
           <dd>
             <p>To verify your identity, you'll need</p>
-                 <!-- <div class="mrgn-tp-lg" style=""> -->
-                 <label class="container-checks">Your three-digit bank (financial institution) number, five-digit transit number, and your account number
-                   <input type="checkbox">
-                   <span class="checkmark"></span>
-                 </label>
-                 <label class="container-checks">Social Insurance Number
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                  </label>
-                  <label class="container-checks">Full name and date of birth
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                  </label>
-                  <label class="container-checks">Your complete address
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                  </label>
-                  <label class="container-checks">Details from your account or an assessed return, notice of assessment, reassessment, or other tax document
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                  </label>
+            <div class="mrgn-tp-lg beforeCall" style="">
+              <label class="container-checks">Your three-digit bank (financial institution) number, five-digit transit number, and your account number
+                <input class="btnCheck" type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+                <label class="container-checks">Social Insurance Number
+                  <input class="btnCheck" type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container-checks">Full name and date of birth
+                  <input class="btnCheck" type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container-checks">Your complete address
+                  <input class="btnCheck" type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container-checks">Details from your account or an assessed return, notice of assessment, reassessment, or other tax document
+                  <input class="btnCheck" type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+
+                <p><span id="check-message"><label class="label label-danger">You need all of the above to call</label></span></p>
+              </div>
+
           </dd>
           <dt>Telephone number</dt>
           <dd><p>1-800-959-8281</p><p>Outside Canada and US: 613-940-8495</p><p>Yukon, Northwest Territories and Nunavut: 1-866-426-1527</p></dd>
@@ -236,8 +241,9 @@
         <p>Note that it might take up to 3 months to process the mailed form</p>
       </details>
     </div>
+</div>
 
-
+<div class="col-md-8">
     <div class="hidden" id="business">
       <h2>Businesses</h2>
       <h3>CRA payments that you can sign up to receive by direct deposit</h3>
@@ -251,7 +257,7 @@
         <h3>Online</h3>
         <p>Sign up or update direct deposit and bank details for business taxes in My Business Account</p>
         <div class="mrgn-tp-lg">
-          <span class="btn btn-default">Sign in to My Business Account</span>  <span><a href="">Register</a></span>
+          <span class="btn btn-default">Sign in to My Business Account</span>  <span class="register" ><a href="">Register</a></span>
         </div>
         <p class="mrgn-tp-lg"><b>Alternative:</b> <a href="">Sign in to Represent a Client</a></p>
       </div>
@@ -282,7 +288,9 @@
         </dl>
       </details>
     </div>
+</div>
 
+<div class="col-md-8">
     <div class="hidden" id="trusts">
       <h2>Trusts</h2>
       <h3>CRA payments that you can sign up to receive by direct deposit</h3>
@@ -315,7 +323,9 @@
         </dl>
       </details>
     </div>
+</div>
 
+<div class="col-md-8">
     <div class="hidden" id="non-resident">
       <h2>Non-resident account holders and NR7-R refund applicants</h2>
       <h3>CRA payments that you can sign up to receive by direct deposit</h3>
@@ -330,7 +340,7 @@
         <h3>Online</h3>
         <p>Sign up or update direct deposit and bank details for personal taxes in My Account</p>
         <div class="mrgn-tp-lg">
-          <span class="btn btn-default">Sign in to My Account</span>  <span><a href="">Register</a></span>
+          <span class="btn btn-default">Sign in to My Account</span>  <span class="register"><a href="">Register</a></span>
         </div>
         <p class="mrgn-tp-lg"><b>Alternative:</b> <a href="">MyCRA mobile application</a></p>
       </div>
@@ -374,7 +384,8 @@
       </details>
     </div>
 </div>
-
+</div>
+<div class="clearfix"></div>
         <div class="pagedetails ">
 <div class="row">
 <div class="col-sm-6 col-md-5 col-lg-4">
@@ -520,7 +531,7 @@
 
   		<![endif]-->
   <script src="https://gc-proto.github.io/cra-contactus/GCWeb/js/theme.js"></script>
-  <script src="https://gc-proto.github.io/cra-contactus/js/cannedsearch-querystring.js"></script>
+  <script src="https://gc-proto.github.io/cra-contactus/js/checkboxes.js"></script>
   <script>
   $("#wb-auto-12").prop("checked", true);
   </script>
