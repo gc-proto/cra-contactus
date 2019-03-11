@@ -160,7 +160,7 @@
   <h3>Online</h3>
   <p>Change your address online with My Account</p>
   <div class="mrgn-tp-lg">
-    <a href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/services/e-services/e-services-individuals/account-individuals.html" class="btn btn-call-to-action">Sign in to My Account</a>  <span><a href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/services/e-services/e-services-individuals/account-individuals.html">Register</a></span>
+    <a href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/services/e-services/e-services-individuals/account-individuals.html" class="btn btn-call-to-action">Sign in to My Account</a>  <span class="register"><a href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/services/e-services/e-services-individuals/account-individuals.html">Register</a></span>
   </div>
   <p class="mrgn-tp-lg"><b>Alternative:</b> <a href="https://www.canada.ca/en/revenue-agency/services/e-services/cra-mobile-apps.html">MyCRA mobile application</a></p>
 </div>
@@ -173,23 +173,27 @@
       <dt>Before you call</dt>
       <dd>
         <p>To verify your identity, you'll need</p>
-         <!-- <div class="mrgn-tp-lg" style=""> -->
-          <label class="container-checks">Social Insurance Number
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container-checks">Full name and date of birth
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container-checks">Your complete address
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container-checks">Details from your account or an assessed return, notice of assessment, reassessment, or other tax document
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
+         <div class="mrgn-tp-lg beforeCall" style="">
+             <label class="container-checks">Social Insurance Number
+               <input class="btnCheck" type="checkbox">
+               <span class="checkmark"></span>
+             </label>
+             <label class="container-checks">Full name and date of birth
+               <input class="btnCheck" type="checkbox">
+               <span class="checkmark"></span>
+             </label>
+             <label class="container-checks">Your complete address
+               <input class="btnCheck" type="checkbox">
+               <span class="checkmark"></span>
+             </label>
+             <label class="container-checks">Details from your account or an assessed return, notice of assessment, reassessment, or other tax document
+               <input class="btnCheck" type="checkbox">
+               <span class="checkmark"></span>
+             </label>
+
+             <p><span id="check-message"><label class="label label-danger">You need all of the above to call</label></span></p>
+           </div>
+           <br>
         <p>If you wish to deal with the CRA on someone else’s behalf, you must be an authorized representative:</p>
         <ul>
          <li><a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/authorizing-a-representative-overview.html">authorizing or cancelling a representative (personal)</a></li>
@@ -295,7 +299,7 @@
     <h3>Online</h3>
     <p>Change your business address in My Business Account</p>
     <div class="mrgn-tp-lg">
-      <span class="btn btn-default">Sign in to My Business Account</span>  <span><a href="">Register</a></span>
+      <a href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/services/e-services/e-services-businesses/business-account.html" class="btn btn-default">Sign in to My Business Account</a>  <span class="register"><a href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/services/e-services/e-services-businesses/business-account.html">Register</a></span>
     </div>
     <p class="mrgn-tp-lg"><b>Alternative:</b> <a href="">Sign in to Represent a Client</a></p>
   </div>
@@ -303,6 +307,36 @@
   <details>
     <summary><h3>By phone</h3></summary>
     <dl class="dl-horizontal">
+      <dt>Before you call</dt>
+      <dd>
+        <p>To verify your identity, you'll need</p>
+         <div class="mrgn-tp-lg beforeCall2" style="">
+             <label class="container-checks">Your business number
+               <input class="btnCheck2" type="checkbox">
+               <span class="checkmark"></span>
+             </label>
+             <label class="container-checks">Your business name
+               <input class="btnCheck2" type="checkbox">
+               <span class="checkmark"></span>
+             </label>
+             <label class="container-checks">Your complete business address
+               <input class="btnCheck2" type="checkbox">
+               <span class="checkmark"></span>
+             </label>
+             <label class="container-checks">Details from your business account or your most recently assessed business-related tax information return
+               <input class="btnCheck2" type="checkbox">
+               <span class="checkmark"></span>
+             </label>
+
+             <p><span id="check-message2"><label class="label label-danger">You need all of the above to call</label></span></p>
+           </div>
+           <br>
+        <p>If you wish to deal with the CRA on someone else’s behalf, you must be an authorized representative:</p>
+        <ul>
+         <li><a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/authorize-a-representative-business-number.html">authorizing or cancelling a representative (business)</a></li>
+        </ul>
+      </dd>
+
       <dt>Telephone number</dt>
       <dd><p>1-800-959-5525</p><p>Outside Canada and US: 613-940-8497</p><p>Yukon, Northwest Territories and Nunavut: 1-866-841-1876</p></dd>
       <dt>Hours</dt>
@@ -316,19 +350,7 @@
           </ul>
         </details>
       </dd>
-      <dt>What you'll need</dt>
-      <dd>
-        <p>To verify your identity and to set up the direct deposit, you'll need</p>
-        <ul>
-          <li>your business number</li>
-          <li>your business name</li>
-          <li>your complete business address</li>
-          <li>details from your business account or your most recently assessed business-related tax information return</li>
-        </ul>
-        <p>If you wish to deal with the CRA on someone else’s behalf, you must be an authorized representative:</p>
-        <ul>
-         <li><a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/authorize-a-representative-business-number.html">authorizing a business representative</a></li>
-      </dd>
+
     </dl>
   </details>
   <details>
@@ -346,7 +368,7 @@
     </ul>
     <p>The letter should be sent by mail or fax to your tax centre:</p>
     <ul>
-      <li><a href="???">Find your tax centre</a></li>
+      <li><a href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/corporate/contact-us/tax-centres.html">Find your tax centre</a></li>
     </ul>
   </details>
 </details>
@@ -473,6 +495,6 @@
 
   		<![endif]-->
   <script src="https://gc-proto.github.io/cra-contactus/GCWeb/js/theme.js"></script>
-  <script src="https://gc-proto.github.io/cra-contactus/js/cannedsearch-querystring.js"></script>
+  <script src="https://gc-proto.github.io/cra-contactus/js/checkboxes.js"></script>
 </body>
 </html>
