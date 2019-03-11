@@ -6,6 +6,13 @@ legend.h5 {
   margin-bottom: 15px !important;
 }
 
+/* need padding to the left of register when next to a button */
+
+.register {
+  padding-left: 15px;
+}
+
+
 .home h2 {
   font-size: 1.2em;
 }
@@ -338,7 +345,7 @@ ol.vertical-steps {
 
 }
 
-/*active*/          
+/*active*/
 
 .vertical-steps li.active>:first-child::before {
 
@@ -368,7 +375,7 @@ ol.vertical-steps {
 
 }
 
-/*sub-steps un-ordered*/            
+/*sub-steps un-ordered*/
 
 .vertical-steps > li ul li > :first-child::before {
 
@@ -414,7 +421,7 @@ ol.vertical-steps {
 
 }
 
-/*sub-sub-steps un-ordered*/     
+/*sub-sub-steps un-ordered*/
 
 .vertical-steps > li li ul li > :first-child::before {
 
@@ -436,7 +443,7 @@ ol.vertical-steps {
 
 }
 
- 
+
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 
@@ -446,7 +453,7 @@ ol.vertical-steps {
 
 }
 
-} 
+}
 
 .alert-success, .alert-info, .alert-warning, .alert-danger {
 	background: #fff !important;
