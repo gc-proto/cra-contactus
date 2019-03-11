@@ -13869,7 +13869,7 @@ main .btn-primary {
 }
 
 .btn-call-to-action {
-    color: #fff;
+    color: #fff !important;
     background-color: #318000;
     border-color: #458259 !important;
     font-size: 1.1em;
@@ -13881,7 +13881,7 @@ main .btn-primary {
 
 .btn-call-to-action.focus,
 .btn-call-to-action:focus {
-    color: #fff;
+    color: #fff !important;
     background-color: #1d4d00;
     border-color: #192f20
 }
@@ -13890,7 +13890,7 @@ main .btn-primary {
 .btn-call-to-action:active,
 .btn-call-to-action:hover,
 .open>.btn-call-to-action.dropdown-toggle {
-    color: #fff;
+    color: #fff !important;
     background-color: #1d4d00;
     border-color: #305a3e
 }
@@ -13904,7 +13904,7 @@ main .btn-primary {
 .open>.btn-call-to-action.dropdown-toggle.focus,
 .open>.btn-call-to-action.dropdown-toggle:focus,
 .open>.btn-call-to-action.dropdown-toggle:hover {
-    color: #fff;
+    color: #fff !important;
     background-color: #102900;
     border-color: #192f20
 }
