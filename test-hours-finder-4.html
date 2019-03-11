@@ -18,7 +18,7 @@
 	<h1>Dates</h1>
 
 <!--note that day0 is Sunday cycling through the other days of the week-->
-<details open
+<!-- <details open
 	class="need-date"
 	data-day0-open=null
   data-day0-close=null
@@ -42,7 +42,7 @@
 				 <dd>
 					 <p><span class="open-or-closed">I'm supposed to say open/closed based on brower time matching the set hours of operations that needs to be defined somewhere</span> | Expected wait time: 1 hour or less</p>
 
-</details>
+</details> -->
 
 <details open
 	class="need-date"
@@ -50,16 +50,16 @@
 	data-extended-hours-end="dd/mm/yy"
 	data-day0-open=null
   data-day0-close=null
-	data-day1-open="9:00"
-	data-day1-close="17:00"
+	data-day1-open="9:15"
+	data-day1-close="17:15"
 	data-day2-open="9:00"
-	data-day2-close="17:00"
+	data-day2-close="17:15"
 	data-day3-open="9:00"
-	data-day3-close="17:00"
+	data-day3-close="17:15"
   data-day4-open="9:00"
-  data-day4-close="17:00"
+  data-day4-close="17:15"
 	data-day5-open="9:00"
-	data-day5-close="17:00"
+	data-day5-close="17:15"
 	data-day6-open=null
 	data-day6-close=null
 	data-day0-ext-open=null
@@ -189,7 +189,21 @@ $(document).ready(function() {
 		var lineOpen = Number(el.data("day" + day + "-open"));
     var lineClose = Number(el.data("day" + day + "-close"));
 
-		//*************instring of the opening time 9:00 to get before : and after :
+		//Get data from string for today's hours
+		var tOpenTime = new Date();
+		var tCloseTime = new Date();
+		var tOpenTimeExt = new Date();
+		var tCloseTimeExt = new Date();
+		tOpenTime.setHours(el.data("day" + day + "-open").substring(0, el.data("day" + day + "-open").indexOf(":")));
+		tOpenTime.setMinutes(el.data("day" + day + "-open").substring(el.data("day" + day + "-open").indexOf(":")+1));
+		tCloseTime.setHours(el.data("day" + day + "-close").substring(0, el.data("day" + day + "-close").indexOf(":")));
+		tCloseTime.setMinutes(el.data("day" + day + "-close").substring(el.data("day" + day + "-close").indexOf(":")+1));
+		tOpenTimeExt.setHours(el.data("day" + day + "-ext-open").substring(0, el.data("day" + day + "-ext-open").indexOf(":")));
+		tOpenTimeExt.setMinutes(el.data("day" + day + "-ext-open").substring(el.data("day" + day + "-ext-open").indexOf(":")+1));
+		tCloseTimeExt.setHours(el.data("day" + day + "-ext-close").substring(0, el.data("day" + day + "-ext-close").indexOf(":")));
+		tCloseTimeExt.setMinutes(el.data("day" + day + "-ext-close").substring(el.data("day" + day + "-ext-close").indexOf(":")+1));
+		console.log(tOpenTime);
+		console.log(tCloseTime);
 
 
 		var closeClock = (lineClose - 12);
