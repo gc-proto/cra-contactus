@@ -132,7 +132,7 @@ Proof of income statement (option "C" print)</h1>
 
         <div>
 
-    <div class="row ">
+    <div class="row">
 
                 <div class="col-sm-8">
 
@@ -186,24 +186,29 @@ Proof of income statement (option "C" print)</h1>
                <dt>Before you call</dt>
                <dd>
                  <p>To verify your identity, you'll need</p>
-                 <!-- <div class="mrgn-tp-lg" style=""> -->
-                  <label class="container-checks">Social Insurance Number
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                  </label>
-                  <label class="container-checks">Full name and date of birth
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                  </label>
-                  <label class="container-checks">Your complete address
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                  </label>
-                  <label class="container-checks">Details from your account or an assessed return, notice of assessment, reassessment, or other tax document
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                  </label>
-                <!-- </div> -->
+
+                           <div class="mrgn-tp-lg beforeCall" style="">
+                               <label class="container-checks">Social Insurance Number
+                                 <input class="btnCheck" type="checkbox">
+                                 <span class="checkmark"></span>
+                               </label>
+                               <label class="container-checks">Full name and date of birth
+                                 <input class="btnCheck" type="checkbox">
+                                 <span class="checkmark"></span>
+                               </label>
+                               <label class="container-checks">Your complete address
+                                 <input class="btnCheck" type="checkbox">
+                                 <span class="checkmark"></span>
+                               </label>
+                               <label class="container-checks">Details from your account or an assessed return, notice of assessment, reassessment, or other tax document
+                                 <input class="btnCheck" type="checkbox">
+                                 <span class="checkmark"></span>
+                               </label>
+
+                               <p><span id="check-message"></span></p>
+                             </div>
+
+                <br>
                  <p>If you wish to deal with the CRA on someone else’s behalf, you must be an authorized representative:</p>
                  <ul>
                   <li><a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/authorizing-a-representative-overview.html">authorizing or cancelling a representative (personal)</a></li>
@@ -218,12 +223,8 @@ Proof of income statement (option "C" print)</h1>
              </dl>
            </details>
 </div>
-
-<h2>Infographic: Proof of Income Statement (Option 'C' Print)</h2>
-                <div class="col-md-8">
-
-
-
+</div>
+                <div class="col-sm-4">
 
 
     <div class="panel well-sm well">
@@ -434,6 +435,6 @@ Proof of income statement (option "C" print)</h1>
 
   		<![endif]-->
   <script src="https://gc-proto.github.io/cra-contactus/GCWeb/js/theme.js"></script>
-  <script src="https://gc-proto.github.io/cra-contactus/js/cannedsearch-querystring.js"></script>
+  <script src="https://gc-proto.github.io/cra-contactus/js/checkboxes.js"></script>
 </body>
 </html>
