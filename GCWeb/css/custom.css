@@ -4,7 +4,10 @@ details dl.dl-horizontal dd, details dl.dl-horizontal dt {
   border-top: 0px solid #ccc !important;
 }
 
-
+/* bigger label */
+label {
+  font-size: 18px !important;
+}
 /* increase field flow sizing */
 
 legend.h5 {
