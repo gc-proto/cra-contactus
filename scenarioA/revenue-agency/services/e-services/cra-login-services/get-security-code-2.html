@@ -167,56 +167,51 @@
         "default": [{ "action": "addClass", "source":"#personal,#business,#non-resident,#trusts", "class": "hidden" },
           { "action": "addClass", "source": "#wb-auto-12", "class": "checked"}]
         }'>
-        <p>Are you doing online banking with one of these banks?</p>
-        <ul>
-          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Affinity Credit Union</li>
-          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>ATB Financial</li>
-          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>BMO</li>
-          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>CIBC</li>
-          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Choice Rewards Master Card</li>
-          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Caisses Populaires</li>
-          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Connexus Credit Union</li>
-          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Desjardins</li>
-          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>National Bank</li>
-          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>RBC Royal Bank</li>
-          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>ScotiaBank</li>
-          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Servus Credit Union</li>
-          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Tangerine</li>
-          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>TD Canada Trust</li>
-          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>UNI</li>
-          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Vancity</li>
-          <li data-wb-fieldflow='{ "action": "append", "source":"#question2" }'>None of the above</li>
-        </ul>
-      </div>
-
-      <div id="question2" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{
-        "renderas":"radio",
-        "noreqlabel": true
-        }'>
         <p>What type of account do you need a security code for?</p>
         <ul>
           <li data-wb-fieldflow='{ "action": "removeClass", "source":"#personal", "class": "hidden"}' checked="checked">My Account</li> <!--result-->
           <li data-wb-fieldflow='{ "action": "removeClass", "source":"#business", "class": "hidden" }'>My Business Account</li>
           <li data-wb-fieldflow='{ "action": "removeClass", "source":"#representatives", "class": "hidden"}'>Represent a Client</li>
         </ul>
-      </div>
     </form>
   </div>
 
-  <div id="banking" class="hidden">
-    <h2>Use your online banking credentials</h2>
+  <!-- <p>Are you doing online banking with one of these banks?</p>
+  <ul>
+    <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Affinity Credit Union</li>
+    <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>ATB Financial</li>
+    <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>BMO</li>
+    <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>CIBC</li>
+    <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Choice Rewards Master Card</li>
+    <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Caisses Populaires</li>
+    <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Connexus Credit Union</li>
+    <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Desjardins</li>
+    <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>National Bank</li>
+    <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>RBC Royal Bank</li>
+    <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>ScotiaBank</li>
+    <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Servus Credit Union</li>
+    <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Tangerine</li>
+    <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>TD Canada Trust</li>
+    <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>UNI</li>
+    <li data-wb-fieldflow='{ "action": "removeClass", "source":"#banking", "class": "hidden"}'>Vancity</li>
+    <li data-wb-fieldflow='{ "action": "append", "source":"#question2" }'>None of the above</li>
+  </ul>
+</div> -->
 
+
+  <!-- <div id="banking" class="hidden">
+    <h2>Use your online banking credentials</h2>
     <p>You should be able to login with your online bank credentials using the "Sign-in partners login". You should not need a security code.</p>
     <ul>
       <li><a href="">Sign in to My Account</a></li>
       <li><a href="">Sign in to My Business Account</a></li>
       <li><a href="">Sign in to Represent a client</a></li>
     </ul>
-  </div>
+  </div> -->
 
   <div id="personal" class="hidden">
     <h2>Security code for My Account</h2>
-    <p>To register for My Account, you will need to get a security code. You can do this by phone or by mail.</p>
+    <p>To recover My Account, you will need to get a security code. You can do this by phone or by mail.</p>
     <h3>By phone</h3></summary>
     <dl class="dl-horizontal">
       <dt>Before you call</dt>
@@ -320,7 +315,7 @@
   <div id="business" class="hidden">
 
     <h2>Security code for My Business Account</h2>
-    <p>To register for My Business Account, you will need to get a security code. You can do this by phone or by mail.</p>
+    <p>To recover My Business Account, you will need to get a security code. You can do this by phone or by mail.</p>
 
     <h3>By phone</h3>
     <dl class="dl-horizontal">
@@ -428,8 +423,8 @@
 
   <div id="representatives" class="hidden">
 
-    <h2>Security code for My BusinessAccount</h2>
-    <p>To register for My Business Account, you will need to get a security code. You can do this by phone or by mail.</p>
+    <h2>Security code for Represent a Client/h2>
+    <p>To recover Represent a Client, you will need to get a security code. You can do this by phone or mail.</p>
 
     <h3>By phone</h3>
     <dl class="dl-horizontal">
