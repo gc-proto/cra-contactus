@@ -132,18 +132,25 @@
       </div>
     </div>
 
+    <h2>On this page</h2>
+    <ul>
+      <li><a href="#payment-arrangement">Contact the CRA to make a payment arrangement</a></li>
+      <li><a href="#relief">Financial hardship and taxpayer relief</a></li>
+      <li><a href="#bankruptcy">Declare insolvency or bankruptcy</a></li>
+    </ul>
+
+
     <h2>Contact the CRA to make a payment arrangement</h2>
     <div class="wb-frmvld">
-      <form method="get">
+      <!-- <form method="get"> -->
     		<!--Smart question!-->
     		<div id="question1" class="wb-fieldflow" data-wb-fieldflow='{
-          "noForm":false,
-    			"renderas":"radio",
-    			"base": { "live": true },
-    			"noreqlabel": true,
-    			"default": [{ "action": "addClass", "source":"#personal,#business,#non-resident,#trusts", "class": "hidden" },
-            { "action": "addClass", "source": "#wb-auto-12", "class": "checked"}]
-    			}'>
+            "noForm":false,
+      			"renderas":"radio",
+      			"base": { "live": false },
+      			"noreqlabel": true,
+      			"default": { "action": "addClass", "source":"#personal,#business,#non-resident,#trusts", "class": "hidden" }
+          }'>
     			<p>For which of these do you need a payment arrangement?</p>
     			<ul>
     				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#personal", "class": "hidden"}'>personal taxes</li> <!--result-->
@@ -151,12 +158,12 @@
             <li data-wb-fieldflow='{ "action": "removeClass", "source":"#other", "class": "hidden"}'>a government service unrelated to taxes (such as EI or student loans)</li>
     			</ul>
     		</div>
-      </form>
+      <!-- </form> -->
     </div>
 
-    <div class="hidden" id="personal">
+    <div class="hidden mrgn-bttm-lg" id="personal">
       <h3>Personal payment arrangement</h3>
-      <h4>A payment arrangement allows you to make smaller payments over time until you have paid your entire debt including applicable interest.</h4>
+      <p>A payment arrangement allows you to make smaller payments over time until you have paid your entire debt including applicable interest.</p>
       <details>
         <summary>Find out if you qualify</summary>
         <p>To help calculate payment arrangement options before speaking to the CRA, you can use the:
@@ -249,40 +256,110 @@
       </details>
     </div>
 
-    <h2>Get taxpayer relief for personal taxes</h2>
-    <p>In some circumstances, you <strong>may</strong> be able to ask for relief from penalties and interest charges and reduce the overall amount you or your business owes.</p>
-    <ul><li><a href="https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/complaints-disputes/taxpayer-relief-provisions.html">Find out if you qualify for taxpayer relief provisions</a></li></ul>
-
-
-    <h2>Declare insolvency or bankruptcy</h2>
-    <p>If you feel you are <strong>insolvent</strong><strong> </strong>or are considering <strong>bankruptcy</strong>, special provisions might apply.
-      <ul><li><a href="http://strategis.ic.gc.ca/eic/site/bsf-osb.nsf/eng/home">How bankruptcy affects tax payments</a></li></ul>
-
-
-
-
-      <h4>Pre-authorized debit</h4>
-      <p>Paying online is one of the fastest and easiest ways to set up a payment arrangement. You&nbsp;can do this using <a href="https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/pay-authorized-debit.html">Pay by pre-authorized debit</a> through My Account. In most cases, you can make the arrangement on your own without speaking with the CRA.</p>
-
-      <h4>TeleArrangement</h4>
-       <p>You can make a payment arrangement through our automated TeleArrangement service by calling 1-866-256-1147. TeleArrangement is available Monday to Friday, 7:00&nbsp;a.m. to 10:00&nbsp;p.m., Eastern time. To use this service, you will need to provide:</p>
-       <ul>
-         <li>your social insurance number</li>
-         <li>your date of birth</li>
-         <li>the amount entered on line 150 from your last assessed return</li>
-       </ul>
-
-            <h4>Speak with an agent</h4>
-     <p>Receive a call from a CRA call centre agent by completing an <a href="https://apps.cra-arc.gc.ca/ebci/iesl/clicktotalk/ntr.action?RefNumber=13000e&amp;lp=1">Individual tax debt call request</a> or call 1-888-863-8657.</p>  <p>If you have other questions about your individual account, please call the individual income tax enquiries line at 1-800-959-8281.</p>
-
-
-
-
-
-
-
-
    <div class="hidden" id="business">
+     <h3>Business payment arrangement</h3>
+     <p>A payment arrangement is an agreement that your business makes with the CRA. It allows your business to make smaller payments over time until you have paid your entire debt including applicable interest.</p>
+     <details>
+       <summary>Find out if you qualify</summary>
+       <p>To help calculate payment arrangement options before speaking to the CRA, you can use the:
+       <ul>
+         <li><a href="https://apps.cra-arc.gc.ca/ebci/recc/pac/prot/lngg?request_locale=en_CA">Payment Arrangement Calculator</a> to calculate payment options with the prescribed CRA interest rates</li>
+         <li><a href="https://apps.cra-arc.gc.ca/ebci/recc/pac/showWorksheet?request_locale=en_CA">Income and Expense Worksheet</a> to help you to calculate your available net income to pay your debt</li>
+       </ul>
+       <p>Before your business makes a payment arrangement, you may need to show that you have tried to pay your debt in full by borrowing money or reducing expenses. As a business, you may also have to fully disclose your financial records.</p>
+       <p>Once you have made a payment arrangement your business must also:</p>
+       <ul>
+         <li>maintain a regular payment plan</li>
+         <li>always file all returns on time</li>
+         <li>stay up to date with tax obligations</li>
+       </ul>
+       <p>If you fail to do any of these things, we may cancel the payment arrangement and take action to recover the debt.</p>
+     </details>
+     <div>
+       <h4>Online</h4>
+       <p>You can set up a payment arrangement by using pre-authorized debit in My Account</p>
+       <ul><li><a href="https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/pay-authorized-debit.html">How to set up pre-authorized debit in My Account</a></li></ul>
+       <div class="mrgn-tp-lg">
+           <a href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/services/e-services/e-services-individuals/account-individuals.html" class="btn btn-call-to-action">Sign in to My Account</a>  <span class="register"><a href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/services/e-services/e-services-individuals/account-individuals.html">Register</a></span>
+       </div>
+     </div>
+     <p class="h3">Other ways to make a payment arrangement</p>
+     <details>
+       <summary><h4>By phone</h4></summary>
+       <dl class="dl-horizontal">
+         <dt>Before you call</dt>
+         <dd>
+           <p>To verify your identity, you'll need</p>
+
+           <div class="mrgn-tp-lg beforeCall" style="">
+               <label class="container-checks">Social Insurance Number
+                 <input class="btnCheck" type="checkbox">
+                 <span class="checkmark"></span>
+               </label>
+               <label class="container-checks">Full name and date of birth
+                 <input class="btnCheck" type="checkbox">
+                 <span class="checkmark"></span>
+               </label>
+               <label class="container-checks">The amount entered on line 150 from your last assessed return
+                 <input class="btnCheck" type="checkbox">
+                 <span class="checkmark"></span>
+               </label>
+
+               <p><span id="check-message"><label class="label label-danger">You need all of the above to call</label></span></p>
+             </div>
+
+         </dd>
+         <dt>Telephone number</dt>
+         <dd><p>1-866-256-1147</p></dd>
+         <dt>Hours</dt>
+         <dd>
+           <p><label class="label label-success">Always open (automated line)</label></p>
+         </dd>
+       </dl>
+     </details>
+     <details>
+       <summary><h4>By phone (talk to an agent about a complex scenario)</h4></summary>
+       <dl class="dl-horizontal">
+         <dt>Before you request a call</dt>
+         <dd>
+           <p>To verify your identity, you'll need</p>
+
+           <div class="mrgn-tp-lg beforeCall" style="">
+               <label class="container-checks">Social Insurance Number
+                 <input class="btnCheck" type="checkbox">
+                 <span class="checkmark"></span>
+               </label>
+               <label class="container-checks">Full name and date of birth
+                 <input class="btnCheck" type="checkbox">
+                 <span class="checkmark"></span>
+               </label>
+               <label class="container-checks">Your complete address
+                 <input class="btnCheck" type="checkbox">
+                 <span class="checkmark"></span>
+               </label>
+               <label class="container-checks">The amount entered on line 150 from your last assessed return
+                 <input class="btnCheck" type="checkbox">
+                 <span class="checkmark"></span>
+               </label>
+
+               <p><span id="check-message"><label class="label label-danger">You need all of the above to call</label></span></p>
+             </div>
+
+         </dd>
+         <dt>Telephone number</dt>
+         <dd><p>1-888-863-8657</p></dd>
+         <dt>Hours</dt>
+         <dd>
+           ???????
+
+
+         </dd>
+       </dl>
+     </details>
+
+
+
+
           <h2>Business payment arrangement</h2>
    <p>If you are an employer, the amounts that you deduct and withhold from the wages of your employees are considered deemed trust amounts. Similarly, if you operate a business as a sole proprietor, partnership, or corporation, the GST/HST amounts that you collect from your customers are also considered deemed trust amounts.</p>  <p>If your business has a tax debt, it may include corporate income tax debt and <a href="https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/when-you-money-collections-cra/information-on-deemed-trust.html">deemed trust amounts</a>.</p>  <p>You cannot use deemed trust amounts as cash flow. Even if you keep these amounts with your personal or business funds, the amounts are considered to be held separate and apart. Deemed trust amounts must be paid in full when owed.</p>  <p>The CRA will work with businesses to help them meet their payment obligations, such as corporate income tax debt or deemed trust amounts. In <strong>extraordinary situations</strong> where your business cannot pay in full, you may qualify for a payment arrangement or taxpayer relief.</p>
 
@@ -357,6 +434,157 @@
           <h3>Insolvency or bankruptcy</h3>
    <p>If you feel you are <strong>insolvent</strong><strong> </strong>or are considering <strong>bankruptcy</strong>, visit the <a href="http://strategis.ic.gc.ca/eic/site/bsf-osb.nsf/eng/home">Office of the Superintendent of Bankruptcy</a> for more information.</p>
  </div>
+
+
+       <h2 id="relief" class="mrgn-tp-lg">Financial hardship and taxpayer relief</h2>
+       <!-- <div class="wb-frmvld"> -->
+         <!-- <form method="get"> -->
+       		<!--Smart question!-->
+       		<!-- <div id="questionA" class="wb-fieldflow" data-wb-fieldflow='{
+              "noForm":false,
+         			"renderas":"radio",
+         			"base": { "live": false },
+         			"noreqlabel": true,
+         			"default": { "action": "addClass", "source":"#personal-relief,#business-relief,#financial-hardship", "class": "hidden" }
+             }'>
+       			<p>For which of these do you need taxpayer relief?</p>
+       			<ul>
+       				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#personal-relief", "class": "hidden"}'>personal taxes</li> <!--result-->
+         			<!-- <li data-wb-fieldflow='{ "action": "removeClass", "source":"#business-relief", "class": "hidden" }'>a business</li>
+              <li data-wb-fieldflow='{ "action": "removeClass", "source":"#financial-hardship", "class": "hidden"}'>a government service unrelated to taxes (such as EI or student loans)</li>
+       			</ul>
+       		</div> -->
+         <!-- </form> -->
+       <!-- </div> -->
+
+
+
+       <details>
+         <summary><h3>Taxpayer relief for personal taxes</h3></summary>
+       <!-- <div id="personal-relief"> -->
+       <p>In some circumstances, you <strong>may</strong> be able to ask for relief from penalties and interest charges and reduce the overall amount you or your business owes.</p>
+       <ul><li><a href="https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/complaints-disputes/taxpayer-relief-provisions.html">Find out if you qualify for taxpayer relief provisions</a></li></ul>
+      <!-- </div> -->
+      </details>
+      <!-- <div id="business-relief"> -->
+      <details>
+        <summary><h3>Taxpayer relief for businesses</h3></summary>
+        <p>In some circumstances, you <strong>may</strong> be able to ask for relief from penalties and interest charges and reduce the overall amount you or your business owes.</p>
+        <ul><li><a href="https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/complaints-disputes/taxpayer-relief-provisions.html">Find out if your situation qualifies for taxpayer relief provisions</a></li></ul>
+      <!-- </div> -->
+    </details>
+    <details>
+      <summary><h3>Financial hardship provisions</h3></summary>
+      <!-- <div id="financial-hardship"> -->
+
+      <h4>By phone</h4>
+      <dl class="dl-horizontal">
+        <dt>Eligibility</dt>
+        <dd>If your debt repayment makes it difficult for you to pay for housing, food, utilities and other necessities of life, you may qualify for help under the financial hardship provisions.</dd>
+        <dt>Before you request a call</dt>
+        <dd>
+          <p>To verify your identity, you'll need</p>
+
+          <div class="mrgn-tp-lg beforeCall" style="">
+              <label class="container-checks">Social Insurance Number
+                <input class="btnCheck" type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container-checks">Full name and date of birth
+                <input class="btnCheck" type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container-checks">Your complete address
+                <input class="btnCheck" type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container-checks">Details from your account or an assessed return, notice of assessment, reassessment, or other tax document
+                <input class="btnCheck" type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+
+              <p><span id="check-message"><label class="label label-danger">You need all of the above to call</label></span></p>
+            </div>
+        </dd>
+        <dt>Telephone number</dt>
+        <dd><p>1-866-864-5823</p></dd>
+        <dt>Hours</dt>
+        <dd>
+          <p><label class="label label-success">Open until 9 pm</label> | Expected wait time: 1 hour or less</p>
+          <details>
+            <summary>Opening hours</summary>
+            <div class="row">
+              <div class="col-lg-6">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="wb-inv">Day</th>
+                      <th class="wb-inv">Hours</th>
+                      <th class="wb-inv">Wait times</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Mon</td>
+                      <td>8 am to 9 pm EST</td>
+                      <td>Long wait times</td>
+                    </tr>
+                    <tr>
+                      <td>Tue</td>
+                      <td>8 am to 9 pm EST</td>
+                      <td>Long wait times</td>
+                    </tr>
+                    <tr>
+                      <td>Wed</td>
+                      <td>8 am to 9 pm EST</td>
+                      <td>Medium wait times</td>
+                    </tr>
+                    <tr>
+                      <td>Thu</td>
+                      <td>8 am to 9 pm EST</td>
+                      <td>Short wait times</td>
+                    </tr>
+                    <tr>
+                      <td>Fri</td>
+                      <td>8 am to 9 pm EST</td>
+                      <td>Short wait times</td>
+                    </tr>
+                    <tr>
+                      <td>Sat</td>
+                      <td>Closed</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Sun</td>
+                      <td>Closed</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <h4>Next 3 holiday closures:</h4>
+            <ul>
+              <li>March 30 (Volunteering)</li>
+              <li>April 2 (Bunny rabbits)</li>
+              <li>May 21 (Mayday)</li>
+            </ul>
+          </details>
+        </dd>
+      </dl>
+      <!-- </div> -->
+    </details>
+
+
+ <h2 id="bankruptcy">Declare insolvency or bankruptcy</h2>
+ <p>If you feel you are <strong>insolvent</strong><strong> </strong>or are considering <strong>bankruptcy</strong>, a bankruptcy discharge could release you from the obligation to repay debts you had when you filed for bankruptcy.</p>
+
+<section class="alert alert-warning">
+  <h3 class="text-warning h5">Debt that will not be released</h3>
+ <p>Bankruptcy will not release you from debt owed on GST/HST, payroll deductions and other amounts held in trust. Unless 7 years after you completed your studies, bankruptcy will not release you from student loan debt.</p>
+ <p><a href="https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/when-you-money-collections-cra/information-on-deemed-trust.html">See what other debt is considered to be held in trust</a></p>
+</section>
+ <ul><li><a href="https://www.ic.gc.ca/eic/site/bsf-osb.nsf/eng/br03733.html#discharge">Get a discharge from bankruptcy</a></li></ul>
 
 
 
