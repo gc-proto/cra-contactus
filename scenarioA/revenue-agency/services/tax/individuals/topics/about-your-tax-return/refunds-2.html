@@ -183,32 +183,39 @@ Tax refunds: Check the status of your refund</h1>
     <dl class="dl-horizontal">
       <dt>Before you call</dt>
       <dd>
+
         <p>To verify your identity, you'll need</p>
-        <!-- <div class="mrgn-tp-lg" style=""> -->
-         <label class="container-checks">Social Insurance Number
-           <input type="checkbox">
-           <span class="checkmark"></span>
-         </label>
-         <label class="container-checks">Full name and date of birth
-           <input type="checkbox">
-           <span class="checkmark"></span>
-         </label>
-         <label class="container-checks">Your complete address
-           <input type="checkbox">
-           <span class="checkmark"></span>
-         </label>
-         <label class="container-checks">Details from your account or an assessed return, notice of assessment, reassessment, or other tax document
-           <input type="checkbox">
-           <span class="checkmark"></span>
-         </label>
-       <!-- </div> -->
+        <div class="mrgn-tp-lg beforeCall" style="">
+          <label class="container-checks">Your three-digit bank (financial institution) number, five-digit transit number, and your account number
+            <input class="btnCheck" type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+            <label class="container-checks">Social Insurance Number
+              <input class="btnCheck" type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-checks">Full name and date of birth
+              <input class="btnCheck" type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-checks">Your complete address
+              <input class="btnCheck" type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container-checks">Details from your account or an assessed return, notice of assessment, reassessment, or other tax document
+              <input class="btnCheck" type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+
+            <p><span id="check-message"><label class="label label-danger">You need all of the above to call</label></span></p>
+          </div>
+          <br>
+
         <p>If you wish to deal with the CRA on someone else’s behalf, you must be an authorized representative:</p>
         <ul>
          <li><a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/authorizing-a-representative-overview.html">authorizing or cancelling a representative (personal)</a></li>
         </ul>
       </dd>
-      <dt>Automated line</dt>
-      <dd>You can use our automated line to check your refund status.
 
       </dd>
       <dt>Telephone number</dt>
@@ -217,6 +224,10 @@ Tax refunds: Check the status of your refund</h1>
       <dd>
         <p><label class="label label-success">Always open (automated line)</label></p>
       </dd>
+
+      <dt>Automated line</dt>
+      <dd>You can use our automated line to check your refund status.
+
     </dl>
   </details>
 </div>
