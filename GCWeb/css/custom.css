@@ -1,3 +1,10 @@
+/* take out table lines for phone lines */
+details dl.dl-horizontal dd, details dl.dl-horizontal dt {
+  border-top: 0px solid #ccc !important;
+
+}
+
+
 /* increase field flow sizing */
 
 legend.h5 {
