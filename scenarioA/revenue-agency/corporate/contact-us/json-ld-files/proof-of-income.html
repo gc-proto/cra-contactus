@@ -1,0 +1,37 @@
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "GovernmentService",
+  "name": "Get a Proof of Income (Option C Print)",
+  "serviceType": "Taxes",
+  "serviceOperator": {
+    "@type": "GovernmentOrganization",
+    "name": "Canada Revenue Agency",
+    "url": "https://www.canada.ca/en/revenue-agency.html",
+    "parentOrganization": {
+      "@type": "GovernmentOrganization",
+      "name": "Government of Canada",
+      "url": "http://www.canada.ca/"
+    }
+  },
+  "availableChannel": [
+    {
+      "@type": "ServiceChannel",
+      "servicePhone":  {
+        "@type": "ContactPoint",
+        "contactType": "Tax Information Phone Service",
+        "telephone": "+1-800-267-6999",
+        "contactOption" : "TollFree",
+        "areaServed": ["CA","US"],
+        "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["http://schema.org/Monday","http://schema.org/Tuesday","http://schema.org/Wednesday","http://schema.org/Thursday","http://schema.org/Friday","http://schema.org/Saturday","http://schema.org/Sunday"],
+            "opens":  "00:00:00",
+            "closes":  "23:59:59"
+        }
+      },
+      "serviceURL": "https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/services/e-services/e-services-individuals/account-individuals.html"
+    }
+  ]
+}
+</script>
