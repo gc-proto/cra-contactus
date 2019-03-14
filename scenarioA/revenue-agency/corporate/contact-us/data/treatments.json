@@ -1,6 +1,5 @@
-[
-  {
-    "Treatment code (tmt)": "tax-benefits",
+{
+  "tax-benefits": {
     "FIXED": "",
     "ONTARIO": "SUD-TC",
     "ATLANTIC": "SUD-TC",
@@ -9,8 +8,7 @@
     "PACIFIC": "WPG-TC",
     "OTHER": "SUD-TC"
   },
-  {
-    "Treatment code (tmt)": "business",
+  "business": {
     "FIXED": "",
     "ONTARIO": "SUD-TC",
     "ATLANTIC": "PEI-TC",
@@ -19,8 +17,7 @@
     "PACIFIC": "PEI-TC",
     "OTHER": "SUD-TC"
   },
-  {
-    "Treatment code (tmt)": "corp-tax",
+  "corp-tax": {
     "FIXED": "",
     "ONTARIO": "SUD-TC",
     "ATLANTIC": "PEI-TC",
@@ -29,8 +26,7 @@
     "PACIFIC": "WPG-TC",
     "OTHER": "SUD-TC"
   },
-  {
-    "Treatment code (tmt)": "nvcc",
+  "nvcc": {
     "FIXED": "",
     "ONTARIO": "STJ-NVCC",
     "ATLANTIC": "SHA-NVVCC",
@@ -39,8 +35,7 @@
     "PACIFIC": "SUR",
     "OTHER": ""
   },
-  {
-    "Treatment code (tmt)": "coe",
+  "coe": {
     "FIXED": "",
     "ONTARIO": "OTT",
     "ATLANTIC": "CHA",
@@ -49,8 +44,7 @@
     "PACIFIC": "SUR",
     "OTHER": ""
   },
-  {
-    "Treatment code (tmt)": "GST-returns",
+  "GST-returns": {
     "FIXED": "",
     "ONTARIO": "SUD-TC",
     "ATLANTIC": "PEI-TC",
@@ -59,8 +53,7 @@
     "PACIFIC": "PEI-TC",
     "OTHER": ""
   },
-  {
-    "Treatment code (tmt)": "trusts",
+  "trusts": {
     "FIXED": "",
     "ONTARIO": "SUD-TC",
     "ATLANTIC": "WPG-TC",
@@ -69,8 +62,7 @@
     "PACIFIC": "WPG-TC",
     "OTHER": "WPG-TC"
   },
-  {
-    "Treatment code (tmt)": "gst-hst-rulings",
+  "gst-hst-rulings": {
     "FIXED": "",
     "ONTARIO": "HAM",
     "ATLANTIC": "HAL-PO-638",
@@ -79,8 +71,7 @@
     "PACIFIC": "SUR",
     "OTHER": ""
   },
-  {
-    "Treatment code (tmt)": "excise-regions",
+  "excise-regions": {
     "FIXED": "",
     "ONTARIO": "HAM",
     "ATLANTIC": "HAL-PO-638",
@@ -89,8 +80,7 @@
     "PACIFIC": "SUR",
     "OTHER": ""
   },
-  {
-    "Treatment code (tmt)": "donotmail",
+  "donotmail": {
     "FIXED": "donotmail",
     "ONTARIO": "",
     "ATLANTIC": "",
@@ -99,8 +89,7 @@
     "PACIFIC": "",
     "OTHER": ""
   },
-  {
-    "Treatment code (tmt)": "userevquebec",
+  "userevquebec": {
     "FIXED": "userevquebec",
     "ONTARIO": "",
     "ATLANTIC": "",
@@ -109,8 +98,7 @@
     "PACIFIC": "",
     "OTHER": ""
   },
-  {
-    "Treatment code (tmt)": "undefined",
+  "undefined": {
     "FIXED": "undefined",
     "ONTARIO": "",
     "ATLANTIC": "",
@@ -119,8 +107,7 @@
     "PACIFIC": "",
     "OTHER": ""
   },
-  {
-    "Treatment code (tmt)": "WPG-TC",
+  "WPG-TC": {
     "FIXED": "WPG-TC",
     "ONTARIO": "",
     "ATLANTIC": "",
@@ -129,8 +116,7 @@
     "PACIFIC": "",
     "OTHER": ""
   },
-  {
-    "Treatment code (tmt)": "PEI-TC",
+  "PEI-TC": {
     "FIXED": "PEI-TC",
     "ONTARIO": "",
     "ATLANTIC": "",
@@ -139,8 +125,7 @@
     "PACIFIC": "",
     "OTHER": ""
   },
-  {
-    "Treatment code (tmt)": "OTT-QUEEN",
+  "OTT-QUEEN": {
     "FIXED": "OTT-QUEEN",
     "ONTARIO": "",
     "ATLANTIC": "",
@@ -149,8 +134,7 @@
     "PACIFIC": "",
     "OTHER": ""
   },
-  {
-    "Treatment code (tmt)": "OTT-HERON",
+  "OTT-HERON": {
     "FIXED": "OTT-HERON",
     "ONTARIO": "",
     "ATLANTIC": "",
@@ -159,8 +143,7 @@
     "PACIFIC": "",
     "OTHER": ""
   },
-  {
-    "Treatment code (tmt)": "OTT-KENT",
+  "OTT-KENT": {
     "FIXED": "OTT-KENT",
     "ONTARIO": "",
     "ATLANTIC": "",
@@ -169,8 +152,7 @@
     "PACIFIC": "",
     "OTHER": ""
   },
-  {
-    "Treatment code (tmt)": "OTT-MACK",
+  "OTT-MACK": {
     "FIXED": "OTT-MACK",
     "ONTARIO": "",
     "ATLANTIC": "",
@@ -179,8 +161,7 @@
     "PACIFIC": "",
     "OTHER": ""
   },
-  {
-    "Treatment code (tmt)": "OTT-SLATER",
+  "OTT-SLATER": {
     "FIXED": "OTT-SLATER",
     "ONTARIO": "",
     "ATLANTIC": "",
@@ -189,8 +170,7 @@
     "PACIFIC": "",
     "OTHER": ""
   },
-  {
-    "Treatment code (tmt)": "SK-PO-2405",
+  "SK-PO-2405": {
     "FIXED": "SK-PO-2405",
     "ONTARIO": "",
     "ATLANTIC": "",
@@ -199,4 +179,4 @@
     "PACIFIC": "",
     "OTHER": ""
   }
-]
+}
