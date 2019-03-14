@@ -17,9 +17,11 @@ Those files are independepent from each other, but together provide the result.
 The JSON files are created from an Excel CSV or Google sheet with 3 tabs, one for each of the files. 
 * March 8th data is in an Excel CSV file (get from @lisafast )
 * There are 3 tabs in the file, one for each JSON data file. 
-* To update the data anytime, make your edits to the Excel file (or into the Google doc)  then paste the data into this site: 
+* To update the data anytime, make your edits to the Excel file (or into the Google doc)  via this site: 
   * https://csvjson.com/csv2json
-  * then paste that new JSON into the datafiles - for the forms file, only copy/paste the first 2 columns
+  * Change the Options on top right: deselect parse numbers, deselect parse JSON, select hash
+  * Select the entire first two columns of the Forms file and copy and paste into the Converter paste panel - for the other files, select all then copy and paste
+  * Click convert, then click copy and paste the new JSON into the relevant file. 
   * which file to paste into depends on what you changed - if you changed only the forms file, and didn't need to add new treatments, just change that one
   * if you added a new treatment, and applied that treatment to a form in the form file, and added a new address to the address file, then do all three
 
