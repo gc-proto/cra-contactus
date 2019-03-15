@@ -533,7 +533,11 @@ ol.vertical-steps {
 }
 .circle-nav h2 {
 	color: #777;
+}
+@media all and (min-width: 992px) {
+.circle-nav h2 {
 	margin-top:48px;
+}
 }
 @media all and (min-width: 992px) {
 .section-nav .col-md-4 {
