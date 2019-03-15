@@ -555,3 +555,10 @@ ol.vertical-steps {
 
 .overlay-def.wb-bar-b, .overlay-def.wb-bar-b header, .overlay-def.wb-bar-t, .overlay-def.wb-bar-t header {background-color:#26374a}
 
+@media all and (max-width: 479px) {
+#wb-srch input {
+	border-right: 1px solid #e0e0e0;
+	max-width: 246px;
+	
+}
+}
