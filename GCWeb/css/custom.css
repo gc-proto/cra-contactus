@@ -92,7 +92,7 @@ main .btn-primary {
   color: #fff !important;
 }
 
-main .btn-default {
+.edge-color .btn-default {
   background-color: white!important;
 }
 
