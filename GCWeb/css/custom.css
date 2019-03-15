@@ -86,11 +86,14 @@ main .btn {
   font-family: "Lato";
   font-size: 20px !important;
   color: #333;
-  border: 1px solid #6e8cad;
 }
 
 main .btn-primary {
   color: #fff !important;
+}
+
+main .btn-default {
+  background-color: white!important;
 }
 
 div.pagedetails .btn {
@@ -521,7 +524,7 @@ ol.vertical-steps {
 	font-weight: 400;
 	border:none;
 	margin:0;
-} 
+}
 .gc-theme h1.secondh1 {
 	margin: 0 0 0.2em;
 	padding: 0 0 0.2em;
@@ -564,6 +567,6 @@ ol.vertical-steps {
 #wb-srch input {
 	border-right: 1px solid #e0e0e0;
 	max-width: 246px;
-	
+
 }
 }
