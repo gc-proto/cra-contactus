@@ -531,7 +531,10 @@ ol.vertical-steps {
 	color: #777;
 	margin-top:10px;
 }
-
+.circle-nav h2 {
+	color: #777;
+	margin-top:48px;
+}
 @media all and (min-width: 992px) {
 .section-nav .col-md-4 {
 	position: absolute;
