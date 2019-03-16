@@ -525,6 +525,13 @@ ol.vertical-steps {
 	border:none;
 	margin:0;
 }
+@media all and (max-width: 991px) {
+.gc-theme .firsth1 h1 {
+	color: #000;
+	font-weight: 600;
+	font-size: 1.7em;
+	}
+}
 .gc-theme h1.secondh1 {
 	margin: 0 0 0.2em;
 	padding: 0 0 0.2em;
