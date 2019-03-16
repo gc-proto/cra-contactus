@@ -527,7 +527,7 @@ ol.vertical-steps {
 }
 @media all and (max-width: 991px) {
 .gc-theme .firsth1 h1 {
-	color: #777;
+	color: #333;
 	font-weight: 600;
 	font-size: 1.7em;
 	}
