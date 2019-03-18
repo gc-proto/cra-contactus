@@ -66,6 +66,10 @@
 
   }
 
+  dl.dl-horizontal dd, dl.dl-horizontal dt {
+    border-top: 0px solid #ccc !important;
+  }
+
   </style>
      <div class="form-group">
       <label for="wb-srch-q" class="wb-inv">Search Canada.ca</label>
@@ -145,165 +149,169 @@
      <div class="modal-body" data-ajax-replace="https://gc-proto.github.io/cra-contactus/scenarioA//revenue-agency/services/child-family-benefits/canada-child-benefit-6.html .vertical-steps"></div>
     </section>
     <h1 class="secondh1">Contact us</h1>
-    <h2>Online</h2>
-    <p><b>Sign in</b> or <b>register</b> for <a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html">My Account</a> or the <a href="https://www.canada.ca/en/revenue-agency/services/e-services/cra-mobile-apps.html">MyBenefits CRA</a> mobile application so you can get your personalized benefit information.</p>
-  <details><summary>What you can do online</summary>
-    <ul>
-     <li>apply for child benefits</li>
-     <li>view Canada Child Benefit and related provincial and territorial programs payments, account balance, and statement of account</li>
-     <li>view and update children in your care</li>
-    </ul>
-</details>
-    <h2>By phone</h2>
-    <details>
-     <summary>
-      <h4>Call Canada Child Benefit (CCB)</h4>
-     </summary>
-     <dl class="dl-horizontal">
-      <p>Call this number for help with the Canada Child Benefit (CCB) and assistance with our electronic services for benefit recipients such as the MyBenefits CRA mobile app.</p>
-      <dt>Before you call</dt>
+    <dl class="dl-horizontal">
+      <dt>Online:</dt>
       <dd>
-       <p>To verify your identity, you'll need</p>
-       <!-- <div class="mrgn-tp-lg" style=""> -->
-       <div class="mrgn-tp-lg beforeCall" style="">
-        <label class="container-checks">Social Insurance Number
-        <input class="btnCheck" type="checkbox">
-        <span class="checkmark"></span> </label>
-        <label class="container-checks">Personal details about the children in your care
-        <input class="btnCheck" type="checkbox">
-        <span class="checkmark"></span> </label>
-        <label class="container-checks">Information from previous benefit payments
-        <input class="btnCheck" type="checkbox">
-        <span class="checkmark"></span> </label>
-        <br>
-        <p><span id="check-message">
-         <label class="label label-danger">You need all of the above to call</label>
-         </span></p>
-       </div>
+      <p><b>Sign in</b> or <b>register</b> for <a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html">My Account</a> or the <a href="https://www.canada.ca/en/revenue-agency/services/e-services/cra-mobile-apps.html">MyBenefits CRA</a> mobile application so you can get your personalized benefit information.</p>
+      <p>What you can do online:</p>
+        <ul>
+         <li>apply for child benefits</li>
+         <li>view Canada Child Benefit and related provincial and territorial programs payments, account balance, and statement of account</li>
+         <li>view and update children in your care</li>
+        </ul>
       </dd>
-      <dt>Telephone number</dt>
+      <dt>By phone:</dt>
       <dd>
-       <p><b>1-800-387-1193</b></p>
-       <p>Yukon, Northwest Territories and Nunavut:<br><b>1-866-426-1527</b></p>
-      </dd>
-      <dt>Hours</dt>
-      <dd>
-       <td data-label="Hours"><p>
-         <label class="label label-success">Open until 5PM</label>
-        </p>
-        <p>Expected wait time: 1 hour or less</p>
-        <details class="right-mobile">
-         <summary>Opening hours</summary>
-         <div class="row ">
-          <div>
-           <table class="table small-tbl">
-            <thead>
-             <tr>
-              <th class="wb-inv">Day</th>
-              <th class="wb-inv">Hours</th>
-              <th class="wb-inv">Wait times</th>
-             </tr>
-            </thead>
-            <tbody>
-             <tr>
-              <td data-label="Day">Mon</td>
-              <td data-label="Hours">9am-5pm</td>
-              <td data-label="Wait times">Long wait times</td>
-             </tr>
-             <tr>
-              <td data-label="Day">Tue</td>
-              <td data-label="Hours">9am-5pm</td>
-              <td data-label="Wait times">Long wait times</td>
-             </tr>
-             <tr>
-              <td data-label="Day">Wed</td>
-              <td data-label="Hours">9am-5pm</td>
-              <td data-label="Wait times">Medium wait times</td>
-             </tr>
-             <tr>
-              <td data-label="Day">Thu</td>
-              <td data-label="Hours">9am-5pm</td>
-              <td data-label="Wait times">Short wait times</td>
-             </tr>
-             <tr>
-              <td data-label="Day">Fri</td>
-              <td data-label="Hours">9am-5pm</td>
-              <td data-label="Wait times">Short wait times</td>
-             </tr>
-             <tr>
-              <td data-label="Day">Sat</td>
-              <td data-label="Hours">Closed</td>
-              <td></td>
-             </tr>
-             <tr>
-              <td data-label="Day">Sun</td>
-              <td data-label="Hours">Closed</td>
-              <td></td>
-             </tr>
-            </tbody>
-           </table>
-          </div>
+      <details>
+       <summary>
+        <h4>Call Canada Child Benefit (CCB)</h4>
+       </summary>
+       <dl class="dl-horizontal">
+        <p>Call this number for help with the Canada Child Benefit (CCB) and assistance with our electronic services for benefit recipients such as the MyBenefits CRA mobile app.</p>
+        <dt>Before you call</dt>
+        <dd>
+         <p>To verify your identity, you'll need</p>
+         <!-- <div class="mrgn-tp-lg" style=""> -->
+         <div class="mrgn-tp-lg beforeCall" style="">
+          <label class="container-checks">Social Insurance Number
+          <input class="btnCheck" type="checkbox">
+          <span class="checkmark"></span> </label>
+          <label class="container-checks">Personal details about the children in your care
+          <input class="btnCheck" type="checkbox">
+          <span class="checkmark"></span> </label>
+          <label class="container-checks">Information from previous benefit payments
+          <input class="btnCheck" type="checkbox">
+          <span class="checkmark"></span> </label>
+          <br>
+          <p><span id="check-message">
+           <label class="label label-danger">You need all of the above to call</label>
+           </span></p>
          </div>
-         <p><strong>Next 3 holiday closures:</strong></p>
-         <ul>
-          <li style="font-size: 17px !important; line-height: 1.65em !important;">March 30 (Volunteering)</li>
-          <li style="font-size: 17px !important; line-height: 1.65em !important;">April 22 (Bunny rabbits)</li>
-          <li style="font-size: 17px !important; line-height: 1.65em !important;">May 21 (Mayday)</li>
-         </ul>
-        </details>
-      </dd>
-     </dl>
-     <details>
-      <summary>Avoid waiting on the phone line</summary>
-      <ul>
-       <li><a href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/services/e-services/e-services-individuals/account-individuals/about-account.html">Benefits of signing up for an online account</a></li>
-       <li><a href="">When our lines are less busy</a></li>
-      </ul>
-     </details>
-    </details>
-    <details>
-     <summary>
-      <h4>Call Alberta Child Benefit (ACB)</h4>
-     </summary>
-     <dl class="dl-horizontal">
-      <p>Call this number for help with the Alberta Child Benefit (ACB).</p>
-      <dt>Before you call</dt>
-      <dd>
-       <p>To verify your identity, you'll need</p>
-       <!-- <div class="mrgn-tp-lg" style=""> -->
-       <div class="mrgn-tp-lg beforeCall2" style="">
-        <label class="container-checks">Social Insurance Number
-        <input class="btnCheck2" type="checkbox">
-        <span class="checkmark"></span> </label>
-        <label class="container-checks">Personal details about the children in your care
-        <input class="btnCheck2" type="checkbox">
-        <span class="checkmark"></span> </label>
-        <label class="container-checks">Information from previous benefit payments
-        <input class="btnCheck2" type="checkbox">
-        <span class="checkmark"></span> </label>
-        <br>
-        <p><span id="check-message2">
-         <label class="label label-danger">You need all of the above to call</label>
-         </span></p>
-       </div>
-      </dd>
-      <dt>Telephone number</dt>
-      <dd>
-       <p><b>1-800-959-2809</b></p>
-      </dd>
-      <dt>Hours</dt>
-      <dd>
-       <p>Monday to Friday (except holidays) from 9 a.m. to 5 p.m. (Mountain time)</p>
-      </dd>
-     </dl>
-     <details>
-      <summary>Avoid waiting on the phone line</summary>
-      <ul>
-       <li><a href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/services/e-services/e-services-individuals/account-individuals/about-account.html">Benefits of signing up for an online account</a></li>
-       <li><a href="">When our lines are less busy</a></li>
-      </ul>
-     </details>
-    </details>
+        </dd>
+        <dt>Telephone number</dt>
+        <dd>
+         <p><b>1-800-387-1193</b></p>
+         <p>Yukon, Northwest Territories and Nunavut:<br><b>1-866-426-1527</b></p>
+        </dd>
+        <dt>Hours</dt>
+        <dd>
+         <td data-label="Hours"><p>
+           <label class="label label-success">Open until 5PM</label>
+          </p>
+          <p>Expected wait time: 1 hour or less</p>
+          <details class="right-mobile">
+           <summary>Opening hours</summary>
+           <div class="row ">
+            <div>
+             <table class="table small-tbl">
+              <thead>
+               <tr>
+                <th class="wb-inv">Day</th>
+                <th class="wb-inv">Hours</th>
+                <th class="wb-inv">Wait times</th>
+               </tr>
+              </thead>
+              <tbody>
+               <tr>
+                <td data-label="Day">Mon</td>
+                <td data-label="Hours">9am-5pm</td>
+                <td data-label="Wait times">Long wait times</td>
+               </tr>
+               <tr>
+                <td data-label="Day">Tue</td>
+                <td data-label="Hours">9am-5pm</td>
+                <td data-label="Wait times">Long wait times</td>
+               </tr>
+               <tr>
+                <td data-label="Day">Wed</td>
+                <td data-label="Hours">9am-5pm</td>
+                <td data-label="Wait times">Medium wait times</td>
+               </tr>
+               <tr>
+                <td data-label="Day">Thu</td>
+                <td data-label="Hours">9am-5pm</td>
+                <td data-label="Wait times">Short wait times</td>
+               </tr>
+               <tr>
+                <td data-label="Day">Fri</td>
+                <td data-label="Hours">9am-5pm</td>
+                <td data-label="Wait times">Short wait times</td>
+               </tr>
+               <tr>
+                <td data-label="Day">Sat</td>
+                <td data-label="Hours">Closed</td>
+                <td></td>
+               </tr>
+               <tr>
+                <td data-label="Day">Sun</td>
+                <td data-label="Hours">Closed</td>
+                <td></td>
+               </tr>
+              </tbody>
+             </table>
+            </div>
+           </div>
+           <p><strong>Next 3 holiday closures:</strong></p>
+           <ul>
+            <li style="font-size: 17px !important; line-height: 1.65em !important;">March 30 (Volunteering)</li>
+            <li style="font-size: 17px !important; line-height: 1.65em !important;">April 22 (Bunny rabbits)</li>
+            <li style="font-size: 17px !important; line-height: 1.65em !important;">May 21 (Mayday)</li>
+           </ul>
+          </details>
+        </dd>
+       </dl>
+       <details>
+        <summary>Avoid waiting on the phone line</summary>
+        <ul>
+         <li><a href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/services/e-services/e-services-individuals/account-individuals/about-account.html">Benefits of signing up for an online account</a></li>
+         <li><a href="">When our lines are less busy</a></li>
+        </ul>
+       </details>
+      </details>
+      <details>
+       <summary>
+        <h4>Call Alberta Child Benefit (ACB)</h4>
+       </summary>
+       <dl class="dl-horizontal">
+        <p>Call this number for help with the Alberta Child Benefit (ACB).</p>
+        <dt>Before you call</dt>
+        <dd>
+         <p>To verify your identity, you'll need</p>
+         <!-- <div class="mrgn-tp-lg" style=""> -->
+         <div class="mrgn-tp-lg beforeCall2" style="">
+          <label class="container-checks">Social Insurance Number
+          <input class="btnCheck2" type="checkbox">
+          <span class="checkmark"></span> </label>
+          <label class="container-checks">Personal details about the children in your care
+          <input class="btnCheck2" type="checkbox">
+          <span class="checkmark"></span> </label>
+          <label class="container-checks">Information from previous benefit payments
+          <input class="btnCheck2" type="checkbox">
+          <span class="checkmark"></span> </label>
+          <br>
+          <p><span id="check-message2">
+           <label class="label label-danger">You need all of the above to call</label>
+           </span></p>
+         </div>
+        </dd>
+        <dt>Telephone number</dt>
+        <dd>
+         <p><b>1-800-959-2809</b></p>
+        </dd>
+        <dt>Hours</dt>
+        <dd>
+         <p>Monday to Friday (except holidays) from 9 a.m. to 5 p.m. (Mountain time)</p>
+        </dd>
+       </dl>
+       <details>
+        <summary>Avoid waiting on the phone line</summary>
+        <ul>
+         <li><a href="https://gc-proto.github.io/cra-contactus/scenarioA/revenue-agency/services/e-services/e-services-individuals/account-individuals/about-account.html">Benefits of signing up for an online account</a></li>
+         <li><a href="">When our lines are less busy</a></li>
+        </ul>
+       </details>
+      </details>
+    </dd>
   <!--  <details>
      <summary>
       <h4>Residents from Yukon, Northwest Territories and Nunavut</h4>
