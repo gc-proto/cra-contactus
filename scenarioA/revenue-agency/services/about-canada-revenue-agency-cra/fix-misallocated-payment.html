@@ -540,6 +540,288 @@
     </details>
 </div>
 <h2 id="missing">Payment is missing from all of my accounts</h2>
+  <details>
+    <summary>If you checked all your accounts and can't find the missing payment</summary>
+
+    <div class="wb-frmvld">
+      <!-- <form method="get"> -->
+    		<!--Smart question!-->
+    		<div id="question1" class="wb-fieldflow" data-wb-fieldflow='{
+            "noForm":false,
+      			"renderas":"radio",
+      			"base": { "live": false },
+      			"noreqlabel": true,
+      			"default": { "action": "addClass", "source":"#missing-personal,#missing-business", "class": "hidden" }
+          }'>
+    			<p>Which account is the payment missing in?</p>
+    			<ul>
+    				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#missing-personal", "class": "hidden"}'>personal account</li> <!--result-->
+      			<li data-wb-fieldflow='{ "action": "removeClass", "source":"#missing-business", "class": "hidden"}'>business account</li>
+    			</ul>
+    		</div>
+      <!-- </form> -->
+    </div>
+
+    <div id="missing-personal" class="hidden">
+      <h3>Call this number if</h3>
+      <ul>
+        <li>you cannot track down the missing payment in one of your other accounts</li>
+        <li>the payment is missing from a personal account</li>
+      </ul>
+      <div>
+
+        <h3>By phone</h3>
+        <dl class="dl-horizontal">
+          <dt>Before you call</dt>
+          <dd>
+            <p>To verify your identity, you'll need</p>
+            <div class="mrgn-tp-lg beforeCall3" style="">
+
+              <label class="container-checks">Social Insurance Number
+                <input class="btnCheck" type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container-checks">Full name and date of birth
+                <input class="btnCheck" type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container-checks">Your complete address
+                <input class="btnCheck" type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container-checks">Details from your account or an assessed return, notice of assessment, reassessment, or other tax document
+                <input class="btnCheck" type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+
+              <p><span id="check-message"><label class="label label-danger">You need all of the above to call</label></span></p>
+            </div>
+
+        </dd>
+        <dt>Telephone number</dt>
+        <dd><p><b>1-800-959-8281</b></p><p>Yukon, Northwest Territories and Nunavut:<br> <b>1-866-426-1527</b></p><p>Outside Canada and US: <br><b>613-940-8495</b></p></dd>
+        <dt>Hours</dt>
+        <dd>
+         <p class="need-date"
+          data-day0-open=null
+          data-day0-close=null
+          data-day1-open=9
+          data-day1-close=21
+          data-day2-open=9
+          data-day2-close=21
+          data-day3-open=9
+          data-day3-close=21
+          data-day4-open=9
+          data-day4-close=21
+          data-day5-open=9
+          data-day5-close=21
+          data-day6-open=9
+          data-day6-close=17><span class="open-or-closed"></span></p><p>Expected wait time: 1 hour or less</p>
+
+          <details>
+                   <summary>Opening hours (tax season)</summary>
+                   <div class="row">
+                     <div>
+                       <table class="table">
+                         <thead>
+                           <tr>
+                             <th class="wb-inv">Day</th>
+                             <th class="wb-inv">Hours</th>
+                             <th class="wb-inv">Wait times</th>
+                           </tr>
+                         </thead>
+                         <tbody>
+                           <tr>
+                             <td>Mon</td>
+                             <td>9 am to 9 pm</td>
+                             <td>Long wait times</td>
+                           </tr>
+                           <tr>
+                             <td>Tue</td>
+                             <td>9 am to 9 pm</td>
+                             <td>Long wait times</td>
+                           </tr>
+                           <tr>
+                             <td>Wed</td>
+                             <td>9 am to 9 pm</td>
+                             <td>Medium wait times</td>
+                           </tr>
+                           <tr>
+                             <td>Thu</td>
+                             <td>9 am to 9 pm</td>
+                             <td>Short wait times</td>
+                           </tr>
+                           <tr>
+                             <td>Fri</td>
+                             <td>9 am to 9 pm</td>
+                             <td>Short wait times</td>
+                           </tr>
+                           <tr>
+                             <td>Sat</td>
+                             <td>9 am to 5 pm</td>
+                             <td>Short wait times</td>
+                           </tr>
+                           <tr>
+                             <td>Sun</td>
+                             <td>Closed</td>
+                             <td></td>
+                           </tr>
+                         </tbody>
+                       </table>
+                     </div>
+                   </div>
+                   <h4>Next 3 holiday closures:</h4>
+                   <ul>
+                     <li>March 30 (Volunteering)</li>
+                     <li>April 2 (Bunny rabbits)</li>
+                     <li>May 21 (Mayday)</li>
+                   </ul>
+                 </details>
+          </dd>
+
+        </dl>
+
+        <details>
+          <summary>If you are contacting us on someone else's behalf</summary>
+            <p>If you wish to deal with the CRA on someone else’s behalf, you must be an authorized representative:</p>
+            <ul>
+             <li><a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/authorizing-a-representative-overview.html">authorizing or cancelling a representative (personal)</a></li>
+            </ul>
+            <p>Any additional info needed goes here.</p>
+        </details>
+            </dd>
+          </dl>
+      </div>
+    </div>
+
+    <div id="missing-business" class="hidden">
+      <h3>Call this number if</h3>
+      <ul>
+        <li>you cannot track down the missing payment in one of your other accounts</li>
+        <li>the payment is missing from a business account</li>
+      </ul>
+      <div>
+        <dl class="dl-horizontal">
+                  <dt>Before you call</dt>
+          <dd>
+            <p>To verify your identity, you'll need</p>
+            <div class="mrgn-tp-lg beforeCall4" style="">
+                    <label class="container-checks">Your business number
+                      <input class="btnCheck2" type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container-checks">Your business name
+                      <input class="btnCheck2" type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container-checks">Your complete business address
+                      <input class="btnCheck2" type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container-checks">Details from your business account or your most recently assessed business-related tax information return
+                      <input class="btnCheck2" type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+
+
+              <p><span id="check-message2"><label class="label label-danger">You need all of the above to call</label></span></p>
+            </div>
+
+        </dd>
+        <dt>Telephone number</dt>
+        <dd><p><b>1-800-959-5525</b></p><p>Yukon, Northwest Territories and Nunavut:<br> <b>1-866-841-1876</b></p><p>Outside Canada and US: <br><b>613-940-8497</b></p></dd>
+        <dt>Hours</dt>
+        <dd>
+         <p class="need-date-2"
+          data-day0-open=null
+          data-day0-close=null
+          data-day1-open=9
+          data-day1-close=18
+          data-day2-open=9
+          data-day2-close=18
+          data-day3-open=9
+          data-day3-close=18
+          data-day4-open=9
+          data-day4-close=18
+          data-day5-open=9
+          data-day5-close=18
+          data-day6-open=null
+          data-day6-close=null><span class="open-or-closed-2"></span></p><p>Expected wait time: 1 hour or less</p>
+
+          <details>
+                   <summary>Opening hours</summary>
+                   <div class="row">
+                     <div>
+                       <table class="table">
+                         <thead>
+                           <tr>
+                             <th class="wb-inv">Day</th>
+                             <th class="wb-inv">Hours</th>
+                             <th class="wb-inv">Wait times</th>
+                           </tr>
+                         </thead>
+                         <tbody>
+                           <tr>
+                             <td>Mon</td>
+                             <td>9 am to 6 pm</td>
+                             <td>Long wait times</td>
+                           </tr>
+                           <tr>
+                             <td>Tue</td>
+                             <td>9 am to 6 pm</td>
+                             <td>Long wait times</td>
+                           </tr>
+                           <tr>
+                             <td>Wed</td>
+                             <td>9 am to 6 pm</td>
+                             <td>Medium wait times</td>
+                           </tr>
+                           <tr>
+                             <td>Thu</td>
+                             <td>9 am to 6 pm</td>
+                             <td>Short wait times</td>
+                           </tr>
+                           <tr>
+                             <td>Fri</td>
+                             <td>9 am to 6 pm</td>
+                             <td>Short wait times</td>
+                           </tr>
+                           <tr>
+                             <td>Sat</td>
+                             <td>Closed</td>
+                             <td></td>
+                           </tr>
+                           <tr>
+                             <td>Sun</td>
+                             <td>Closed</td>
+                             <td></td>
+                           </tr>
+                         </tbody>
+                       </table>
+                     </div>
+                   </div>
+                   <h4>Next 3 holiday closures:</h4>
+                   <ul>
+                     <li>March 30 (Volunteering)</li>
+                     <li>April 2 (Bunny rabbits)</li>
+                     <li>May 21 (Mayday)</li>
+                   </ul>
+                 </details>
+        </dd>
+
+      </dl>
+
+      <details>
+        <summary>If you are contacting us on someone else's behalf</summary>
+          <p>If you wish to deal with the CRA on someone else’s behalf, you must be an authorized representative:</p>
+          <ul>
+           <li><a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/authorizing-a-representative-overview.html">authorizing or cancelling a representative (personal)</a></li>
+          </ul>
+          <p>Any additional info needed goes here.</p>
+      </details>
+    </div>
+
+  </details>
 
 </div>
 
@@ -685,7 +967,9 @@
   </footer>
   <!--[if gte IE 9 | !IE ]><!-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+  <script src="https://gc-proto.github.io/tax-filing-2/validation/en/assets/wb-fieldflow.min.js"></script>
   <script src="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/js/wet-boew.min.js"></script>
+
   <!--<![endif]-->
   <!--[if lt IE 9]>
   		<script src="./wet-boew/js/ie8-wet-boew2.min.js"></script>
