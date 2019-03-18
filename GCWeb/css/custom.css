@@ -577,3 +577,7 @@ ol.vertical-steps {
 
 }
 }
+
+.hoverimagewow:hover {
+  opacity: 0.8;
+}
