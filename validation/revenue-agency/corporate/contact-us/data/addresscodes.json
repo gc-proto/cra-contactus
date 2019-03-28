@@ -1,0 +1,452 @@
+{
+  "donotmail": {
+    "line1": "Do not mail this document",
+    "line2": "Keep a copy for yourself, and use as instructed",
+    "line3": "You may need to attach it to your tax return",
+    "fax": ""
+  },
+  "userevquebec": {
+    "line1": "Do not mail to the CRA unless specifically requested",
+    "line2": "Revenue Quebec handles GST/HST for Quebec",
+    "line3": "",
+    "fax": ""
+  },
+  "undefined": {
+    "line1": "The mailing address",
+    "line2": "for this form or document is not yet available.",
+    "line3": "We are working on it!",
+    "fax": ""
+  },
+  "Barrie": {
+    "line1": "Canada Revenue Agency",
+    "line2": "81 Mulcaster Street",
+    "line3": "Barrie ON L4M 6T7",
+    "fax": "705-721-0056"
+  },
+  "Belleville": {
+    "line1": "Canada Revenue Agency",
+    "line2": "11 Station Street",
+    "line3": "Belleville ON K8N 2S3",
+    "fax": "613-969-7845"
+  },
+  "Brandon": {
+    "line1": "Brandon Tax Services Office",
+    "line2": "210 - 153 11th Street",
+    "line3": "Brandon MB R7A 7K6",
+    "fax": "204-726-7868"
+  },
+  "Brossard": {
+    "line1": "Canada Revenue Agency",
+    "line2": "3250 Lapinière Boulevard",
+    "line3": "Brossard QC J4Z 3T8",
+    "fax": "450-926-7100"
+  },
+  "CAL": {
+    "line1": "Canada Revenue Agency",
+    "line2": "220 4th Avenue SE",
+    "line3": "Calgary AB T2G 0L1",
+    "fax": "403-264-5843"
+  },
+  "CHA": {
+    "line1": "Canada Revenue Agency",
+    "line2": "1-30 Brackley Point Road",
+    "line3": "Charlottetown PE C1A 6X9",
+    "fax": ""
+  },
+  "CHA-PO-8500": {
+    "line1": "Canada Revenue Agency",
+    "line2": "Post Office Box 8500, Station Central",
+    "line3": "Charlottetown PE C1A 8L3",
+    "fax": ""
+  },
+  "Chicoutimi": {
+    "line1": "Agence du revenu du Canada",
+    "line2": "100 La Fontaine Street",
+    "line3": "Chicoutimi QC G7H 6X2",
+    "fax": "418-698-6387"
+  },
+  "EdmontonDrop": {
+    "line1": "Edmonton Tax Services Office - Main Floor",
+    "line2": "9700 Jasper Avenue",
+    "line3": "Edmonton AB T5J 4C8",
+    "fax": "780-495-3533"
+  },
+  "EdmontonMail": {
+    "line1": "Edmonton Tax Services Office - Suite 10",
+    "line2": "9700 Jasper Avenue",
+    "line3": "Edmonton AB T5J 4C8",
+    "fax": "780-495-3533"
+  },
+  "Gatineau": {
+    "line1": "Agence du revenu du Canada",
+    "line2": "85 Chemin de La Savane",
+    "line3": "Gatineau, QC K1A 1L4",
+    "fax": "819-994-1103"
+  },
+  "HAL-PO-638": {
+    "line1": "Canada Revenue Agency",
+    "line2": "Post Office Box 638, Station Central",
+    "line3": "Halifax NS B3J 2T5",
+    "fax": ""
+  },
+  "HalifaxDrop": {
+    "line1": "Canada Revenue Agency",
+    "line2": "100-145 Hobsons Lake Drive",
+    "line3": "Halifax NS B3S 0J1",
+    "fax": "902-450-8561"
+  },
+  "HAM": {
+    "line1": "Canada Revenue Agency",
+    "line2": "55 Bay Street North",
+    "line3": "Hamilton ON L8R 3P7",
+    "fax": "905-546-1615"
+  },
+  "JON-PO-1300": {
+    "line1": "Jonquière Taxation Centre",
+    "line2": "PO Box LCD 1300",
+    "line3": "Jonquière QC G7S 0L5",
+    "fax": ""
+  },
+  "JON-PO-1660": {
+    "line1": "Agence du revenu du Canada",
+    "line2": "Post Office Box 1660, Station Bureau-chef",
+    "line3": "Jonquière QC G7S 4L3",
+    "fax": ""
+  },
+  "JON-TC": {
+    "line1": "Jonquière Tax Centre",
+    "line2": "2251 René-Lévesque Boulevard",
+    "line3": "Jonquière QC G7S 5J2",
+    "fax": ""
+  },
+  "KelownaDrop": {
+    "line1": "Kelowna Tax Services office",
+    "line2": "200 - 471 Queensway Avenue",
+    "line3": "Kelowna BC V1Y 6S5",
+    "fax": "250-492-8346"
+  },
+  "KingstonMail": {
+    "line1": "Canada Revenue Agency",
+    "line2": "102 - 1475 John Counter Boulevard",
+    "line3": "Kingston ON K7M 0E6",
+    "fax": "613-541-7158"
+  },
+  "KingstonDrop": {
+    "line1": "Canada Revenue Agency",
+    "line2": "1475 John Counter Boulevard",
+    "line3": "Kingston ON K7M 0E6",
+    "fax": ""
+  },
+  "Kitchener": {
+    "line1": "Canada Revenue Agency",
+    "line2": "166 Frederick Street",
+    "line3": "Kitchener ON N2H 0A9",
+    "fax": "519-579-4532"
+  },
+  "Laval": {
+    "line1": "Agence du revenu du Canada",
+    "line2": "3400 Jean-Béraud Avenue",
+    "line3": "Laval QC H7T 2Z2",
+    "fax": "514-496-1309"
+  },
+  "LethbridgeDrop": {
+    "line1": "Lethbridge Tax Services Office",
+    "line2": "200-419 7th Street South",
+    "line3": "Lethbridge AB T1J 4A9",
+    "fax": "403-382-4765"
+  },
+  "LethbridgeMail": {
+    "line1": "Lethbridge Tax Services Office",
+    "line2": "Post Office Box 3009 Station Main",
+    "line3": "Lethbridge AB T1J 4A9",
+    "fax": "403-382-4765"
+  },
+  "London": {
+    "line1": "Canada Revenue Agency",
+    "line2": "451 Talbot Street",
+    "line3": "London ON N6A 5E5",
+    "fax": "519-645-4029"
+  },
+  "Missisauga": {
+    "line1": "Canada Revenue Agency",
+    "line2": "5800 Hurontario Street",
+    "line3": "Mississauga ON L5R 4B4",
+    "fax": "905-566-6182"
+  },
+  "Moncton": {
+    "line1": "New Brunswick Tax Services Office - Assumption Place",
+    "line2": "217-770 Main St",
+    "line3": "Moncton NB E1C 1E7",
+    "fax": "506-851-7018"
+  },
+  "MON-PO-32": {
+    "line1": "Canada Revenue Agency",
+    "line2": "Post Office Box 32, 305 René-Lévesque Blvd W",
+    "line3": "Montréal QC H2Z 1A6",
+    "fax": ""
+  },
+  "Montréal": {
+    "line1": "Agence du revenu du Canada",
+    "line2": "305 René-Lévesque Boulevard West",
+    "line3": "Montréal QC H2Z 1A6",
+    "fax": "514-496-1309"
+  },
+  "OTT-HERON": {
+    "line1": "Canada Revenue Agency",
+    "line2": "750 Heron Road",
+    "line3": "Ottawa ON K1V 2E4",
+    "fax": ""
+  },
+  "OTT-KENT": {
+    "line1": "Canada Revenue Agency - Registered Plans Directorate",
+    "line2": "112 Kent Street, 16th Floor",
+    "line3": "Ottawa ON K1A 0W8",
+    "fax": ""
+  },
+  "OTT-MACK": {
+    "line1": "Canada Revenue Agency",
+    "line2": "555 MacKenzie Avenue, 5th floor",
+    "line3": "Ottawa, Ontario K1N 1K4",
+    "fax": ""
+  },
+  "OTT-SLATER": {
+    "line1": "Canada Revenue Agency - Large Business Audit Division",
+    "line2": "344 Slater, 6th Floor",
+    "line3": "Ottawa, ON K1A 0L5",
+    "fax": ""
+  },
+  "OTT-QUEEN": {
+    "line1": "Excise and GST/HST Rulings Directorate",
+    "line2": "Place de Ville Tower A 11th floor, 320 Queen Street",
+    "line3": "Ottawa ON K1A 0L5",
+    "fax": ""
+  },
+  "OTT": {
+    "line1": "Canada Revenue Agency",
+    "line2": "333 Laurier Avenue West",
+    "line3": "Ottawa ON K1A 0L9",
+    "fax": "613-238-7125"
+  },
+  "PentictionDrop": {
+    "line1": "Penticton Tax Services Office",
+    "line2": "277 Winnipeg Street",
+    "line3": "Penticton BC V2A 1N6",
+    "fax": "250-492-8346"
+  },
+  "Peterborough": {
+    "line1": "Canada Revenue Agency",
+    "line2": "1161 Crawford Drive",
+    "line3": "Peterborough ON K9J 6X6",
+    "fax": ""
+  },
+  "PrinceGeorgeDrop": {
+    "line1": "Vancouver Island and North Tax Services Office",
+    "line2": "280 Victoria Street",
+    "line3": "Prince George BC V2L 4X3",
+    "fax": "250-561-7869"
+  },
+  "EasternQC": {
+    "line1": "Agence du revenu du Canada",
+    "line2": "2575 Ste Anne Boulevard",
+    "line3": "Québec QC G1J 1Y5",
+    "fax": "418-649-6478"
+  },
+  "RedDeer": {
+    "line1": "Red Deer Tax Services Office",
+    "line2": "4996 49th Avenue",
+    "line3": "Red Deer AB T4N 6X2",
+    "fax": "403-341-7053"
+  },
+  "Regina": {
+    "line1": "Canada Revenue Agency",
+    "line2": "1955 Smith Street",
+    "line3": "Regina SK S4P 2N9",
+    "fax": ""
+  },
+  "Rimouski": {
+    "line1": "Agence du revenu du Canada - Suite 101",
+    "line2": "180 de la Cathédrale Avenue",
+    "line3": "Rimouski QC G5L 5H9",
+    "fax": "418-722-3027"
+  },
+  "Rouyn-Noranda": {
+    "line1": "Agence du revenu du Canada",
+    "line2": "44 du Lac Avenue",
+    "line3": "Rouyn-Noranda QC J9X 6Z9",
+    "fax": "819-797-8366"
+  },
+  "SaintJohnDrop": {
+    "line1": "Canada Revenue Agency",
+    "line2": "65 Canterbury Street",
+    "line3": "Saint John NB E2L 2C7",
+    "fax": "506-636-5200"
+  },
+  "SaintJohnMail": {
+    "line1": "Retail Postal Outlet Brunswick Square",
+    "line2": "Post Office Box 6300",
+    "line3": "Saint John NB E2L 4H9",
+    "fax": ""
+  },
+  "Saskatoon": {
+    "line1": "Canada Revenue Agency",
+    "line2": "340 3rd Avenue North",
+    "line3": "Saskatoon SK S7K 0A8",
+    "fax": "306-652-3211"
+  },
+  "SHA-NVCC": {
+    "line1": "Canada Revenue Agence",
+    "line2": "4695 Shawinigan-Sud Boulevard",
+    "line3": "Shawinigan-Sud QC G9P 5H9",
+    "fax": ""
+  },
+  "Sherbrooke": {
+    "line1": "Agence du revenu du Canada -Post Office Box 1300",
+    "line2": "50 Place de la Cité",
+    "line3": "Sherbrooke QC J1H 5L8",
+    "fax": "819-821-8582"
+  },
+  "SK-PO-2405": {
+    "line1": "Saskatchewan Family Health Benefits",
+    "line2": "Post Office Box 2405",
+    "line3": "Regina SK S4P 4L7",
+    "fax": ""
+  },
+  "STJ-NVCC": {
+    "line1": "Newfoundland and Labrador NVCC",
+    "line2": "P.O. Box 12071 Station A",
+    "line3": "St-Johns NL A1B 3Z1",
+    "fax": ""
+  },
+  "St. Catharines": {
+    "line1": "Canada Revenue Agency",
+    "line2": "32 Church Street",
+    "line3": "St. Catharines ON L2R 3B9",
+    "fax": "905-688-5996"
+  },
+  "StJohnDrop": {
+    "line1": "Canada Revenue Agency -Sir Humphrey Gilbert Building",
+    "line2": "165 Duckworth Street",
+    "line3": "St. John's NL A1B 1G4",
+    "fax": "709-754-5928"
+  },
+  "StJohnMail": {
+    "line1": "Canada Revenue Agency",
+    "line2": "Post Office Box 12075, Station A",
+    "line3": "St. John's NL A1B 4R5",
+    "fax": ""
+  },
+  "SUD-PO-2000": {
+    "line1": "Sudbury Tax Centre",
+    "line2": "Post Office Box 20000, Station A",
+    "line3": "Sudbury ON P3A 5C1",
+    "fax": ""
+  },
+  "SUD-TC": {
+    "line1": "Sudbury Tax Centre",
+    "line2": "1050 Notre Dame Avenue",
+    "line3": "Sudbury ON P3A 5C2",
+    "fax": ""
+  },
+  "PEI-TC": {
+    "line1": "Prince Edward Island Tax Centre",
+    "line2": "275 Pope Road",
+    "line3": "Summerside PE C1N 6A2",
+    "fax": ""
+  },
+  "SUR": {
+    "line1": "Canada Revenue Agency",
+    "line2": "9755 King George Boulevard",
+    "line3": "Surrey BC V3T 5E1",
+    "fax": "250-492-8346"
+  },
+  "SydneyMail": {
+    "line1": "Canada Revenue Agency",
+    "line2": "Post Office Box 1300, Station A",
+    "line3": "Sydney NS B1P 6K3",
+    "fax": ""
+  },
+  "SydneyDrop": {
+    "line1": "Canada Revenue Agency",
+    "line2": "47 Dorchester Street",
+    "line3": "Sydney NS B1P 7H5",
+    "fax": "902-564-3095"
+  },
+  "ThunderBay": {
+    "line1": "Canada Revenue Agency",
+    "line2": "130 South Syndicate Avenue",
+    "line3": "Thunder Bay ON P7E 1C7",
+    "fax": "807-622-8512"
+  },
+  "TorontoEast": {
+    "line1": "Canada Revenue Agency",
+    "line2": "200 Town Centre Court",
+    "line3": "Toronto ON M1P 4Y3",
+    "fax": "416-973-5126"
+  },
+  "TorontoNorth": {
+    "line1": "Canada Revenue Agency",
+    "line2": "5001 Yonge Street",
+    "line3": "Toronto ON M2N 6R9",
+    "fax": "416-512-2558"
+  },
+  "TorontoCentre": {
+    "line1": "Canada Revenue Agency",
+    "line2": "1 Front Street West",
+    "line3": "Toronto ON M5J 2X6",
+    "fax": "416-360-8908"
+  },
+  "Trois-Rivières": {
+    "line1": "Agence du revenu du Canada",
+    "line2": "2250 St-Olivier Street",
+    "line3": "Trois-Rivières, QC G9A 4E9",
+    "fax": "819-371-2744"
+  },
+  "VancouverDrop": {
+    "line1": "Vancouver Tax Services Office",
+    "line2": "468 Terminal Ave",
+    "line3": "Vancouver BC V6A 0C1",
+    "fax": "604-689-7536"
+  },
+  "VictoriaDrop": {
+    "line1": "Victoria Tax Services Office",
+    "line2": "1415 Vancouver Street",
+    "line3": "Victoria BC V8V 3W4",
+    "fax": "250-363-8188"
+  },
+  "Windsor": {
+    "line1": "Canada Revenue Agency",
+    "line2": "441 University Avenue West, Suite 101",
+    "line3": "Windsor ON N9A 5S8",
+    "fax": "519-257-6558"
+  },
+  "WPG-TC": {
+    "line1": "Winnipeg Tax Centre",
+    "line2": "66 Stapon Road",
+    "line3": "Winnipeg MB R3C 3M2",
+    "fax": ""
+  },
+  "WPG-PO-14000": {
+    "line1": "Winnipeg Tax Centre",
+    "line2": "Post Office Box 14000, Station Main",
+    "line3": "Winnipeg MB R3C 3M2",
+    "fax": ""
+  },
+  "WPG-PO-14001": {
+    "line1": "Winnipeg Tax Centre -Income tax and Benefits",
+    "line2": "Post Office Box 14001, Station Main",
+    "line3": "Winnipeg MB R3C 3M3",
+    "fax": ""
+  },
+  "WPG": {
+    "line1": "Winnipeg Tax Services Office",
+    "line2": "325 Broadway",
+    "line3": "Winnipeg MB R3C 4T4",
+    "fax": "984-5164"
+  },
+  "WPG-PO-14003": {
+    "line1": "Winnipeg Tax Centre -T3",
+    "line2": "Post Office Box 14003, Station Main",
+    "line3": "Winnipeg, MB R3C 0N8",
+    "fax": ""
+  }
+}
