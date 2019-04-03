@@ -125,7 +125,29 @@
 
 
   <h1 property="name" id="wb-cont" dir="ltr">Find the right CRA contact or telephone number</h1>
-  <div><div class="panel panel-default"><p>To speak to an agent about a trust or an estate, call <strong>1-800-959-8281</strong>.</p><p>Open Monday to Friday, 9 am to 9 pm local time during the extended tax season.</p></div><div><a href="find-contact.html" class="btn btn-default">Start again</a></div></div>
+  <!-- <div class="col-md-12"> -->
+    <div class="wb-frmvld">
+      <!-- <form method="get"> -->
+        <!--Smart question!-->
+        <div id="question1" class="wb-fieldflow" data-wb-fieldflow='{
+            "noForm":false,
+            "renderas":"radio",
+            "base": { "live": false },
+            "noreqlabel": true
+          }'>
+          <p>What kind of payment problem do you want to fix?</p>
+          <ul>
+            <li><a href="answer.html?id=7">Can't make a payment (make a payment arrangement)</a></li>
+            <li><a href="../contact-us/change-setup-direct-deposit.html?preselected=2">Missing or misallocated payment</a></li>
+            <li><a href="answer.html?id=9">Already late on a payment</a></li>
+            <li><a href="answer.html?id=9">Check the status of your refund</a></li>
+            <li><a href="find-contact-benefits.html">Check the status of a benefit payment</a></li>
+            <li><a href="answer.html?id=9">Get a receipt of payment by mail (remittance voucher)</a></li>
+          </ul>
+        </div>
+      <!-- </form> -->
+    </div>
+  <!-- </div> -->
 
 
 <div class="pagedetails">
@@ -243,7 +265,7 @@
   </footer>
   <!--[if gte IE 9 | !IE ]><!-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
-  <script src="https://gc-proto.github.io/tax-filing-2/validation/en/assets/wb-fieldflow.min.js"></script>
+  <script src="https://gc-proto/github.io/cra-contactus/GCWeb/js/wb-fieldflow.js"></script>
   <script src="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/js/wet-boew.min.js"></script>
   <!--<![endif]-->
   <!--[if lt IE 9]>
