@@ -1,0 +1,132 @@
+<!--1. Spec main page: Implement as part of description only-->
+<script type="application/ld+json">
+  {
+    "@type": "WebPage",
+    "name": "Canada.ca Content and Information Architecture Specifications",
+    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/government-communications/canada-content-information-architecture-specification.html",
+    "author": {
+      "@type": "GovernmentOrganization",
+      "name": "Treasury Board of Canada Secretariat",
+      "url": "https://www.canada.ca/en/treasury-board-secretariat.html",
+      "parentOrganization": {
+        "@type": "GovernmentOrganization",
+        "name": "Government of Canada",
+        "url": "http://www.canada.ca/"
+      }
+    },
+    "description": "The Canada.ca Content and Information Architecture Specifications are the templates and guidance for designing pages on Canada.ca."
+  }
+</script>
+
+<!--2. IP page: Implement as speakable string in json only-->
+<!--Note that despite using a string, instead of a selector, the speakable throws no errors in the structured data testing tool-->
+<script type="application/ld+json">
+  {
+    "@type": "WebPage",
+    "name": "Institutional profile pages - Canada.ca mandatory template",
+    "url": "https://design.canada.ca/mandatory-templates/institutional-profile-pages.html",
+    "author": {
+      "@type": "GovernmentOrganization",
+      "name": "Treasury Board of Canada Secretariat",
+      "url": "https://www.canada.ca/en/treasury-board-secretariat.html",
+      "parentOrganization": {
+        "@type": "GovernmentOrganization",
+        "name": "Government of Canada",
+        "url": "http://www.canada.ca/"
+      }
+    },
+    "speakable": "Use the Institutional Profile Page Template if your institution is listed under the schedules of the Financial Administration Act (FAA)"
+  }
+</script>
+
+<!--3. Who has to use design system page: Implement as speakable with id selector-->
+<!--make sure to add '<p id="#who-has-to-use">Federal public administration listed in Schedules I, I.1 and II of the Financial Administration Act must apply Canada.ca design requirements for all their public-facing websites or digital services</p>'-->
+<script type="application/ld+json">
+  {
+    "@type": "WebPage",
+    "name": "Canada.ca Content and Information Architecture Specification: Who has to use the Canada.ca design system",
+    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/government-communications/canada-content-information-architecture-specification/usage-canadaca-design.html",
+    "author": {
+      "@type": "GovernmentOrganization",
+      "name": "Treasury Board of Canada Secretariat",
+      "url": "https://www.canada.ca/en/treasury-board-secretariat.html",
+      "parentOrganization": {
+        "@type": "GovernmentOrganization",
+        "name": "Government of Canada",
+        "url": "http://www.canada.ca/"
+      }
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": "#who-has-to-use"
+    }
+  }
+</script>
+
+<!--4. Who has to use design system page: Implement as hidden paragraph with class selector-->
+<!--make sure to add hidden paragraph: <p class="byline-not-mandatory">The institutional byline is not a mandatory pattern for pages on canada.ca</p>-->
+<script type="application/ld+json">
+  {
+    "@type": "WebPage",
+    "name": "Institutional byline - Canada.ca design pattern",
+    "url": "https://design.canada.ca/common-design-patterns/institutional-byline.html",
+    "author": {
+      "@type": "GovernmentOrganization",
+      "name": "Treasury Board of Canada Secretariat",
+      "url": "https://www.canada.ca/en/treasury-board-secretariat.html",
+      "parentOrganization": {
+        "@type": "GovernmentOrganization",
+        "name": "Government of Canada",
+        "url": "http://www.canada.ca/"
+      }
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ".byline-not-mandatory"
+    }
+  }
+</script>
+
+<!--5. Mandatory elements page: Implement as speakable string in json only-->
+<script type="application/ld+json">
+  {
+    "@type": "WebPage",
+    "name": "Canada.ca Content and Information Architecture Specification: Mandatory elements of the Canada.ca design system",
+    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/government-communications/canada-content-information-architecture-specification/mandatory-elements.html",
+    "author": {
+      "@type": "GovernmentOrganization",
+      "name": "Treasury Board of Canada Secretariat",
+      "url": "https://www.canada.ca/en/treasury-board-secretariat.html",
+      "parentOrganization": {
+        "@type": "GovernmentOrganization",
+        "name": "Government of Canada",
+        "url": "http://www.canada.ca/"
+      }
+    },
+    "speakable": "The H2 font for canada.ca is Lato, 36px, bold"
+  }
+</script>
+
+<!--6. Mandatory elements page: Add class selector to existing paragraph-->
+<!--make sure to add 'class="theme-navigation"'to that <li> with the target: "Theme navigation: people who do not know which institution offers what they are looking for can find it through theme and topic pages"-->
+<script type="application/ld+json">
+  {
+    "@type": "WebPage",
+    "name": "Canada.ca Content and Information Architecture Specification: Organizing content on Canada.ca",
+    "url": "https://www.canada.ca/en/treasury-board-secretariat/services/government-communications/canada-content-information-architecture-specification/organizing-content.html",
+    "author": {
+      "@type": "GovernmentOrganization",
+      "name": "Treasury Board of Canada Secretariat",
+      "url": "https://www.canada.ca/en/treasury-board-secretariat.html",
+      "parentOrganization": {
+        "@type": "GovernmentOrganization",
+        "name": "Government of Canada",
+        "url": "http://www.canada.ca/"
+      }
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ".theme-navigation"
+    }
+  }
+</script>
