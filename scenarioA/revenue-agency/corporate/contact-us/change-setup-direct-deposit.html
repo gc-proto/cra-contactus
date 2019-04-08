@@ -136,12 +136,12 @@
       </div>
     </div>
     <div class="wb-frmvld">
-      <form method="get">
+      <!-- <form method="get"> -->
     		<!--Smart question!-->
     		<div id="question1" class="wb-fieldflow" data-wb-fieldflow='{
-          "noForm":true,
+          "noForm":false,
     			"renderas":"radio",
-    			"base": { "live": true },
+    			"base": { "live": false },
     			"noreqlabel": true,
     			"default": [{ "action": "addClass", "source":"#personal,#business,#non-resident,#trusts", "class": "hidden" },
             { "action": "addClass", "source": "#wb-auto-12", "class": "checked"}]
@@ -154,7 +154,7 @@
             <li data-wb-fieldflow='{ "action": "removeClass", "source":"#non-resident", "class": "hidden" }'>a non-resident account holder or NR7-R refund applicant</li>
     			</ul>
     		</div>
-      </form>
+      <!-- </form> -->
     </div>
 
     <div class="hidden" id="personal">
