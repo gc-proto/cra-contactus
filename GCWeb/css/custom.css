@@ -520,7 +520,7 @@ ol.vertical-steps {
 	font-size: 1.4em;
 	color: #777;
 	float: none;
-	/* padding-left: 15px; */
+	padding-left: 15px;
 	padding-right: 15px;
 	font-weight: 400;
 	border:none;
