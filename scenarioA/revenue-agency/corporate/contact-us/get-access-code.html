@@ -71,6 +71,10 @@
 
   }
 
+  dl.dl-horizontal dd, dl.dl-horizontal dt {
+    border-top: 0px solid #ccc !important;
+  }
+
   </style>
 <div class="form-group">
 <label for="wb-srch-q" class="wb-inv">Search Canada.ca</label>
@@ -127,51 +131,148 @@
 <!-- class="gc-theme" is doing some weird stuff with the first h2... -->
 <main property="mainContentOfPage" class="container">
   <h1 property="name" id="wb-cont" dir="ltr">Get or change an access code for your business </h1>
-	<div class="mwsbodytext text parbase section row col-md-8">
-	<h2>Change your GST/HST Access Code</h2>
-         <div>
-           <h3>Online</h3>
-         <p>GST/HST Access Code Online lets you change your access code to a number of your choice. You will need your business number and some information from a previously filed return. </p>
-           <div class="mrgn-tp-lg">
-             <a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-businesses/gst-hst-netfile/need-access-code.html" class="btn btn-call-to-action">Use GST/HST Access Code Online</a>
-           </div>
-	<p>If you are not able to use GST/HST Access Code Online, call us.</p>
 
-	<h2>Get a web access code to file information returns online</h2>
-         <div>
-           <h3>Online</h3>
-         <p>You can file T4/T5 and other information returns online through <a href="https://apps.cra-arc.gc.ca/ebci/leb0/webform/pub/disclaimer.action?request_locale=en">Web Forms</a> or by signing in to <a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-businesses/business-account.html">My Business Account</a>. If you choose to use Web Forms, you will need the Web access code for your business. If you can't find that code or need a new code, you can get it online:   </p>
-           <div class="mrgn-tp-lg">
-             <a href="https://apps.cra-arc.gc.ca/ebci/leb0/wacretrieve/pub/disclaimer.action?request_locale=en" >Get a Web access code online</a>
-           </div>
+  <div class="col-md-8 row">
 
-		<p>If you are not able to get your Web access code online, call us.</p>
-    <br>
+  <div class="wb-frmvld">
+    <!-- <form method="get"> -->
+      <!--Smart question!-->
+      <div id="question1" class="wb-fieldflow" data-wb-fieldflow='{
+        "noForm":false,
+        "renderas":"radio",
+        "base": { "live": false },
+        "noreqlabel": true,
+        "default": { "action": "addClass", "source":"#gst,#information", "class": "hidden" }
+        }'>
+        <p>For which kinds of information returns does your business need an access code?</p>
+        <ul>
+          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#gst", "class": "hidden"}'>GST/HST</li> <!--result-->
+          <li data-wb-fieldflow='{ "action": "removeClass", "source":"#information", "class": "hidden" }'>Information returns</li>
+        </ul>
+      </div>
+    <!-- </form> -->
+  </div>
+
+  <div id="gst" class="hidden">
+
+  <h2>Change your GST/HST Access Code</h2>
+  <dl class="dl-horizontal">
+    <dt>Online:</dt>
+    <dd>
+     <p>GST/HST Access Code Online lets you change your access code to a number of your choice. You will need your business number and some information from a previously filed return. </p>
+     <div class="mrgn-tp-lg">
+       <a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-businesses/gst-hst-netfile/need-access-code.html" class="btn btn-call-to-action">Use GST/HST Access Code Online</a>
+     </div>
+   </dd>
+   <dt>By phone:</dt>
+   <dd>
+     <details>
+       <summary>Call us to change your GST/HST Access Code</summary>
+       <dl class="dl-horizontal">
+         <dt>Before you call</dt>
+         <dd>
+           <p>To verify your identity, you'll need</p>
+            <div class="mrgn-tp-lg beforeCall2" style="">
+                <label class="container-checks">Your business number
+                  <input class="btnCheck2" type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container-checks">Your business name
+                  <input class="btnCheck2" type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container-checks">Your complete business address
+                  <input class="btnCheck2" type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container-checks">Details from your business account or your most recently assessed business-related tax information return
+                  <input class="btnCheck2" type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+
+                <p><span id="check-message2"><label class="label label-danger">You need all of the above to call</label></span></p>
+              </div>
+              <br>
+           <p>If you wish to deal with the CRA on someone else’s behalf, you must be an authorized representative:</p>
+           <ul>
+            <li><a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/authorize-a-representative-business-number.html">authorizing or cancelling a representative (business)</a></li>
+           </ul>
+         </dd>
+
+         <dt>Telephone number</dt>
+         <dd><p>1-800-959-5525</p><p>Outside Canada and US: 613-940-8497</p><p>Yukon, Northwest Territories and Nunavut: 1-866-841-1876</p></dd>
+         <dt>Hours</dt>
+         <dd>
+           <p><label class="label label-danger">Closed until 9 am</label></p>
+         </dd>
+       </dl>
+     </details>
+   </dd>
+  </dl>
+
+  </div>
+
+  <div id="information" class="hidden">
+	   <h2>Get a web access code to file information returns online</h2>
+     <section class="alert alert-info">
+       <h5 class="text-info">File your information returns without a web access code in My Business Account</h5>
+       <p>You can file information returns without a web access code in <a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-businesses/business-account.html">My Business Account</a>.</p>
+     </section>
+     <dl class="dl-horizontal">
+       <dt>Online:</dt>
+       <dd>
+         <p>If you choose to use <a href="https://apps.cra-arc.gc.ca/ebci/leb0/webform/pub/disclaimer.action?request_locale=en">Web Forms</a> to file your T4/T5 or other information returns, you will need the Web access code for your business.</p>
+         <div class="mrgn-tp-lg">
+           <a href="https://apps.cra-arc.gc.ca/ebci/leb0/wacretrieve/pub/disclaimer.action?request_locale=en" class="btn btn-call-to-action">Get a Web access code online</a>
+         </div>
+       </dd>
+       <dt>By phone:</dt>
+       <dd>
+         <details>
+           <summary>Call us to get a web access code</summary>
+           <dl class="dl-horizontal">
+             <dt>Before you call</dt>
+             <dd>
+               <p>To verify your identity, you'll need</p>
+                <div class="mrgn-tp-lg beforeCall2" style="">
+                    <label class="container-checks">Your business number
+                      <input class="btnCheck2" type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container-checks">Your business name
+                      <input class="btnCheck2" type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container-checks">Your complete business address
+                      <input class="btnCheck2" type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container-checks">Details from your business account or your most recently assessed business-related tax information return
+                      <input class="btnCheck2" type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+
+                    <p><span id="check-message2"><label class="label label-danger">You need all of the above to call</label></span></p>
+                  </div>
+                  <br>
+               <p>If you wish to deal with the CRA on someone else’s behalf, you must be an authorized representative:</p>
+               <ul>
+                <li><a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/authorize-a-representative-business-number.html">authorizing or cancelling a representative (business)</a></li>
+               </ul>
+             </dd>
+
+             <dt>Telephone number</dt>
+             <dd><p>1-800-959-5525</p><p>Outside Canada and US: 613-940-8497</p><p>Yukon, Northwest Territories and Nunavut: 1-866-841-1876</p></dd>
+             <dt>Hours</dt>
+             <dd>
+               <p><label class="label label-danger">Closed until 9 am</label></p>
+             </dd>
+           </dl>
+         </details>
+       </dd>
+     </dl>
 </div>
 </div>
-</div>
-</div>
-<div class="col-lg-8 row">
-           <details>
-             <summary><h2>Get an access code by phone</h2></summary>
-             <dl class="dl-horizontal">
-                <dt>Before you call</dt>
-               <dd>
-                 <p>To verify your identity, have these in front of you: </p>
-                 <ul>
-                  <li>Your business number and GST account number</li>
-		  <li>A recent tax or GST return assessed by the CRA
-                 </ul>
-               </dd>
-               <dt>Business enquiries telephone number</dt>
-		     <dd><p>1-800-267-6999 </dd>
-		     <dd>Outside Canada and the US: 613-940-8497</p></dd>
-               <dt>Hours</dt>
-               <dd>
-                 <p>Monday to Friday (except holidays) from 9 am to 6 pm (local time; Eastern time from Outside Canada and the US)</p>
-               </dd>
-             </dl>
-           </details>
 </div>
 
 <div class="clearfix"></div>
