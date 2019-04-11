@@ -1,5 +1,4 @@
 # Find an address instructions
-First hasty draft... 
 The address finder results are based on 3 JSON data files in the Data folder in this folder. 
 Those files are independepent from each other, but together provide the result. 
 1. addresscodes - has each mailing address in 3 lines, with an addresscode to identify the address
@@ -14,8 +13,8 @@ Those files are independepent from each other, but together provide the result.
 3. forms - the forms file was originally created from the data table on the site at https://www.canada.ca/en/revenue-agency/services/forms-publications/forms.html
   * essentially the only change to that file was to add a new column labelled 'tmt' for the treatment of that form - only the first 2 columns of the data table are used in the JSON file
   
-The JSON files are created from an Excel CSV or Google sheet with 3 tabs, one for each of the files. 
-* March 8th data is in an Excel CSV file (get from @lisafast )
+The JSON files are created from an Excel CSV file with three tabs -  one tab for each of the JSON files. 
+* March 8th data is in an Excel CSV file (get the most recent version from @nnekanagbo at CRA )
 * There are 3 tabs in the file, one for each JSON data file. 
 * To update the data anytime, make your edits to the Excel file (or into the Google doc)  via this site: 
   * https://csvjson.com/csv2json
