@@ -25,9 +25,9 @@ $(".need-date").each(function(index, element) {
   var isHoliday = holidays["" + month + "-" + dayOfMonth + ""];
 
   if (!isHoliday && hour >= lineOpen && hour <= lineClose) {
-    el.find(".open-or-closed").html('<label class="label label-success">Open until ' + closeClock +'PM during tax season</label>');
+    el.find(".open-or-closed").html('<label class="label label-success">' + lineOpen +'am to ' + closeClock +'pm today</label>');
   } else {
-    el.find(".open-or-closed").html('<label class="label label-danger">Closed until ' + nextDay + 'AM</label>');
+    el.find(".open-or-closed").html('<p>Closed today</p>');
   }
 });
 });
