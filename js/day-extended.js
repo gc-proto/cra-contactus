@@ -9,7 +9,6 @@ $(".need-date").each(function(index, element) {
   var el = $(element);
   var date = new Date();
   var hour = date.getHours();
-  var minutes = date.getMinutes();
   var day = date.getDay();
   var month = date.getMonth();
   var dayOfMonth = date.getDate();
@@ -18,7 +17,6 @@ $(".need-date").each(function(index, element) {
   var lineClose = Number(el.data("day" + day + "-close"));
 
   var closeClock = (lineClose - 12);
-  var nextDay = Number(el.data("day" + (day + 1) + "-open"));
 
 
   console.log(lineOpen, lineClose);
