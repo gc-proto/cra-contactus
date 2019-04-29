@@ -998,7 +998,7 @@
 
               <tr valign="top" class="d2">
 
-              <td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div>Use the automated line to:<ul id="benefits"><li>Get Proof of Income (Option C print-out)</li><li>Request remittance voucher</li><li>Tax-free savings account (TFSA) contribution room</li><li>Unused RRSP contributions to claim</li><li>Registered retirement savings plan (RRSP) contributions this year</li><li>Estimated GST/HST credit payment amount, three weeks before next payment</li><li>Estimated Child Benefit payment amount, two weeks before next payment</li><li>Find out if you are eligible for the Canada child benefit (CCB), and the GST/HST credit, as well as the dates you can expect to receive them</li></ul></td>
+              <td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div>Use the automated line to:<ul id="benefits"><li>Get Proof of Income (Option C print-out)</li><li id="remittance-voucher">Request remittance voucher</li><span id="contribution-room"><li>Tax-free savings account (TFSA) contribution room</li><li>Unused RRSP contributions to claim</li><li>Registered retirement savings plan (RRSP) contributions this year</li></span><li>Estimated GST/HST credit payment amount, three weeks before next payment</li><li>Estimated Child Benefit payment amount, two weeks before next payment</li><li>Find out if you are eligible for the Canada child benefit (CCB), and the GST/HST credit, as well as the dates you can expect to receive them</li></ul></td>
 
               <td data-label="Hours"><p><label class="label label-success">Always open (automated line)</label></p><p>No wait times</p></td>
 
@@ -1370,7 +1370,7 @@ padding: 8px 5px !important;
 
               <tr valign="top" class="d2">
 
-              <td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Help making a payment</li><li>Questions on instalments (paying taxes as you earn income)</li><li>Move a payment to a business account</li></ul></td>
+              <td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Help making a payment</li><li id="business-instalments">Questions on instalments (paying taxes as you earn income)</li><li>Move a payment to a business account</li></ul></td>
 
               <td data-label="Hours" >
                 <p>Hours in local time <br>
@@ -1453,7 +1453,7 @@ padding: 8px 5px !important;
 
               <tr valign="top" class="d1">
 
-              <td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Get copy of notice of assessment</li><li>Questions about personal income tax file</li><li>Get a tax form or publication</li><li>Registered Retirement Savings plan (RRSP)</li><li>Home Buyers Plan (HBP)</li><li>How to report income on your personal income tax return</li><li id="trusts">Trusts</li></ul></td>
+              <td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Get copy of notice of assessment</li><li id="individuals-line">Questions about personal income tax file</li><li id="first-time-income-tax">Issues with filing for the first time</li><li id="get-form">Get a tax form or publication</li><li>Registered Retirement Savings plan (RRSP)</li><li id="home-buyers-plan">Home Buyers Plan (HBP)</li><li>How to report income on your personal income tax return</li><li id="trusts">Trusts</li></ul></td>
 
               <td data-label="Hours" >
                 <p>Hours in local time <br>
@@ -1536,7 +1536,7 @@ padding: 8px 5px !important;
 
               <tr valign="top" class="d2">
 
-              <td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Canada child benefit (CCB), and related benefits</li><li>GST/HST credit</li><li>Get help with child disability benefit</li></ul></td>
+              <td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul id="benefits-line"><li>Canada child benefit (CCB), and related benefits</li><li>GST/HST credit</li><li>Get help with child disability benefit</li></ul></td>
 
               <td data-label="Hours" >
                 <p>Hours in local time </p>
@@ -2013,7 +2013,7 @@ padding: 8px 5px !important;
 
             <tr valign="top" class="d2">
 
-<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Get help with a Phoenix related tax issue</li></ul></td>
+<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li id="phoenix-issues">Get help with a Phoenix related tax issue</li></ul></td>
 
 <td data-label="Hours">
 
@@ -2091,7 +2091,7 @@ padding: 8px 5px !important;
 
 <tr valign="top" class="d1">
 
-<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Get help with registering a registered savings plan</li><li>Questions about registered savings plans</li></ul></td>
+<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul id="rrsp-other"><li>Get help with registering a registered savings plan</li><li>Questions about registered savings plans</li></ul></td>
 
 <td data-label="Hours">
 
@@ -2177,7 +2177,7 @@ padding: 8px 5px !important;
 
 <tr valign="top" class="d2">
 
-<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Income Tax Rulings Directorate</li></ul></td>
+<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li id="income-tax-rulings">Income Tax Rulings Directorate</li></ul></td>
 
 <td data-label="Hours"><mark>Unknown</mark></td>
 
@@ -2185,7 +2185,7 @@ padding: 8px 5px !important;
 
 <tr valign="top" class="d1">
 
-<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>If you have an issue with social security payments being double payed because of working internationally</li></ul></td>
+<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li id="double-social-security">If you have an issue with social security payments being double payed because of working internationally</li></ul></td>
 
 <td data-label="Hours"><mark>Unknown</mark></td>
 
@@ -2193,7 +2193,7 @@ padding: 8px 5px !important;
 
 <tr valign="top" class="d2">
 
-<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Follow up on an Requirements To Pay (RTP) form you received</li></ul></td>
+<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li id="requirements-to-pay">Follow up on an Requirements To Pay (RTP) form you received</li></ul></td>
 
 <td data-label="Hours"><mark>Unknown</mark></td>
 
@@ -2287,7 +2287,7 @@ padding: 8px 5px !important;
 
                 <tr valign="top" class="d1">
 
-                <td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Help with My Business Account and Represent a Client</li></ul></td>
+                <td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li id="business-technical">Help with My Business Account and Represent a Client</li></ul></td>
 
                   <td data-label="Hours">
                     <p>Hours in local time</p>
@@ -2527,7 +2527,7 @@ padding: 8px 5px !important;
 
                 <tr valign="top" class="d2">
 
-                <td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Payroll deductions and accounts</li><li>Charging GST/HST as a business (including rebates such as the new housing rebates)</li><li>Excise taxes, duties and other levies</li><li>Business tax for corporations, sole proprietorships, partnerships, non-resident corporations, and corporation accounts</li><li id="get-business-number">Register for a business number and any program account such as the GST/HST</li><li>Get corporate income tax forms or publications</li></ul></td>
+                <td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul id="business-line"><li>Payroll deductions and accounts</li><li id="charge-gst">Charging GST/HST as a business (including rebates such as the new housing rebates)</li><li>Excise taxes, duties and other levies</li><li>Business tax for corporations, sole proprietorships, partnerships, non-resident corporations, and corporation accounts</li><li id="get-business-number">Register for a business number and any program account such as the GST/HST</li><li id="corporate-forms">Get corporate income tax forms or publications</li></ul></td>
 
                 <td data-label="Hours">
 
@@ -2607,7 +2607,7 @@ padding: 8px 5px !important;
 
                 <tr valign="top" class="d1">
 
-                <td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Get help with filing your T2 corporation income tax return electronically</li><li>Get help with the Corporation Internet Filing service</li></ul></td>
+                <td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Get help with filing your T2 corporation income tax return electronically</li><li id="t2">Get help with the Corporation Internet Filing service</li></ul></td>
 
                 <td data-label="Hours">
 
@@ -2917,7 +2917,7 @@ padding: 8px 5px !important;
 
                 <tr valign="top" class="d1">
 
-                <td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Ask for a ruling or interpretation on the GST/HST or one of the First Nations taxes</li></ul></td>
+                <td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li id="gst-rulings">Ask for a ruling or interpretation on the GST/HST or one of the First Nations taxes</li></ul></td>
 
                 <td data-label="Hours">  <p>Hours in Eastern time</p>
 
@@ -3108,7 +3108,7 @@ padding: 8px 5px !important;
 
 <tr valign="top" class="d1">
 
-<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>EFILE registration, renewal, account maintenance and/or view transmission history processes, </li><li>EFILE Suitability Screening and/or Monitoring programs, </li><li>EFILE web service questions regarding error messages for initial and/or amended T1 returns, and/or </li><li>Authentication problems related to EFILE numbers/passwords (for both T1 and T2 returns)</li></ul></td>
+<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li id="efile">EFILE registration, renewal, account maintenance and/or view transmission history processes, </li><li>EFILE Suitability Screening and/or Monitoring programs, </li><li>EFILE web service questions regarding error messages for initial and/or amended T1 returns, and/or </li><li>Authentication problems related to EFILE numbers/passwords (for both T1 and T2 returns)</li></ul></td>
 
 <td data-label="Hours"><mark>Unknown</mark></td>
 
@@ -3116,7 +3116,7 @@ padding: 8px 5px !important;
 
 <tr valign="top" class="d2">
 
-<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Report a nil remittance for payroll</li></ul></td>
+<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li id="nil-payroll">Report a nil remittance for payroll</li></ul></td>
 
 <td data-label="Hours"><mark>Unknown</mark></td>
 
@@ -3124,7 +3124,7 @@ padding: 8px 5px !important;
 
 <tr valign="top" class="d1">
 
-<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Report a nil remittance for non-resident witholding tax</li></ul></td>
+<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li id="nil-non-resident">Report a nil remittance for non-resident witholding tax</li></ul></td>
 
 <td data-label="Hours"><mark>Unknown</mark></td>
 
@@ -3140,7 +3140,7 @@ padding: 8px 5px !important;
 
 <tr valign="top" class="d1">
 
-<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Get help with the Air Travellers' Security charge or credit, </li><li>Questions about import and export duties or duty free shopping</li><li>Get help with broker, levy or insuree returns, or partnership information returns</li></ul></td>
+<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Get help with the Air Travellers' Security charge or refund</li><li>Questions about import and export duties or duty free shopping</li><li>Get help with broker, levy or insuree returns, or partnership information returns</li></ul></td>
 
 <td data-label="Hours"><mark>Unknown</mark></td>
 
@@ -3148,7 +3148,7 @@ padding: 8px 5px !important;
 
 <tr valign="top" class="d2">
 
-<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Check your softwood lumber export balance</li><li>Get help with softwood lumber export charge</li></ul></td>
+<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul id="softwood-lumber"><li>Check your softwood lumber export balance</li><li>Get help with softwood lumber export charge</li></ul></td>
 
 <td data-label="Hours"><mark>Unknown</mark></td>
 
@@ -3156,7 +3156,7 @@ padding: 8px 5px !important;
 
 <tr valign="top" class="d1">
 
-<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Check the status of a Flow-through Shares (FTS) form</li></ul></td>
+<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li id="flow-through-shares">Check the status of a Flow-through Shares (FTS) form</li></ul></td>
 
 <td data-label="Hours"><mark>Unknown</mark></td>
 
@@ -3164,7 +3164,7 @@ padding: 8px 5px !important;
 
 <tr valign="top" class="d2">
 
-<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Electronic Processing Unit</li></ul></td>
+<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li id="electronic-processing-unit">Electronic Processing Unit</li></ul></td>
 
 <td data-label="Hours"><mark>Unknown</mark></td>
 
@@ -3180,7 +3180,7 @@ padding: 8px 5px !important;
 
 <tr valign="top" class="d2">
 
-<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Call when you received a letter for GST/HST post assessing</li></ul></td>
+<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li id="gst-post-assessing">Call when you received a letter for GST/HST post assessing</li></ul></td>
 
 <td data-label="Hours"><mark>Unknown</mark></td>
 
@@ -3188,7 +3188,7 @@ padding: 8px 5px !important;
 
 <tr valign="top" class="d1">
 
-<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Advise discounter services of changes to your discounter information</li></ul></td>
+<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li id="discounter-services">Advise discounter services of changes to your discounter information</li></ul></td>
 
 <td data-label="Hours"><mark>Unknown</mark></td>
 
@@ -3204,7 +3204,7 @@ padding: 8px 5px !important;
 
 <tr valign="top" class="d1">
 
-<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul><li>Help with the Children's Special Allowances</li><li>Register for Children's Special Allowances</li></ul></td>
+<td data-label="What do you want to call about?" class="right-mobile"><div class="clearfix"></div><ul id="childrens-special-allowance"><li>Help with the Children's Special Allowances</li><li>Register for Children's Special Allowances</li></ul></td>
 
 <td data-label="Hours"><mark>Unknown</mark></td>
 
