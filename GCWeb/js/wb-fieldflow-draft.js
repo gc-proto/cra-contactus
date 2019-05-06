@@ -684,6 +684,7 @@
     				j_len = cur_itm.group.length;
     				for ( j = 0; j !== j_len; j += 1 ) {
     					radCheckOut += buildCheckboxRadio( cur_itm.group[ j ], fieldName, typeRadCheck, isInline, isReq );
+              console.log(buildCheckboxRadio);
     				}
     			}
     		}
@@ -813,6 +814,7 @@
     	},
     	buildCheckboxRadio = function( data, fieldName, inputType, isInline, isReq, preselect ) {
         var label = data.label,
+          iLoopBuilder = 1,
     			fieldID = wb.getId(),
     			inline = isInline ? "-inline" : "",
     			out = " for='" + fieldID + "'><input id='" + fieldID + "' type='" + inputType + "' name='" + fieldName + "' value='" + label + "'";
@@ -826,7 +828,7 @@
     		out += buildDataAttribute( data );
 
     		if ( isReq ) {
-    			out += " required='required'";
+    			out += " required='NOOOOOO' ";
     		}
 
         //*** addition for preselect
@@ -840,7 +842,10 @@
     		if ( !isInline ) {
     			out += "</div>";
     		}
-
+        console.log(iLoopBuilder);
+        out += "<div class='radioDot" + iLoopBuilder + "hidden' />";
+        iLoopBuilder ++
+        console.log(out);
     		return out;
     	};
 
