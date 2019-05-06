@@ -1038,7 +1038,7 @@ function(a, b, c) {
     				}
     			}
     		}
-        radCheckOut = "<div class='clearfix'></div>" + radCheckOut;
+        radCheckOut = "<div class='clearfix'></div><div class='cst-inputs'>" + radCheckOut; /*need to close div still*/
     		$out.append( radCheckOut );
     		$( "#" + bodyId ).append( $out );
     		if ( $prevContent ) {
