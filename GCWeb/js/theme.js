@@ -345,1334 +345,687 @@ function(a, b, c) {
             })
         }), !1
     })
-
-
-
-
-
-
-
-
-
-
-
-
-}(jQuery, window, wb),
-function(a, b, c) {
-    "use strict";
-    var componentName = "wb-fieldflow",
-    	selector = "." + componentName,
-    	formComponent = componentName + "-form",
-    	subComponentName = componentName + "-sub",
-    	crtlSelectClass = componentName + "-init",
-    	crtlSelectSelector = "." + crtlSelectClass,
-    	basenameInput = componentName + wb.getId(),
-    	basenameInputSelector = "[name^=" + basenameInput + "]",
-    	labelClass = componentName + "-label",
-    	headerClass = componentName + "-header",
-    	selectorForm = "." + formComponent,
-    	initEvent = "wb-init" + selector,
-    	drawEvent = "draw" + selector,
-    	actionEvent = "action" + selector,
-    	submitEvent = "submit" + selector,
-    	submitedEvent = "submited" + selector,
-    	readyEvent = "ready" + selector,
-    	cleanEvent = "clean" + selector,
-    	resetActionEvent = "reset" + selector,
-    	createCtrlEvent = "createctrl" + selector,
-    	registerJQData = componentName + "-register", // Data that contain all the component registered (to the form element and component), used for executing action upon submit
-    	registerHdnFld = componentName + "-hdnfld",
-    	configData = componentName + "-config",
-    	pushJQData =  componentName + "-push",
-    	submitJQData =  componentName + "-submit", // List of action to perform upon form submission
-    	actionData =  componentName + "-action", // temp for code transition
-    	originData =  componentName + "-origin", // To carry the plugin origin ID, any implementation of "createCtrlEvent" must set that option.
-    	sourceDataAttr =  "data-" + componentName + "-source",
-    	flagOptValueData =  componentName + "-flagoptvalue",
-    	$document = wb.doc,
-    	defaults = {
-    		toggle: {
-    			stateOn: "visible", // For toggle plugin
-    			stateOff: "hidden"  // For toggle plugin
-    		},
-    		i18n:
-    		{
-    			"en": {
-    				btn: "Continue", // Action button
-    				defaultsel: "Make your selection...", // text use for the first empty select
-    				required: "required"// text for the required label
-    			},
-    			"fr": {
-    				btn: "Allez",
-    				defaultsel: "Sélectionnez dans la liste...", // text use for the first empty select
-    				required: "obligatoire" // text for the required label
-    			}
-    		},
-    		action: "ajax",
-    		prop: "url"
-    	},
-    	fieldflowActionsEvents = [
-    		[
-    			"redir",
-    			"query",
-    			"ajax",
-    			"addClass",
-    			"removeClass",
-    			"removeClass",
-    			"append",
-    			"tblfilter",
-    			"toggle"
-    		].join( "." + actionEvent + " " ) + "." + actionEvent,
-    		[
-    			"ajax",
-    			"toggle",
-    			"redir",
-    			"addClass",
-    			"removeClass"
-    		].join( "." + submitEvent + " " ) + "." + submitEvent,
-    		[
-    			"tblfilter",
-    			componentName
-    		].join( "." + drawEvent + " " ) + "." + drawEvent,
-    		[
-    			"select",
-    			"checkbox",
-    			"radio"
-    		].join( "." + createCtrlEvent + " " ) + "." + createCtrlEvent
-    	].join( " " ),
-
-    	/**
-    	* @method init
-    	* @param {jQuery Event} event Event that triggered the function call
-    	*/
-    	init = function( event ) {
-    		var elm = wb.init( event, componentName, selector ),
-    			$elm, elmId,
-    			wbDataElm,
-    			config,
-    			i18n;
-
-    		if ( elm ) {
-    			$elm = $( elm );
-    			elmId = elm.id;
-
-    			// Set default i18n information
-    			if ( defaults.i18n[ wb.lang ] ) {
-    				defaults.i18n = defaults.i18n[ wb.lang ];
-    			}
-
-    			// Extend this data with the contextual default
-    			wbDataElm = wb.getData( $elm, componentName );
-    			if ( wbDataElm && wbDataElm.i18n ) {
-    				wbDataElm.i18n = $.extend( {}, defaults.i18n, wbDataElm.i18n );
-    			}
-    			config = $.extend( {}, defaults, wbDataElm );
-
-    			if ( config.defaultIfNone && !$.isArray( config.defaultIfNone ) ) {
-    				config.defaultIfNone = [ config.defaultIfNone ];
-    			}
-
-    			// Set the data to the component, if other event need to have access to it.
-    			$elm.data( configData, config );
-    			i18n = config.i18n;
-
-    			// Add startWith function (ref: https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/startsWith)
-    			if ( !String.prototype.startsWith ) {
-    				String.prototype.startsWith = function( searchString, position ) {
-    					position = position || 0;
-    					return this.substr( position, searchString.length ) === searchString;
-    				};
-    			}
-
-    			// Transform the list into a select, use the first paragrap content for the label, and extract for i18n the name of the button action.
-    			var bodyID = wb.getId(),
-    				stdOut,
-    				formElm, $form;
-
-    			if ( config.noForm ) {
-    				stdOut = "<div class='mrgn-tp-md'><div id='" + bodyID + "'></div></div>";
-
-    				// Need to add the class="formComponent" to the div that wrap the form element.
-    				formElm = elm.parentElement;
-    				while ( formElm.nodeName !== "FORM" ) {
-    					formElm = formElm.parentElement;
-    				}
-    				$( formElm.parentElement ).addClass( formComponent );
-    			} else {
-    				stdOut = "<div class='wb-frmvld " + formComponent + "'><form><div id='" + bodyID + "'>";
-    				stdOut = stdOut + "</div><input type=\"submit\" value=\"" + i18n.btn + "\" class=\"btn btn-primary mrgn-bttm-md\" /> </form></div>";
-    			}
-    			$elm.addClass( "hidden" );
-    			stdOut = $( stdOut );
-    			$elm.after( stdOut );
-
-    			if ( !config.noForm ) {
-    				formElm = stdOut.find( "form" );
-    				stdOut.trigger( "wb-init.wb-frmvld" );
-    			}
-
-    			$form = $( formElm );
-
-    			// Register this plugin within the form, this is to manage form submission
-    			pushData( $form, registerJQData, elmId );
-
-    			if ( !config.outputctnrid ) { // Output container ID
-    				config.outputctnrid = bodyID;
-    			}
-
-    			if ( !config.source ) {
-    				config.source = elm; // We assume th container have the source
-    			}
-
-    			if ( !config.srctype ) {
-    				config.srctype = componentName;
-    			}
-
-    			config.inline = !!config.inline;
-
-    			// Trigger the drop down loading
-    			$elm.trigger( config.srctype + "." + drawEvent, config );
-
-    			// Do requested DOM manipulation
-    			if ( config.unhideelm ) {
-    				$( config.unhideelm ).removeClass( "hidden" );
-    			}
-    			if ( config.hideelm ) {
-    				$( config.hideelm ).addClass( "hidden" );
-    			}
-
-    			// Identify that initialization has completed
-    			wb.ready( $elm, componentName );
-
-    			if ( config.ext ) {
-    				config.form = $form.get( 0 );
-    				$elm.trigger( config.ext + "." + readyEvent, config );
-    			}
-    		}
-    	},
-    	pushData = function( $elm, prop, data, reset ) {
-    		var dtCache = $elm.data( prop );
-    		if ( !dtCache || reset ) {
-    			dtCache = [];
-    		}
-    		dtCache.push( data );
-    		return $elm.data( prop, dtCache );
-    	},
-    	subRedir = function( event, data ) {
-
-    		var form = data.form,
-    			url = data.url;
-
-    		if ( url ) {
-    			form.setAttribute( "action", url );
-    		}
-    	},
-    	actQuery = function( event, data ) {
-    		var $selectElm = data.$selElm,
-    			fieldName = data.name,
-    			fieldValue = data.value;
-
-    		if ( fieldName ) {
-    			data.provEvt.setAttribute( "name", fieldName );
-    		}
-    		if ( fieldValue ) {
-    			$selectElm.val( fieldValue );
-    		}
-
-    		// Add a flag to know the option value was inserted
-    		$selectElm.attr( "data-" + flagOptValueData, flagOptValueData );
-    	},
-    	actAjax = function( event, data ) {
-    		var provEvt = data.provEvt,
-    			$container;
-
-    		if ( !data.live ) {
-    			data.preventSubmit = true;
-    			pushData( $( provEvt ), submitJQData, data );
-    		} else {
-    			if ( !data.container ) {
-
-    				// Create the container next to component
-    				$container = $( "<div></div>" );
-    				$( provEvt.parentNode ).append( $container );
-    				data.container = $container.get( 0 );
-    			}
-    			$( event.target ).trigger( "ajax." + submitEvent, data );
-    		}
-    	},
-    	subAjax = function( event, data ) {
-    		var $container, containerID, ajxType,
-    			cleanSelector = data.clean;
-
-    		if ( !data.container ) {
-    			containerID = wb.getId();
-    			$container = $( "<div id='" + containerID + "'></div>" );
-    			$( data.form ).append( $container );
-    			cleanSelector = "#" + containerID;
-    		} else {
-    			$container = $( data.container );
-    		}
-
-    		if ( cleanSelector ) {
-    			$( data.origin ).one( cleanEvent, function( ) {
-    				$( cleanSelector ).empty();
-    			} );
-    		}
-
-    		if ( data.trigger ) {
-    			$container.attr( "data-trigger-wet", "true" );
-    		}
-
-    		ajxType = data.type ? data.type : "replace";
-    		$container.attr( "data-ajax-" + ajxType, data.url );
-
-    		$container.one( "wb-contentupdated", function( event, data ) {
-    			var updtElm = event.currentTarget,
-    				trigger = updtElm.getAttribute( "data-trigger-wet" );
-
-    			updtElm.removeAttribute( "data-ajax-" + data[ "ajax-type" ] );
-    			if ( trigger ) {
-    				$( updtElm )
-    					.find( wb.allSelectors )
-    						.addClass( "wb-init" )
-    						.filter( ":not(#" + updtElm.id + " .wb-init .wb-init)" )
-    							.trigger( "timerpoke.wb" );
-    				updtElm.removeAttribute( "data-trigger-wet" );
-    			}
-    		} );
-    		$container.trigger( "wb-update.wb-data-ajax" );
-    	},
-    	subToggle = function( event, data ) {
-    		var $origin = $( data.origin ),
-    			config = $( event.target ).data( configData ),
-    			toggleOpts = data.toggle;
-
-
-    		// For simple toggle call syntax
-    		if ( toggleOpts && typeof toggleOpts === "string" ) {
-    			toggleOpts = { selector: toggleOpts };
-    		}
-    		toggleOpts = $.extend( {}, toggleOpts, config.toggle );
-
-    		// Doing an add and remove "wb-toggle" class in order to avoid the click event added by toggle plugin
-    		$origin.addClass( "wb-toggle" );
-    		$origin.trigger( "toggle.wb-toggle", toggleOpts );
-
-    		// Set the cleaning task
-    		toggleOpts.type = "off";
-    		$origin.one( cleanEvent, function( ) {
-    			$origin.addClass( "wb-toggle" );
-    			$origin.trigger( "toggle.wb-toggle", toggleOpts );
-    			$origin.removeClass( "wb-toggle" );
-    		} );
-    	},
-    	actAppend = function( event, data ) {
-    		if ( event.namespace === actionEvent ) {
-    			var srctype = data.srctype ? data.srctype : componentName;
-    			data.container = data.provEvt.parentNode.id;
-    			if ( !data.source ) {
-    				throw "A source is required to append a field flow control.";
-    			}
-    			$( event.currentTarget ).trigger( srctype + "." + drawEvent, data );
-    		}
-    	},
-    	actTblFilter = function( event, data ) {
-    		if ( event.namespace === actionEvent ) {
-    			var sourceSelector = data.source,
-    				$datatable = $( sourceSelector ).dataTable( { "retrieve": true } ).api(),
-    				$dtSelectedColumn,
-    				column = data.column,
-    				colInt = parseInt( column, 10 ),
-    				regex = !!data.regex,
-    				smart = ( !data.smart ) ? true : !!data.smart,
-    				caseinsen = ( !data.caseinsen ) ? true : !!data.caseinsen;
-
-    			column = ( colInt === true ) ? colInt : column;
-
-    			$dtSelectedColumn = $datatable.column( column );
-
-    			$dtSelectedColumn.search( data.value, regex, smart, caseinsen ).draw();
-
-    			// Add a clean up task
-    			$( data.provEvt ).one( cleanEvent, function( ) {
-    				$dtSelectedColumn.search( "" ).draw();
-    			} );
-
-    		}
-    	},
-    	drwTblFilter = function( event, data ) {
-    		if ( event.namespace === drawEvent ) {
-    			var selColumn = data.column, // (integer/datatable column selector)
-    				csvExtract = data.csvextract, // (true|false) assume items are in CSV format instead of being inside "li" elements
-    				$column,
-    				sourceSelector = data.source,
-    				$source = $( sourceSelector ),
-    				$datatable,
-    				arrData, $listItem,
-    				i, i_len,
-    				j, j_len,
-    				items = [ ],
-    				cur_itm,
-    				prefLabel = data.label,
-    				defaultSelectedLabel = data.defaultselectedlabel,
-    				lblselector = data.lblselector,
-    				filterSequence = data.fltrseq ? data.fltrseq : [ ],
-    				limit = data.limit ? data.limit : 10,
-    				firstFilterSeq,
-    				actionItm, filterItm,
-    				renderas;
-
-    			// Check if the datatable has been loaded, if not we will wait until it is.
-    			if ( !$source.hasClass( "wb-tables-inited" ) ) {
-    				$source.one( "wb-ready.wb-tables", function() {
-    					$( event.target ).trigger( "tblfilter." + drawEvent, data );
-    				} );
-    				return false;
-    			}
-    			$datatable = $source.dataTable( { "retrieve": true } ).api();
-
-    			if ( $datatable.rows( { "search": "applied" } ).data().length <= limit  ) {
-    				return true;
-    			}
-
-    			renderas = data.renderas ? data.renderas : "select"; // Default it will render as select
-
-    			if ( !selColumn && filterSequence.length ) {
-    				cur_itm = filterSequence.shift();
-    				if ( !cur_itm.column ) {
-    					throw "Column is undefined in the filter sequence";
-    				}
-    				selColumn = cur_itm.column;
-    				csvExtract = cur_itm.csvextract;
-    				defaultSelectedLabel = cur_itm.defaultselectedlabel;
-    				prefLabel = cur_itm.label;
-    				lblselector = cur_itm.lblselector;
-    			}
-
-    			$column = $datatable.column( selColumn, { "search": "applied" } );
-
-    			// Get the items
-    			if ( csvExtract ) {
-    				arrData = $column.data();
-    				for ( i = 0, i_len = arrData.length; i !== i_len; i += 1 ) {
-    					items = items.concat( arrData[ i ].split( "," ) );
-    				}
-    			} else {
-    				arrData = $column.nodes();
-    				for ( i = 0, i_len = arrData.length; i !== i_len; i += 1 ) {
-    					$listItem = $( arrData[ i ] ).find( "li" );
-    					for ( j = 0, j_len = $listItem.length; j !== j_len; j += 1 ) {
-    						items.push( $( $listItem[ j ] ).text() );
-    					}
-    				}
-    			}
-
-    			items = items.sort().filter( function( item, pos, ary ) {
-    				return !pos || item !== ary[ pos - 1 ];
-    			} );
-
-    			var elm = event.target,
-    				$elm = $( elm ),
-    				itemsToCreate = [ ],
-    				pushAction = data.actions ? data.actions : [ ];
-
-    			if ( filterSequence.length ) {
-    				firstFilterSeq = filterSequence[ 0 ];
-    				filterItm = {
-    					action: "append",
-    					srctype: "tblfilter",
-    					source: sourceSelector,
-    					renderas: firstFilterSeq.renderas ? firstFilterSeq.renderas : renderas,
-    					fltrseq: filterSequence,
-    					limit: limit
-    				};
-    			}
-    			for ( i = 0, i_len = items.length; i !== i_len; i += 1 ) {
-    				cur_itm = items[ i ];
-    				actionItm = {
-    					label: cur_itm,
-    					actions: [
-    						{ // Set an action upon item selection
-    							action: "tblfilter",
-    							source: sourceSelector,
-    							column: selColumn,
-    							value: cur_itm
-    						}
-    					]
-    				};
-    				if ( filterItm ) {
-    					actionItm.actions.push( filterItm );
-    				}
-    				itemsToCreate.push( actionItm );
-    			}
-
-    			if ( !prefLabel ) {
-    				prefLabel = $column.header().textContent;
-    			}
-
-    			if ( !data.outputctnrid ) {
-    				data.outputctnrid = data.provEvt.parentElement.id;
-    			}
-
-    			$elm.trigger( renderas + "." + createCtrlEvent, {
-    				actions: pushAction,
-    				source: $source.get( 0 ),
-    				outputctnrid: data.outputctnrid,
-    				label: prefLabel,
-    				defaultselectedlabel: defaultSelectedLabel,
-    				lblselector: lblselector,
-    				items: itemsToCreate,
-    				inline: data.inline
-    			} );
-
-    		}
-    	},
-    	drwFieldflow = function( event, data ) {
-    		if ( event.namespace === drawEvent ) {
-    			var elm = event.target,
-    				$elm = $( elm ),
-    				wbDataElm,
-    				$source = $( data.source ),
-    				source = $source.get( 0 ),
-    				$labelExplicit, $firstChild,
-    				labelSelector = data.lblselector || "." + labelClass,
-    				labelTxt,
-    				itmSelector = data.itmselector || "ul:first() > li", $items,
-    				actions,
-    				renderas;
-
-    			// Extend if it is a sub-component
-    			if ( $source.hasClass( subComponentName ) ) {
-    				wbDataElm = wb.getData( $source, componentName );
-    				$source.data( configData, wbDataElm );
-    				data = $.extend( {}, data, wbDataElm );
-    			}
-
-    			actions = data.actions || [ ];
-    			renderas = data.renderas ? data.renderas : "select"; // Default it will render as select
-
-    			// Check if the first node is a div and contain the label.
-    			if ( !source.id ) {
-    				source.id = wb.getId();
-    			}
-    			$firstChild = $source.children().first();
-
-    			if ( !$firstChild.hasClass( headerClass ) ) {
-
-    				// Only use what defined as the label, nothing else
-    				$labelExplicit = $firstChild.find( labelSelector );
-    				if ( $labelExplicit.length ) {
-    					labelTxt = $labelExplicit.html();
-    				} else {
-    					labelTxt = $source.find( "> p" ).html();
-    				}
-    				labelSelector = null; // unset the label selector because it not needed for the control creation
-    			} else {
-    				labelTxt = $firstChild.html();
-    				itmSelector = "." + headerClass + " + " + itmSelector;
-    			}
-
-    			$items = getItemsData( $source.find( itmSelector ) );
-
-    			if ( !data.outputctnrid ) {
-    				data.outputctnrid = data.provEvt.parentElement.id;
-    			}
-
-    			$elm.trigger( renderas + "." + createCtrlEvent, {
-    				actions: actions,
-    				source: source,
-    				attributes: data.attributes,
-    				outputctnrid: data.outputctnrid,
-    				label: labelTxt,
-    				lblselector: labelSelector,
-    				defaultselectedlabel: data.defaultselectedlabel,
-    				required: !!!data.isoptional,
-    				noreqlabel: data.noreqlabel,
-    				items: $items,
-    				inline: data.inline
-    			} );
-    		}
-    	},
-    	ctrlSelect = function( event, data ) {
-    		var bodyId = data.outputctnrid,
-    			$body = $( "#" + bodyId ),
-    			actions = data.actions,
-    			lblselector = data.lblselector,
-    			isReq = !!data.required,
-    			useReqLabel = !!!data.noreqlabel,
-    			items = data.items,
-    			elm = event.target,
-    			$elm = $( elm ),
-    			source = data.source,
-    			attributes = data.attributes,
-    			i18n = $elm.data( configData ).i18n,
-    			autoID = wb.getId(),
-    			labelPrefix = "<label for='" + autoID + "'",
-    			labelSuffix = "</span>",
-    			$out, $tmpLabel,
-    			selectOut, $selectOut,
-    			defaultSelectedLabel = data.defaultselectedlabel ? data.defaultselectedlabel : i18n.defaultsel,
-    			i, i_len, j, j_len, cur_itm;
-
-    		// Create the label
-    		if ( isReq && useReqLabel ) {
-    			labelPrefix += " class='required'";
-    			labelSuffix += " <strong class='required'>(" + i18n.required + ")</strong>";
-    		}
-    		labelPrefix += "><span class='field-name'>";
-    		labelSuffix += "</label>";
-
-    		if ( !lblselector ) {
-    			$out = $( labelPrefix + data.label + labelSuffix );
-    		} else {
-    			$out = $( "<div>" + data.label + "</div>" );
-    			$tmpLabel = $out.find( lblselector );
-    			$tmpLabel.html( labelPrefix + $tmpLabel.html() + labelSuffix );
-    		}
-
-    		// Create the select
-    		selectOut = "<select id='" + autoID + "' name='" + basenameInput + autoID + "' class='full-width form-control mrgn-bttm-md " + crtlSelectClass + "' data-" + originData + "='" + elm.id + "' " + sourceDataAttr + "='" + source.id + "'";
-    		if ( isReq ) {
-    			selectOut += " required";
-    		}
-    		if ( attributes && typeof attributes === "object" ) {
-    			for ( i in attributes ) {
-    				if ( attributes.hasOwnProperty( i ) ) {
-    					selectOut += " " + i + "='" + attributes[ i ] + "'";
-    				}
-    			}
-    		}
-    		selectOut += "><option value=''>" + defaultSelectedLabel + "</option>";
-    		for ( i = 0, i_len = items.length; i !== i_len; i += 1 ) {
-    			cur_itm = items[ i ];
-
-    			if ( !cur_itm.group ) {
-    				selectOut += buildSelectOption( cur_itm );
-    			} else {
-
-    				// We have a group of sub-items, the cur_itm are a group
-    				selectOut += "<optgroup label='" + cur_itm.label + "'>";
-    				j_len = cur_itm.group.length;
-    				for ( j = 0; j !== j_len; j += 1 ) {
-    					selectOut += buildSelectOption( cur_itm.group[ j ] );
-    				}
-    				selectOut += "</optgroup>";
-    			}
-    		}
-    		selectOut += "</select>";
-    		$selectOut = $( selectOut );
-
-    		$body.append( $out ).append( $selectOut );
-
-    		// Set post action if any
-    		if ( actions && actions.length > 0 ) {
-    			$selectOut.data( pushJQData, actions );
-    		}
-
-    		// Register this control
-    		pushData( $elm, registerJQData, autoID );
-    	},
-    	ctrlChkbxRad = function( event, data ) {
-    		var bodyId = data.outputctnrid,
-    			actions = data.actions,
-    			lblselector = data.lblselector,
-    			isReq = !!data.required,
-    			useReqLabel = !!!data.noreqlabel,
-    			items = data.items,
-    			elm = event.target,
-    			$elm = $( elm ),
-    			source = data.source,
-    			i18n = $elm.data( configData ).i18n,
-    			attributes = data.attributes,
-    			ctrlID = wb.getId(),
-    			fieldsetPrefix = "<legend class='h5 ",
-    			fieldsetSuffix = "</span>",
-    			fieldsetHTML = "<fieldset id='" + ctrlID + "' data-" + originData + "='" + elm.id + "' " + sourceDataAttr + "='" + source.id + "' class='" + crtlSelectClass + " mrgn-bttm-md'",
-    			$out,
-    			$tmpLabel, $cloneLbl, $prevContent,
-    			radCheckOut = "",
-    			typeRadCheck = data.typeRadCheck,
-    			isInline = data.inline,
-    			fieldName = basenameInput + ctrlID,
-    			i, i_len, j, j_len, cur_itm;
-
-    		if ( attributes && typeof attributes === "object" ) {
-    			for ( i in attributes ) {
-    				if ( attributes.hasOwnProperty( i ) ) {
-    					fieldsetHTML += " " + i + "='" + attributes[ i ] + "'";
-    				}
-    			}
-    		}
-    		$out = $( fieldsetHTML + "></fieldset>" );
-
-    		// Create the legend
-    		if ( isReq && useReqLabel ) {
-    			fieldsetPrefix += " required";
-    			fieldsetSuffix += " <strong class='required'>(" + i18n.required + ")</strong>";
-    		}
-    		fieldsetPrefix += "'>";
-    		fieldsetSuffix += "</legend>";
-    		if ( !lblselector ) {
-    			$out.append( $( fieldsetPrefix + data.label + fieldsetSuffix ) );
-    		} else {
-    			$cloneLbl = $( "<div>" + data.label + "</div>" );
-    			$tmpLabel = $cloneLbl.find( lblselector );
-    			$out.append( ( fieldsetPrefix + $tmpLabel.html() + fieldsetSuffix ) )
-    				.append( $tmpLabel.nextAll() );
-    			$prevContent = $tmpLabel.prevAll();
-    		}
-
-    		// Create radio
-    		for ( i = 0, i_len = items.length; i !== i_len; i += 1 ) {
-    			cur_itm = items[ i ];
-
-    			if ( !cur_itm.group ) {
-    				radCheckOut += buildCheckboxRadio( cur_itm, fieldName, typeRadCheck, isInline, isReq, i + 1 );
-    			} else {
-
-    				// We have a group of sub-items, the cur_itm are a group
-    				radCheckOut += "<p>" + cur_itm.label + "</p>";
-    				j_len = cur_itm.group.length;
-    				for ( j = 0; j !== j_len; j += 1 ) {
-    					radCheckOut += buildCheckboxRadio( cur_itm.group[ j ], fieldName, typeRadCheck, isInline, isReq );
-    				}
-    			}
-
-    		}
-    		$out.append( radCheckOut );
-    		$( "#" + bodyId ).append( $out );
-    		if ( $prevContent ) {
-    			$out.before( $prevContent );
-    		}
-
-    		// Set post action if any
-    		if ( actions && actions.length > 0 ) {
-    			$out.data( pushJQData, actions );
-    		}
-
-    		// Register this control
-    		pushData( $elm, registerJQData, ctrlID );
-    	},
-    	getItemsData = function( $items, preventRecusive ) {
-    		var arrItems = $items.get(),
-    			i, i_len = arrItems.length, itmCached,
-    			itmLabel, itmValue, grpItem,
-    			j, j_len, childNodes, firstNode, childNode, $childNode, childNodeID,
-    			parsedItms = [],
-    			actions;
-
-    		for ( i = 0; i !== i_len; i += 1 ) {
-    			itmCached = arrItems[ i ];
-
-    			itmValue = "";
-    			grpItem = null;
-    			itmLabel = "";
-
-    			firstNode = itmCached.firstChild;
-    			childNodes = itmCached.childNodes;
-    			j_len = childNodes.length;
-
-    			if ( !firstNode ) {
-    				throw "You have a markup error, There may be an empyt <li> elements in your list.";
-    			}
-
-    			actions = [];
-
-    			// Is firstNode an anchor?
-    			if ( firstNode.nodeName === "A" ) {
-    				itmValue = firstNode.getAttribute( "href" );
-    				itmLabel = $( firstNode ).html();
-    				j_len = 1; // Force following elements to be ignored
-
-    				actions.push( {
-    					action: "redir",
-    					url: itmValue
-    				} );
-    			}
-
-    			// Iterate until we have found the labelClass or <ul> or element with subSelector or end of the array
-    			for ( j = 1; j !== j_len; j += 1 ) {
-    				childNode = childNodes[ j ];
-    				$childNode = $( childNode );
-
-    				// Sub plugin
-    				if ( $childNode.hasClass( subComponentName ) ) {
-    					childNodeID = childNode.id || wb.getId();
-    					childNode.id = childNodeID;
-    					itmValue = componentName + "-" + childNodeID;
-
-    					actions.push( {
-    						action: "append",
-    						srctype: componentName,
-    						source: "#" + childNodeID
-    					} );
-    					break;
-    				}
-
-    				// Grouping
-    				if ( childNode.nodeName === "UL" ) {
-    					if ( preventRecusive ) {
-    						throw "Recursive error, please check your code";
-    					}
-    					grpItem = getItemsData( $childNode.children(), true );
-    				}
-
-    				// Explicit label to use
-    				if ( $childNode.hasClass( labelClass ) ) {
-    					itmLabel = $childNode.html();
-    				}
-    			}
-
-    			if ( !itmLabel ) {
-    				itmLabel = firstNode.nodeValue;
-    			}
-
-    			// Set an id on the element
-    			if ( !itmCached.id ) {
-    				itmCached.id = wb.getId();
-    			}
-
-    			// Return the item parsed
-    			parsedItms.push( {
-    				"bind": itmCached.id,
-    				"label": itmLabel,
-    				"actions": actions,
-    				"group": grpItem
-    			} );
-    		}
-    		return parsedItms;
-    	},
-    	buildSelectOption = function( data ) {
-    		var label = data.label,
-    			out = "<option value='" + label + "'";
-
-    		out += buildDataAttribute( data );
-
-    		out += ">" + label + "</option>";
-
-    		return out;
-    	},
-    	buildDataAttribute = function( data ) {
-    		var out = "",
-    			dataFieldflow = {};
-
-    		dataFieldflow.bind = data.bind || "";
-    		dataFieldflow.actions = data.actions || [ ];
-
-    		out += " data-" + componentName + "='" + JSON.stringify( dataFieldflow ) + "'";
-
-    		return out;
-    	},
-    	buildCheckboxRadio = function( data, fieldName, inputType, isInline, isReq, iLoopBuilder ) {
-    		var label = data.label,
-    			fieldID = wb.getId(),
-    			inline = isInline ? "-inline" : "",
-    			out = " for='" + fieldID + "'>" + label + "<input id='" + fieldID + "' type='" + inputType + "' name='" + fieldName + "' value='" + label + "'";
-
-          console.log("hi");
-    		if ( isInline ) {
-    			out = "<label class='" + inputType + inline + "'" + out;
-    		} else {
-    			out = "<div class='" + inputType + "'><label class='radio-container'" + out;
-    		}
-
-    		out += buildDataAttribute( data );
-
-    		if ( isReq ) {
-    			out += " required='required'";
-    		}
-
-        if ( inputType == "radio") {
-          out += " /></span><span class='checkmark'></span></label>";
-        } else {
-          out += " /><span class='checkmark'></span></label>";
+    }(jQuery, window, wb),
+
+
+    function(a, b, c) {
+        "use strict";
+        var d = "wb-fieldflow"
+          , e = "." + d
+          , f = d + "-form"
+          , g = d + "-sub"
+          , h = d + "-init"
+          , i = "." + h
+          , j = d + c.getId()
+          , k = "[name^=" + j + "]"
+          , l = d + "-label"
+          , m = d + "-header"
+          , n = "." + f
+          , o = "wb-init" + e
+          , p = "draw" + e
+          , q = "action" + e
+          , r = "submit" + e
+          , s = "submited" + e
+          , t = "ready" + e
+          , u = "clean" + e
+          , v = "reset" + e
+          , w = "createctrl" + e
+          , x = d + "-register"
+          , y = d + "-hdnfld"
+          , z = d + "-config"
+          , A = d + "-push"
+          , B = d + "-submit"
+          , C = d + "-action"
+          , D = d + "-origin"
+          , E = "data-" + d + "-source"
+          , F = d + "-flagoptvalue"
+          , G = c.doc
+          , H = {
+            toggle: {
+                stateOn: "visible",
+                stateOff: "hidden"
+            },
+            i18n: {
+                en: {
+                    btn: "Continue",
+                    defaultsel: "Make your selection...",
+                    required: "required"
+                },
+                fr: {
+                    btn: "Allez",
+                    defaultsel: "SÃ©lectionnez dans la liste...",
+                    required: "obligatoire"
+                }
+            },
+            action: "ajax",
+            prop: "url"
         }
-
-    		if ( !isInline ) {
-    			out += "</div>";
-    		}
-
-        console.log(out);
-    		return out;
-    	};
-
-    $document.on( resetActionEvent, selector + ", ." + subComponentName, function( event ) {
-    	var elm = event.target,
-    		$elm,
-    		settings,
-    		settingsReset,
-    		resetAction = [],
-    		i, i_len, i_cache, action, isLive;
-
-    	if ( elm === event.currentTarget ) {
-    		$elm = $( elm );
-    		settings = $elm.data( configData );
-
-    		if ( settings && settings.reset ) {
-    			settingsReset = settings.reset;
-
-    			if ( $.isArray( settingsReset ) ) {
-    				resetAction = settingsReset;
-    			} else {
-    				resetAction.push( settingsReset );
-    			}
-
-    			i_len = resetAction.length;
-    			for ( i = 0; i !== i_len; i += 1 ) {
-    				i_cache = resetAction[ i ];
-    				action = i_cache.action;
-    				if ( action ) {
-    					isLive = i_cache.live;
-    					if ( isLive !== false ) {
-    						i_cache.live = true;
-    					}
-    					$elm.trigger( action + "." + actionEvent, i_cache );
-    				}
-    			}
-    		}
-    	}
-    } );
-
-    // Load content after the user have choosen an option
-    $document.on( "change", selectorForm + " " + crtlSelectSelector, function( event ) {
-
-    	var elm = event.currentTarget,
-    		$elm = $( elm ),
-    		selCurrentElm, cacheAction,
-    		i, i_len, dtCached, dtCachedTarget,
-    		itmToClean = $elm.nextAll(), itm, idxItem,
-    		$orgin = $( "#" + elm.getAttribute( "data-" + originData ) ),
-    		$source = $( "#" + elm.getAttribute( sourceDataAttr ) ),
-    		lstIdRegistered = $orgin.data( registerJQData ),
-    		$optSel = $elm.find( ":checked", $elm ),
-    		form = $elm.get( 0 ).form;
-
-    	//
-    	// 1. Cleaning
-    	//
-    	i_len = itmToClean.length;
-    	if ( i_len ) {
-    		for ( i = i_len; i !== 0; i -= 1 ) {
-    			itm = itmToClean[ i ];
-    			if ( itm ) {
-    				idxItem = lstIdRegistered.indexOf( itm.id );
-    				if ( idxItem > -1 ) {
-    					lstIdRegistered.splice( idxItem, 1 );
-    				}
-    				$( "#" + itm.getAttribute( sourceDataAttr ) ).trigger( resetActionEvent ).trigger( cleanEvent );
-    				$( itm ).trigger( cleanEvent );
-    			}
-    		}
-    		$orgin.data( registerJQData, lstIdRegistered );
-    		itmToClean.remove();
-    	}
-    	$source.trigger( resetActionEvent ).trigger( cleanEvent );
-    	$elm.trigger( cleanEvent );
-
-    	// Remove any action that is pending for form submission
-    	$elm.data( submitJQData, [] );
-
-    	//
-    	// 2. Get defined actions
-    	//
-
-    	var actions = [],
-    		settings, settingsSrc, selFieldFlowData,
-    		actionAttr,
-    		defaultAction,
-    		defaultProp,
-    		baseAction,
-    		nowActions = [],
-    		postActions = [], postAction_len,
-    		bindTo,
-    		bindToElm;
-
-    	// From the component, default action
-    	settings = $orgin.data( configData );
-    	settingsSrc = $source.data( configData );
-    	if ( settingsSrc && settings ) {
-    		settings = $.extend( {}, settings, settingsSrc );
-    	}
-    	if ( $optSel.length && $optSel.val() && settings && settings.default ) {
-    		cacheAction = settings.default;
-    		if ( $.isArray( cacheAction ) ) {
-    			actions = cacheAction;
-    		} else {
-    			actions.push( cacheAction );
-    		}
-    	}
-
-    	defaultAction = settings.action;
-    	defaultProp = settings.prop;
-    	actionData = settings.actionData || {};
-
-    	// From the component, action pushed for later
-    	cacheAction = $elm.data( pushJQData );
-    	if ( cacheAction ) {
-    		actions = actions.concat( cacheAction );
-    	}
-
-    	// For each the binded elements that are selected
-    	for ( i = 0, i_len = $optSel.length; i !== i_len; i += 1 ) {
-    		selCurrentElm = $optSel.get( i );
-    		selFieldFlowData = wb.getData( selCurrentElm, componentName );
-    		if ( selFieldFlowData ) {
-    			bindTo = selFieldFlowData.bind;
-    			actions = actions.concat( selFieldFlowData.actions );
-
-    			if ( bindTo ) {
-
-    				// Retreive action set on the binded element
-    				bindToElm = document.getElementById( bindTo );
-    				actionAttr = bindToElm.getAttribute( "data-" + componentName );
-    				if ( actionAttr ) {
-    					if ( actionAttr.startsWith( "{" ) || actionAttr.startsWith( "[" ) ) {
-    						try {
-    							cacheAction = JSON.parse( actionAttr );
-    						} catch ( error ) {
-    							$.error( "Bad JSON object " + actionAttr );
-    						}
-    						if ( !$.isArray( cacheAction ) ) {
-    							cacheAction = [ cacheAction ];
-    						}
-    					} else {
-    						cacheAction = {};
-    						cacheAction.action = defaultAction;
-    						cacheAction[ defaultProp ] = actionAttr;
-    						cacheAction = $.extend( true, {}, actionData, cacheAction );
-    						cacheAction = [ cacheAction ];
-    					}
-    					actions = actions.concat( cacheAction );
-    				}
-    			}
-    		}
-    	}
-
-    	// If there is no action, do nothing
-    	if ( !actions.length ) {
-    		return true;
-    	}
-
-    	//
-    	// 3. Sort action
-    	// 			array1 = Action to be executed now
-    	//			array2 = Action to be postponed for later use
-    	for ( i = 0, i_len = actions.length; i !== i_len; i += 1 ) {
-    		dtCached = actions[ i ];
-    		dtCachedTarget = dtCached.target;
-    		if ( !dtCachedTarget || dtCachedTarget === bindTo ) {
-    			nowActions.push( dtCached );
-    		} else {
-    			postActions.push( dtCached );
-    		}
-    	}
-
-    	//
-    	// 4. Execute action for the current item
-    	//
-    	baseAction = settings.base || {};
-    	postAction_len = postActions.length;
-    	for ( i = 0, i_len = nowActions.length; i !== i_len; i += 1 ) {
-    		dtCached = $.extend( {}, baseAction, nowActions[ i ] );
-    		dtCached.origin = $source.get( 0 );
-    		dtCached.provEvt = elm;
-    		dtCached.$selElm = $optSel;
-    		dtCached.form = form;
-    		if ( postAction_len ) {
-    			dtCached.actions = postActions;
-    		}
-    		$orgin.trigger( dtCached.action + "." + actionEvent, dtCached );
-    	}
-    	return true;
-    } );
-
-
-    // Load content after the user have choosen an option
-    $document.on( "submit", selectorForm + " form", function( event ) {
-
-    	var elm = event.currentTarget,
-    		$elm = $( elm ),
-    		wbFieldFlowRegistered = $elm.data( registerJQData ),
-    		wbRegisteredHidden = $elm.data( registerHdnFld ) || [],
-    		$hdnField,
-    		i, i_len = wbFieldFlowRegistered ? wbFieldFlowRegistered.length : 0,
-    		$wbFieldFlow, fieldOrigin,
-    		lstFieldFlowPostEvent = [],
-    		componentRegistered, $componentRegistered, $origin, lstOrigin = [],
-    		settings,
-    		j, j_len,
-    		m, m_len, m_cache,
-    		actions,
-    		preventSubmit = false, lastProvEvt;
-
-    	// Run the cleaning on the current items
-    	if ( i_len ) {
-    		$wbFieldFlow = $( "#" + wbFieldFlowRegistered[ i_len - 1 ] );
-    		fieldOrigin = $wbFieldFlow.data( registerJQData );
-    		$( "#" + fieldOrigin[ fieldOrigin.length - 1 ] ).trigger( cleanEvent );
-    		$wbFieldFlow.trigger( cleanEvent );
-    	}
-
-    	// For each wb-fieldflow component, execute submiting task.
-    	for ( i = 0; i !== i_len; i += 1 ) {
-    		$wbFieldFlow = $( "#" + wbFieldFlowRegistered[ i ] );
-    		componentRegistered = $wbFieldFlow.data( registerJQData );
-    		j_len = componentRegistered.length;
-    		for ( j = 0; j !== j_len; j += 1 ) {
-    			$componentRegistered = $( "#" + componentRegistered[ j ] );
-    			$origin = $( "#" + $componentRegistered.data( originData ) );
-    			lstOrigin.push( $origin );
-    			settings = $origin.data( configData );
-    			actions = $componentRegistered.data( submitJQData );
-
-    			// If there is If None setting
-    			if ( !actions && settings.defaultIfNone ) {
-    				actions = settings.defaultIfNone;
-    				for ( m = 0, m_len = actions.length; m !== m_len; m += 1 ) {
-    					m_cache = actions[ m ];
-    					m_cache.origin = $origin.get( 0 );
-    					m_cache.$selElm = $origin.prev().find( "input, select" ).eq( 0 );
-    					m_cache.provEvt = m_cache.$selElm.get( 0 );
-    					m_cache.form = elm;
-    					$origin.trigger( m_cache.action + "." + actionEvent, m_cache );
-    				}
-    				actions = $componentRegistered.data( submitJQData );
-    			}
-    			if ( actions ) {
-    				for ( m = 0, m_len = actions.length; m !== m_len; m += 1 ) {
-    					m_cache = actions[ m ];
-    					m_cache.form = elm;
-    					$wbFieldFlow.trigger( m_cache.action + "." + submitEvent, m_cache );
-    					lstFieldFlowPostEvent.push( {
-    						$elm: $wbFieldFlow,
-    						data: m_cache
-    					} );
-    					preventSubmit = preventSubmit || m_cache.preventSubmit;
-    					lastProvEvt = m_cache.provEvt;
-    				}
-    			}
-    		}
-    	}
-
-    	// Before to submit, remove jj-down accessesory control
-    	if ( !preventSubmit ) {
-    		$elm.find( basenameInputSelector ).removeAttr( "name" );
-
-    		// Fix an issue when clicking back with the mouse
-    		i_len = wbRegisteredHidden.length;
-    		for ( i = 0; i !== i_len; i += 1 ) {
-    			$( wbRegisteredHidden[ i ] ).remove();
-    		}
-    		wbRegisteredHidden = [];
-
-    		// Check the form action, if there is query string, do split it and create hidden field for submission
-    		// The following is may be simply caused by a cross-server security issue generated by the browser itself
-    		var frmAction, idxQueryDelimiter,
-    			queryString, cacheParam, cacheName,
-    			items, params;
-
-    		frmAction = $elm.attr( "action" );
-    		if ( frmAction ) {
-    			idxQueryDelimiter = frmAction.indexOf( "?" );
-    			if ( idxQueryDelimiter > 0 ) {
-
-    				// Split the query string and create hidden input.
-    				queryString = frmAction.substring( idxQueryDelimiter + 1 );
-    				params = queryString.split( "&" );
-
-    				i_len = params.length;
-    				for ( i = 0; i !== i_len; i += 1 ) {
-    					cacheParam = params[ i ];
-    					cacheName = cacheParam;
-    					if ( cacheParam.indexOf( "=" ) > 0 ) {
-    						items = cacheParam.split( "=", 2 );
-    						cacheName = items[ 0 ];
-    						cacheParam = items[ 1 ];
-    					}
-    					$hdnField = $( "<input type='hidden' name='" + cacheName + "' value='" + cacheParam + "' />" );
-    					$elm.append( $hdnField );
-    					wbRegisteredHidden.push( $hdnField.get( 0 ) );
-    				}
-    				$elm.data( registerHdnFld, wbRegisteredHidden );
-    			}
-    		}
-    	}
-
-    	// Add global action
-    	i_len = lstOrigin.length;
-    	for ( i = 0; i !== i_len; i += 1 ) {
-    		$origin = lstOrigin[ i ];
-    		settings = $origin.data( configData );
-    		if ( settings.action ) {
-    			lstFieldFlowPostEvent.push( {
-    				$elm: $origin,
-    				data: settings
-    			} );
-    		}
-    	}
-
-    	i_len = lstFieldFlowPostEvent.length;
-    	for ( i = 0; i !== i_len; i += 1 ) {
-    		m_cache = lstFieldFlowPostEvent[ i ];
-    		m_cache.data.lastProvEvt = lastProvEvt;
-    		m_cache.$elm.trigger( m_cache.data.action + "." + submitedEvent, m_cache.data );
-    	}
-    	if ( preventSubmit ) {
-    		event.preventDefault();
-    		if ( event.stopPropagation ) {
-    			event.stopImmediatePropagation();
-    		} else {
-    			event.cancelBubble = true;
-    		}
-    		return false;
-    	}
-    } );
-
-    $document.on( "keyup", selectorForm + " select", function( Ev ) {
-
-    	// Add the fix for the on change event - https://bugzilla.mozilla.org/show_bug.cgi?id=126379
-    	if ( navigator.userAgent.indexOf( "Gecko" ) !== -1 ) {
-
-    		// prevent tab, alt, ctrl keys from fireing the event
-    		if ( Ev.keyCode && ( Ev.keyCode === 1 || Ev.keyCode === 9 || Ev.keyCode === 16 || Ev.altKey || Ev.ctrlKey ) ) {
-    			return true;
-    		}
-    		$( Ev.target ).trigger( "change" );
-    		return true;
-    	}
-    } );
-
-    $document.on( fieldflowActionsEvents, selector, function( event, data ) {
-
-    	var eventType = event.type;
-
-    	switch ( event.namespace ) {
-    	case drawEvent:
-    		switch ( eventType ) {
-    		case componentName:
-    			drwFieldflow( event, data );
-    			break;
-    		case "tblfilter":
-    			drwTblFilter( event, data );
-    			break;
-    		}
-    		break;
-
-    	case createCtrlEvent:
-    		switch ( eventType ) {
-    		case "select":
-    			ctrlSelect( event, data );
-    			break;
-    		case "checkbox":
-    			data.typeRadCheck = "checkbox";
-    			ctrlChkbxRad( event, data );
-    			break;
-    		case "radio":
-    			data.typeRadCheck = "radio";
-    			ctrlChkbxRad( event, data );
-    			break;
-    		}
-    		break;
-
-    	case actionEvent:
-    		switch ( eventType ) {
-    		case "append":
-    			actAppend( event, data );
-    			break;
-    		case "redir":
-    			pushData( $( data.provEvt ), submitJQData, data, true );
-    			break;
-    		case "ajax":
-    			actAjax( event, data );
-    			break;
-    		case "tblfilter":
-    			actTblFilter( event, data );
-    			break;
-    		case "toggle":
-    			if ( data.live ) {
-    				subToggle( event, data );
-    			} else {
-    				data.preventSubmit = true;
-    				pushData( $( data.provEvt ), submitJQData, data );
-    			}
-    			break;
-    		case "addClass":
-    			if ( !data.source || !data.class ) {
-    				return;
-    			}
-    			if ( data.live ) {
-    				$( data.source ).addClass( data.class );
-    			} else {
-    				data.preventSubmit = true;
-    				pushData( $( data.provEvt ), submitJQData, data );
-    			}
-    			break;
-    		case "removeClass":
-    			if ( !data.source || !data.class ) {
-    				return;
-    			}
-    			if ( data.live ) {
-    				$( data.source ).removeClass( data.class );
-    			} else {
-    				data.preventSubmit = true;
-    				pushData( $( data.provEvt ), submitJQData, data );
-    			}
-    			break;
-    		case "query":
-    			actQuery( event, data );
-    			break;
-    		}
-    		break;
-
-    	case submitEvent:
-    		switch ( eventType ) {
-    		case "redir":
-    			subRedir( event, data );
-    			break;
-    		case "ajax":
-    			subAjax( event, data );
-    			break;
-    		case "toggle":
-    			subToggle( event, data );
-    			break;
-    		case "addClass":
-    			$( data.source ).addClass( data.class );
-    			break;
-    		case "removeClass":
-    			$( data.source ).removeClass( data.class );
-    			break;
-    		case "query":
-    			actQuery( event, data );
-    			break;
-    		}
-    		break;
-    	}
-    } );
-
-    // Bind the init event of the plugin
-    $document.on( "timerpoke.wb " + initEvent, selector, function( event ) {
-    	switch ( event.type ) {
-    	case "timerpoke":
-    	case "wb-init":
-    		init( event );
-    		break;
-    	}
-
-    	/*
-    	* Since we are working with events we want to ensure that we are being passive about our control,
-    	* so returning true allows for events to always continue
-    	*/
-    	return true;
-    } );
-
-    // Add the timer poke to initialize the plugin
-    wb.add( selector );
-}(jQuery, document, wb);
-
-function checkRadio( iRadio ) {
-  //&& reset function...
-  console.log(iRadio);
-  $("#radioDot" + iRadio).show();
-  //$("#radioDot1").show;
-  //{"action": "removeClass", "source":"#radioDot1", "class": "hidden
-};
+          , I = [["redir", "query", "ajax", "addClass", "removeClass", "removeClass", "append", "tblfilter", "toggle"].join("." + q + " ") + "." + q, ["ajax", "toggle", "redir", "addClass", "removeClass"].join("." + r + " ") + "." + r, ["tblfilter", d].join("." + p + " ") + "." + p, ["select", "checkbox", "radio"].join("." + w + " ") + "." + w].join(" ")
+          , J = function(b) {
+            var h, i, j, k, l, g = c.init(b, d, e);
+            if (g) {
+                h = a(g),
+                i = g.id,
+                H.i18n[c.lang] && (H.i18n = H.i18n[c.lang]),
+                j = c.getData(h, d),
+                j && j.i18n && (j.i18n = a.extend({}, H.i18n, j.i18n)),
+                k = a.extend({}, H, j),
+                h.data(z, k),
+                l = k.i18n,
+                String.prototype.startsWith || (String.prototype.startsWith = function(a, b) {
+                    return b = b || 0,
+                    this.substr(b, a.length) === a
+                }
+                );
+                var n, o, q, m = c.getId();
+                if (k.noForm) {
+                    for (n = "<div class='mrgn-tp-md'><div id='" + m + "'></div></div>",
+                    o = g.parentElement; "FORM" !== o.nodeName; )
+                        o = o.parentElement;
+                    a(o.parentElement).addClass(f)
+                } else
+                    n = "<div class='wb-frmvld " + f + "'><form><div id='" + m + "'>",
+                    n = n + '</div><input type="submit" value="' + l.btn + '" class="btn btn-primary mrgn-bttm-md" /> </form></div>';
+                h.addClass("hidden"),
+                n = a(n),
+                h.after(n),
+                k.noForm || (o = n.find("form"),
+                n.trigger("wb-init.wb-frmvld")),
+                q = a(o),
+                K(q, x, i),
+                k.outputctnrid || (k.outputctnrid = m),
+                k.source || (k.source = g),
+                k.srctype || (k.srctype = d),
+                k.inline = !!k.inline,
+                h.trigger(k.srctype + "." + p, k),
+                k.unhideelm && a(k.unhideelm).removeClass("hidden"),
+                k.hideelm && a(k.hideelm).addClass("hidden"),
+                c.ready(h, d),
+                k.ext && (k.form = q.get(0),
+                h.trigger(k.ext + "." + t, k))
+            }
+        }
+          , K = function(a, b, c, d) {
+            var e = a.data(b);
+            return e && !d || (e = []),
+            e.push(c),
+            a.data(b, e)
+        }
+          , L = function(a, b) {
+            var c = b.form
+              , d = b.url;
+            d && c.setAttribute("action", d)
+        }
+          , M = function(a, b) {
+            var c = b.$selElm
+              , d = b.name
+              , e = b.value;
+            d && b.provEvt.setAttribute("name", d),
+            e && c.val(e),
+            c.attr("data-" + F, F)
+        }
+          , N = function(b, c) {
+            var e, d = c.provEvt;
+            c.live ? (c.container || (e = a("<div></div>"),
+            a(d.parentNode).append(e),
+            c.container = e.get(0)),
+            a(b.target).trigger("ajax." + r, c)) : (c.preventSubmit = !0,
+            K(a(d), B, c))
+        }
+          , O = function(b, d) {
+            var e, f, g, h = d.clean;
+            d.container ? e = a(d.container) : (f = c.getId(),
+            e = a("<div id='" + f + "'></div>"),
+            a(d.form).append(e),
+            h = "#" + f),
+            h && a(d.origin).one(u, function() {
+                a(h).empty()
+            }),
+            d.trigger && e.attr("data-trigger-wet", "true"),
+            g = d.type ? d.type : "replace",
+            e.attr("data-ajax-" + g, d.url),
+            e.one("wb-contentupdated", function(b, d) {
+                var e = b.currentTarget
+                  , f = e.getAttribute("data-trigger-wet");
+                e.removeAttribute("data-ajax-" + d["ajax-type"]),
+                f && (a(e).find(c.allSelectors).addClass("wb-init").filter(":not(#" + e.id + " .wb-init .wb-init)").trigger("timerpoke.wb"),
+                e.removeAttribute("data-trigger-wet"))
+            }),
+            e.trigger("wb-update.wb-data-ajax")
+        }
+          , P = function(b, c) {
+            var d = a(c.origin)
+              , e = a(b.target).data(z)
+              , f = c.toggle;
+            f && "string" == typeof f && (f = {
+                selector: f
+            }),
+            f = a.extend({}, f, e.toggle),
+            d.addClass("wb-toggle"),
+            d.trigger("toggle.wb-toggle", f),
+            f.type = "off",
+            d.one(u, function() {
+                d.addClass("wb-toggle"),
+                d.trigger("toggle.wb-toggle", f),
+                d.removeClass("wb-toggle")
+            })
+        }
+          , Q = function(b, c) {
+            if (b.namespace === q) {
+                var e = c.srctype ? c.srctype : d;
+                if (c.container = c.provEvt.parentNode.id,
+                !c.source)
+                    throw "A source is required to append a field flow control.";
+                a(b.currentTarget).trigger(e + "." + p, c)
+            }
+        }
+          , R = function(b, c) {
+            if (b.namespace === q) {
+                var f, d = c.source, e = a(d).dataTable({
+                    retrieve: !0
+                }).api(), g = c.column, h = parseInt(g, 10), i = !!c.regex, j = !c.smart || !!c.smart, k = !c.caseinsen || !!c.caseinsen;
+                g = !0 === h ? h : g,
+                f = e.column(g),
+                f.search(c.value, i, j, k).draw(),
+                a(c.provEvt).one(u, function() {
+                    f.search("").draw()
+                })
+            }
+        }
+          , S = function(b, c) {
+            if (b.namespace === p) {
+                var f, i, j, k, l, m, n, o, r, y, z, A, B, d = c.column, e = c.csvextract, g = c.source, h = a(g), q = [], s = c.label, t = c.defaultselectedlabel, u = c.lblselector, v = c.fltrseq ? c.fltrseq : [], x = c.limit ? c.limit : 10;
+                if (!h.hasClass("wb-tables-inited"))
+                    return h.one("wb-ready.wb-tables", function() {
+                        a(b.target).trigger("tblfilter." + p, c)
+                    }),
+                    !1;
+                if (i = h.dataTable({
+                    retrieve: !0
+                }).api(),
+                i.rows({
+                    search: "applied"
+                }).data().length <= x)
+                    return !0;
+                if (B = c.renderas ? c.renderas : "select",
+                !d && v.length) {
+                    if (r = v.shift(),
+                    !r.column)
+                        throw "Column is undefined in the filter sequence";
+                    d = r.column,
+                    e = r.csvextract,
+                    t = r.defaultselectedlabel,
+                    s = r.label,
+                    u = r.lblselector
+                }
+                if (f = i.column(d, {
+                    search: "applied"
+                }),
+                e)
+                    for (j = f.data(),
+                    l = 0,
+                    m = j.length; l !== m; l += 1)
+                        q = q.concat(j[l].split(","));
+                else
+                    for (j = f.nodes(),
+                    l = 0,
+                    m = j.length; l !== m; l += 1)
+                        for (k = a(j[l]).find("li"),
+                        n = 0,
+                        o = k.length; n !== o; n += 1)
+                            q.push(a(k[n]).text());
+                q = q.sort().filter(function(a, b, c) {
+                    return !b || a !== c[b - 1]
+                });
+                var C = b.target
+                  , D = a(C)
+                  , E = []
+                  , F = c.actions ? c.actions : [];
+                for (v.length && (y = v[0],
+                A = {
+                    action: "append",
+                    srctype: "tblfilter",
+                    source: g,
+                    renderas: y.renderas ? y.renderas : B,
+                    fltrseq: v,
+                    limit: x
+                }),
+                l = 0,
+                m = q.length; l !== m; l += 1)
+                    r = q[l],
+                    z = {
+                        label: r,
+                        actions: [{
+                            action: "tblfilter",
+                            source: g,
+                            column: d,
+                            value: r
+                        }]
+                    },
+                    A && z.actions.push(A),
+                    E.push(z);
+                s || (s = f.header().textContent),
+                c.outputctnrid || (c.outputctnrid = c.provEvt.parentElement.id),
+                D.trigger(B + "." + w, {
+                    actions: F,
+                    source: h.get(0),
+                    outputctnrid: c.outputctnrid,
+                    label: s,
+                    defaultselectedlabel: t,
+                    lblselector: u,
+                    items: E,
+                    inline: c.inline
+                })
+            }
+        }
+          , T = function(b, e) {
+            if (b.namespace === p) {
+                var i, n, o, r, t, u, v, f = b.target, h = a(f), j = a(e.source), k = j.get(0), q = e.lblselector || "." + l, s = e.itmselector || "ul:first() > li";
+                j.hasClass(g) && (i = c.getData(j, d),
+                j.data(z, i),
+                e = a.extend({}, e, i)),
+                u = e.actions || [],
+                v = e.renderas ? e.renderas : "select",
+                k.id || (k.id = c.getId()),
+                o = j.children().first(),
+                o.hasClass(m) ? (r = o.html(),
+                s = "." + m + " + " + s) : (n = o.find(q),
+                r = n.length ? n.html() : j.find("> p").html(),
+                q = null),
+                t = W(j.find(s)),
+                e.outputctnrid || (e.outputctnrid = e.provEvt.parentElement.id),
+                h.trigger(v + "." + w, {
+                    actions: u,
+                    source: k,
+                    attributes: e.attributes,
+                    outputctnrid: e.outputctnrid,
+                    label: r,
+                    lblselector: q,
+                    defaultselectedlabel: e.defaultselectedlabel,
+                    required: !e.isoptional,
+                    noreqlabel: e.noreqlabel,
+                    items: t,
+                    inline: e.inline
+                })
+            }
+        }
+          , U = function(b, d) {
+            var v, w, y, B, F, G, H, I, J, e = d.outputctnrid, f = a("#" + e), g = d.actions, i = d.lblselector, k = !!d.required, l = !d.noreqlabel, m = d.items, n = b.target, o = a(n), p = d.source, q = d.attributes, r = o.data(z).i18n, s = c.getId(), t = "<label for='" + s + "'", u = "</span>", C = d.defaultselectedlabel ? d.defaultselectedlabel : r.defaultsel;
+            if (k && l && (t += " class='required'",
+            u += " <strong class='required'>(" + r.required + ")</strong>"),
+            t += "><span class='field-name'>",
+            u += "</label>",
+            i ? (v = a("<div>" + d.label + "</div>"),
+            w = v.find(i),
+            w.html(t + w.html() + u)) : v = a(t + d.label + u),
+            y = "<select id='" + s + "' name='" + j + s + "' class='full-width form-control mrgn-bttm-md " + h + "' data-" + D + "='" + n.id + "' " + E + "='" + p.id + "'",
+            k && (y += " required"),
+            q && "object" == typeof q)
+                for (F in q)
+                    q.hasOwnProperty(F) && (y += " " + F + "='" + q[F] + "'");
+            for (y += "><option value=''>" + C + "</option>",
+            F = 0,
+            G = m.length; F !== G; F += 1)
+                if (J = m[F],
+                J.group) {
+                    for (y += "<optgroup label='" + J.label + "'>",
+                    I = J.group.length,
+                    H = 0; H !== I; H += 1)
+                        y += X(J.group[H]);
+                    y += "</optgroup>"
+                } else
+                    y += X(J);
+            y += "</select>",
+            B = a(y),
+            f.append(v).append(B),
+            g && g.length > 0 && B.data(A, g),
+            K(o, x, s)
+        }
+          , V = function(b, d) {
+            var v, w, y, B, I, J, L, M, N, e = d.outputctnrid, f = d.actions, g = d.lblselector, i = !!d.required, k = !d.noreqlabel, l = d.items, m = b.target, n = a(m), o = d.source, p = n.data(z).i18n, q = d.attributes, r = c.getId(), s = "<legend class='h5 ", t = "</span>", u = "<fieldset id='" + r + "' data-" + D + "='" + m.id + "' " + E + "='" + o.id + "' class='" + h + " mrgn-bttm-md'", C = "", F = d.typeRadCheck, G = d.inline, H = j + r;
+            if (q && "object" == typeof q)
+                for (I in q)
+                    q.hasOwnProperty(I) && (u += " " + I + "='" + q[I] + "'");
+            for (v = a(u + "></fieldset>"),
+            i && k && (s += " required",
+            t += " <strong class='required'>(" + p.required + ")</strong>"),
+            s += "'>",
+            t += "</legend>",
+            g ? (y = a("<div>" + d.label + "</div>"),
+            w = y.find(g),
+            v.append(s + w.html() + t).append(w.nextAll()),
+            B = w.prevAll()) : v.append(a(s + d.label + t)),
+            I = 0,
+            J = l.length; I !== J; I += 1)
+                if (N = l[I],
+                N.group)
+                    for (C += "<p>" + N.label + "</p>",
+                    M = N.group.length,
+                    L = 0; L !== M; L += 1)
+                        C += Z(N.group[L], H, F, G, i);
+                else
+                    C += Z(N, H, F, G, i);
+            v.append(C),
+            a("#" + e).append(v),
+            B && v.before(B),
+            f && f.length > 0 && v.data(A, f),
+            K(n, x, r)
+        }
+          , W = function(b, e) {
+            var h, j, k, m, n, o, p, q, r, s, t, u, w, f = b.get(), i = f.length, v = [];
+            for (h = 0; h !== i; h += 1) {
+                if (j = f[h],
+                m = "",
+                n = null,
+                k = "",
+                r = j.firstChild,
+                q = j.childNodes,
+                p = q.length,
+                !r)
+                    throw "You have a markup error, There may be an empyt <li> elements in your list.";
+                for (w = [],
+                "A" === r.nodeName && (m = r.getAttribute("href"),
+                k = a(r).html(),
+                p = 1,
+                w.push({
+                    action: "redir",
+                    url: m
+                })),
+                o = 1; o !== p; o += 1) {
+                    if (s = q[o],
+                    t = a(s),
+                    t.hasClass(g)) {
+                        u = s.id || c.getId(),
+                        s.id = u,
+                        m = d + "-" + u,
+                        w.push({
+                            action: "append",
+                            srctype: d,
+                            source: "#" + u
+                        });
+                        break
+                    }
+                    if ("UL" === s.nodeName) {
+                        if (e)
+                            throw "Recursive error, please check your code";
+                        n = W(t.children(), !0)
+                    }
+                    t.hasClass(l) && (k = t.html())
+                }
+                k || (k = r.nodeValue),
+                j.id || (j.id = c.getId()),
+                v.push({
+                    bind: j.id,
+                    label: k,
+                    actions: w,
+                    group: n
+                })
+            }
+            return v
+        }
+          , X = function(a) {
+            var b = a.label
+              , c = "<option value='" + b + "'";
+            return c += Y(a),
+            c += ">" + b + "</option>"
+        }
+          , Y = function(a) {
+            var b = ""
+              , c = {};
+            return c.bind = a.bind || "",
+            c.actions = a.actions || [],
+            b += " data-" + d + "='" + JSON.stringify(c) + "'"
+        }
+          , Z = function(a, b, d, e, f) {
+            var g = a.label
+              , h = c.getId()
+              , i = e ? "-inline" : ""
+              , j = " for='" + h + "'><input id='" + h + "' type='" + d + "' name='" + b + "' value='" + g + "'";
+            return j = e ? "<label class='" + d + i + "'" + j : "<div class='" + d + "'><label" + j,
+            j += Y(a),
+            f && (j += " required='required'"),
+            j += " /> " + g + "</label>",
+            e || (j += "</div>"),
+            j
+        };
+        G.on(v, e + ", ." + g, function(b) {
+            var d, e, f, h, i, j, k, l, c = b.target, g = [];
+            if (c === b.currentTarget && (d = a(c),
+            (e = d.data(z)) && e.reset))
+                for (f = e.reset,
+                a.isArray(f) ? g = f : g.push(f),
+                i = g.length,
+                h = 0; h !== i; h += 1)
+                    j = g[h],
+                    (k = j.action) && (l = j.live,
+                    !1 !== l && (j.live = !0),
+                    d.trigger(k + "." + q, j))
+        }),
+        G.on("change", n + " " + i, function(e) {
+            var h, i, j, k, l, m, o, p, f = e.currentTarget, g = a(f), n = g.nextAll(), r = a("#" + f.getAttribute("data-" + D)), s = a("#" + f.getAttribute(E)), t = r.data(x), w = g.find(":checked", g), y = g.get(0).form;
+            if (k = n.length) {
+                for (j = k; 0 !== j; j -= 1)
+                    (o = n[j]) && (p = t.indexOf(o.id),
+                    p > -1 && t.splice(p, 1),
+                    a("#" + o.getAttribute(E)).trigger(v).trigger(u),
+                    a(o).trigger(u));
+                r.data(x, t),
+                n.remove()
+            }
+            s.trigger(v).trigger(u),
+            g.trigger(u),
+            g.data(B, []);
+            var G, H, I, J, K, L, M, P, Q, R, F = [], N = [], O = [];
+            for (G = r.data(z),
+            H = s.data(z),
+            H && G && (G = a.extend({}, G, H)),
+            w.length && w.val() && G && G.default && (i = G.default,
+            a.isArray(i) ? F = i : F.push(i)),
+            K = G.action,
+            L = G.prop,
+            C = G.actionData || {},
+            i = g.data(A),
+            i && (F = F.concat(i)),
+            j = 0,
+            k = w.length; j !== k; j += 1)
+                if (h = w.get(j),
+                (I = c.getData(h, d)) && (Q = I.bind,
+                F = F.concat(I.actions),
+                Q && (R = b.getElementById(Q),
+                J = R.getAttribute("data-" + d)))) {
+                    if (J.startsWith("{") || J.startsWith("[")) {
+                        try {
+                            i = JSON.parse(J)
+                        } catch (b) {
+                            a.error("Bad JSON object " + J)
+                        }
+                        a.isArray(i) || (i = [i])
+                    } else
+                        i = {},
+                        i.action = K,
+                        i[L] = J,
+                        i = a.extend(!0, {}, C, i),
+                        i = [i];
+                    F = F.concat(i)
+                }
+            if (!F.length)
+                return !0;
+            for (j = 0,
+            k = F.length; j !== k; j += 1)
+                l = F[j],
+                m = l.target,
+                m && m !== Q ? O.push(l) : N.push(l);
+            for (M = G.base || {},
+            P = O.length,
+            j = 0,
+            k = N.length; j !== k; j += 1)
+                l = a.extend({}, M, N[j]),
+                l.origin = s.get(0),
+                l.provEvt = f,
+                l.$selElm = w,
+                l.form = y,
+                P && (l.actions = O),
+                r.trigger(l.action + "." + q, l);
+            return !0
+        }),
+        G.on("submit", n + " form", function(b) {
+            var g, h, j, l, n, o, p, t, v, w, A, C, E, F, H, c = b.currentTarget, d = a(c), e = d.data(x), f = d.data(y) || [], i = e ? e.length : 0, m = [], q = [], G = !1;
+            for (i && (j = a("#" + e[i - 1]),
+            l = j.data(x),
+            a("#" + l[l.length - 1]).trigger(u),
+            j.trigger(u)),
+            h = 0; h !== i; h += 1)
+                for (j = a("#" + e[h]),
+                n = j.data(x),
+                w = n.length,
+                v = 0; v !== w; v += 1)
+                    if (o = a("#" + n[v]),
+                    p = a("#" + o.data(D)),
+                    q.push(p),
+                    F = o.data(B))
+                        for (A = 0,
+                        C = F.length; A !== C; A += 1)
+                            E = F[A],
+                            E.form = c,
+                            j.trigger(E.action + "." + r, E),
+                            m.push({
+                                $elm: j,
+                                data: E
+                            }),
+                            G = G || E.preventSubmit,
+                            H = E.provEvt;
+            if (!G) {
+                for (d.find(k).removeAttr("name"),
+                i = f.length,
+                h = 0; h !== i; h += 1)
+                    a(f[h]).remove();
+                f = [];
+                var I, J, K, L, M, N, O;
+                if ((I = d.attr("action")) && (J = I.indexOf("?")) > 0) {
+                    for (K = I.substring(J + 1),
+                    O = K.split("&"),
+                    i = O.length,
+                    h = 0; h !== i; h += 1)
+                        L = O[h],
+                        M = L,
+                        L.indexOf("=") > 0 && (N = L.split("=", 2),
+                        M = N[0],
+                        L = N[1]),
+                        g = a("<input type='hidden' name='" + M + "' value='" + L + "' />"),
+                        d.append(g),
+                        f.push(g.get(0));
+                    d.data(y, f)
+                }
+            }
+            for (i = q.length,
+            h = 0; h !== i; h += 1)
+                p = q[h],
+                t = p.data(z),
+                t.action && m.push({
+                    $elm: p,
+                    data: t
+                });
+            for (i = m.length,
+            h = 0; h !== i; h += 1)
+                E = m[h],
+                E.data.lastProvEvt = H,
+                E.$elm.trigger(E.data.action + "." + s, E.data);
+            if (G)
+                return b.preventDefault(),
+                b.stopPropagation ? b.stopImmediatePropagation() : b.cancelBubble = !0,
+                !1
+        }),
+        G.on("keyup", n + " select", function(b) {
+            if (-1 !== navigator.userAgent.indexOf("Gecko"))
+                return !(!b.keyCode || 1 !== b.keyCode && 9 !== b.keyCode && 16 !== b.keyCode && !b.altKey && !b.ctrlKey) || (a(b.target).trigger("change"),
+                !0)
+        }),
+        G.on(I, e, function(b, c) {
+            var e = b.type;
+            switch (b.namespace) {
+            case p:
+                switch (e) {
+                case d:
+                    T(b, c);
+                    break;
+                case "tblfilter":
+                    S(b, c)
+                }
+                break;
+            case w:
+                switch (e) {
+                case "select":
+                    U(b, c);
+                    break;
+                case "checkbox":
+                    c.typeRadCheck = "checkbox",
+                    V(b, c);
+                    break;
+                case "radio":
+                    c.typeRadCheck = "radio",
+                    V(b, c)
+                }
+                break;
+            case q:
+                switch (e) {
+                case "append":
+                    Q(b, c);
+                    break;
+                case "redir":
+                    K(a(c.provEvt), B, c, !0);
+                    break;
+                case "ajax":
+                    N(b, c);
+                    break;
+                case "tblfilter":
+                    R(b, c);
+                    break;
+                case "toggle":
+                    c.live ? P(b, c) : (c.preventSubmit = !0,
+                    K(a(c.provEvt), B, c));
+                    break;
+                case "addClass":
+                    if (!c.source || !c.class)
+                        return;
+                    c.live ? a(c.source).addClass(c.class) : (c.preventSubmit = !0,
+                    K(a(c.provEvt), B, c));
+                    break;
+                case "removeClass":
+                    if (!c.source || !c.class)
+                        return;
+                    c.live ? a(c.source).removeClass(c.class) : (c.preventSubmit = !0,
+                    K(a(c.provEvt), B, c));
+                    break;
+                case "query":
+                    M(b, c)
+                }
+                break;
+            case r:
+                switch (e) {
+                case "redir":
+                    L(b, c);
+                    break;
+                case "ajax":
+                    O(b, c);
+                    break;
+                case "toggle":
+                    P(b, c);
+                    break;
+                case "addClass":
+                    a(c.source).addClass(c.class);
+                    break;
+                case "removeClass":
+                    a(c.source).removeClass(c.class)
+                }
+            }
+        }),
+        G.on("timerpoke.wb " + o, e, function(a) {
+            switch (a.type) {
+            case "timerpoke":
+            case "wb-init":
+                J(a)
+            }
+            return !0
+        }),
+        c.add(e)
+    }(jQuery, document, wb);
