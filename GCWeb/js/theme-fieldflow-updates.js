@@ -1037,8 +1037,8 @@ function(a, b, c) {
     					radCheckOut += buildCheckboxRadio( cur_itm.group[ j ], fieldName, typeRadCheck, isInline, isReq );
     				}
     			}
-
     		}
+        radCheckOut = "<div class='clearfix'></div>" + radCheckOut;
     		$out.append( radCheckOut );
     		$( "#" + bodyId ).append( $out );
     		if ( $prevContent ) {
@@ -1168,7 +1168,6 @@ function(a, b, c) {
     			fieldID = wb.getId(),
     			inline = isInline ? "-inline" : "",
     			out = " for='" + fieldID + "'>" + label + "<input id='" + fieldID + "' type='" + inputType + "' name='" + fieldName + "' value='" + label + "'";
-
           console.log("hi");
     		if ( isInline ) {
     			out = "<label class='" + inputType + inline + "'" + out;
