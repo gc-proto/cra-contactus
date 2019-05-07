@@ -1038,7 +1038,7 @@ function(a, b, c) {
     				}
     			}
     		}
-        radCheckOut = "<div class='clearfix'></div><div class='cst-inputs'>" + radCheckOut; /*need to close div still*/
+        radCheckOut = "<div class='clearfix'></div><div class='cst-inputs radio-container'>" + radCheckOut; /*need to close div still*/
     		$out.append( radCheckOut );
     		$( "#" + bodyId ).append( $out );
     		if ( $prevContent ) {
@@ -1172,7 +1172,7 @@ function(a, b, c) {
     		if ( isInline ) {
     			out = "<label class='" + inputType + inline + "'" + out;
     		} else {
-    			out = "<div class='" + inputType + "'><label class='radio-container'" + out;
+    			out = "<div class='" + inputType + "'><label" + out;
     		}
 
     		out += buildDataAttribute( data );
@@ -1182,9 +1182,9 @@ function(a, b, c) {
     		}
 
         if ( inputType == "radio") {
-          out += " /></span><span class='checkmark'></span></label>";
+          out += " /></span><span></span></label>";
         } else {
-          out += " /><span class='checkmark'></span></label>";
+          out += " /><span></span></label>";
         }
 
     		if ( !isInline ) {
