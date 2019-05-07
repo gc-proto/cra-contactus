@@ -112,6 +112,11 @@ div.pagedetails .btn {
 /* shared components for radio and check */
 
 /* container for checks and radios */
+
+.cst-inputs {
+    margin-top: 15px;
+}
+
 .cst-inputs span {
   position: absolute;
   top: 0;
@@ -147,7 +152,7 @@ div.pagedetails .btn {
   display: block;
   position: relative;
   padding-left: 55px;
-  margin-bottom: 30px;
+  margin-bottom: 26px;
   cursor: pointer;
   font-size: 19px;
   font-weight: normal;

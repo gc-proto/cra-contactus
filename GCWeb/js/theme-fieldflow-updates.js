@@ -1176,7 +1176,7 @@ function(a, b, c) {
     		if ( isInline ) {
     			out = "<label class='" + inputType + inline + "'" + out;
     		} else {
-    			out = "<div class='" + inputType + "'><label" + out;
+    			out = "<label" + out;
     		}
 
     		out += buildDataAttribute( data );
@@ -1191,9 +1191,9 @@ function(a, b, c) {
           out += " /><span></span></label>";
         }
 
-    		if ( !isInline ) {
-    			out += "</div>";
-    		}
+    		// if ( !isInline ) {
+    		// 	out += "</div>";
+    		// }
 
         console.log(out);
     		return out;
