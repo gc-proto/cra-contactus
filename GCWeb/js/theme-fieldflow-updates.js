@@ -1038,7 +1038,11 @@ function(a, b, c) {
     				}
     			}
     		}
-        radCheckOut = "<div class='clearfix'></div><div class='cst-inputs radio-container'>" + radCheckOut; /*need to close div still*/
+        if ( typeRadCheck == "checkbox") {
+          radCheckOut = "<div class='clearfix'></div><div class='cst-inputs checkbox-container'>" + radCheckOut; /*need to close div still*/
+        } else if (typeRadCheck == "radio") {
+          radCheckOut = "<div class='clearfix'></div><div class='cst-inputs radio-container'>" + radCheckOut; /*need to close div still*/
+        }
     		$out.append( radCheckOut );
     		$( "#" + bodyId ).append( $out );
     		if ( $prevContent ) {
