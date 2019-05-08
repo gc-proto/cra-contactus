@@ -154,7 +154,10 @@
       <li><a href="https://www.canada.ca/en/government/change-address.html">Change your address with the Government of Canada</a></li>
     </ul>
 
-    <div class="wb-frmvld">
+    <div data-wb-urlmapping='{
+      "p=personal": { "action": "addClass", "class": "hidden" },
+      "p=business": { "action": "addClass", "class": "hidden" }
+    }' class="wb-frmvld">
       <!-- <form method="get"> -->
         <!--Smart question!-->
         <div id="question1" class="wb-fieldflow" data-wb-fieldflow='{
@@ -174,7 +177,7 @@
     </div>
 
 
-    <div class="hidden mrgn-bttm-lg" id="personal">
+    <div data-wb-urlmapping='{ "p=personal": { "action": "removeClass", "class": "hidden" } }' class="hidden mrgn-bttm-lg" id="personal">
       <h2 class="h3">Change a personal address</h2>
       <dl class="dl-horizontal">
         <dt>Online:</dt>
@@ -321,7 +324,7 @@
       </dl>
     </div>
 
-    <div class="hidden mrgn-bttm-lg" id="business">
+    <div data-wb-urlmapping='{ "p=business": { "action": "removeClass", "class": "hidden" } }' class="hidden mrgn-bttm-lg" id="business">
       <h2 class="h3">Change a business address</h2>
           <p>Notify the CRA of changes in any of your business addresses.</p>
           <details>
@@ -490,6 +493,17 @@
             </dd>
           </dl>
       </div>
+
+      <div data-wb-urlmapping='{ "p=personal": { "action": "removeClass", "class": "hidden" } }' class="hidden">
+        <h2>Change a business address</h2>
+        <p><a href="?p=business">Change an address for a business</a></p>
+      </div>
+      <div data-wb-urlmapping='{ "p=business": { "action": "removeClass", "class": "hidden" } }' class="hidden">
+        <h2>Change an address for personal taxes, benefits or refunds</h2>
+        <p><a href="?p=personal">Change a personal address</a></p>
+      </div>
+
+
 </div>
 <div class="clearfix"></div>
 <div class="pagedetails">

@@ -157,7 +157,10 @@
     <p>The CRA will not share your new information with other government departments, except <span class="nowrap">Elections Canada</span> if you authorized the CRA to, on your return. If you need to inform other departments of a change of address:</p>
 
 
-    <div class="wb-frmvld">
+    <div data-wb-urlmapping='{
+      "p=personal": { "action": "addClass", "class": "hidden" },
+      "p=business": { "action": "addClass", "class": "hidden" }
+    }' class="wb-frmvld">
       <form method="get">
         <!--Smart question!-->
         <div id="question1" class="wb-fieldflow" data-wb-fieldflow='{
@@ -185,6 +188,25 @@
           </ul>
         </div>
 
+      </form>
+    </div>
+
+    <div data-wb-urlmapping='{ "p=personal": { "action": "removeClass", "class": "hidden" } }' class="wb-frmvld hidden">
+      <form method="get">
+        <!--Smart question!-->
+        <div id="question1-personal-only" class="wb-fieldflow" data-wb-fieldflow='{
+            "noForm":true,
+            "renderas":"radio",
+            "base": { "live": true },
+            "noreqlabel": true,
+            "default": { "action": "addClass", "source":"#personal-both,#personal-either,#business", "class": "hidden" }
+          }'>
+          <p>Which parts of your name are you changing?</p>
+          <ul>
+            <li data-wb-fieldflow='{ "action": "removeClass", "source":"#personal-either", "class": "hidden"}'>either your first or last name</li> <!--result-->
+            <li data-wb-fieldflow='{ "action": "removeClass", "source":"#personal-both", "class": "hidden"}'>both your first and last name</li>
+          </ul>
+        </div>
       </form>
     </div>
 
@@ -379,7 +401,7 @@
 
 
 
-<div class="hidden" id="business">
+<div data-wb-urlmapping='{ "p=business": { "action": "removeClass", "class": "hidden" } }' class="hidden" id="business">
   <h2>Change a business operating name</h2>
   <p>Your operating name is the name you use in your day-to-day activities and to advertise your business. You only need to provide your operating name if it is different from your legal name.</p>
   <dl class="dl-horizontal">
@@ -531,6 +553,16 @@
   </dl>
   </details>
   </div>
+  <div data-wb-urlmapping='{ "p=personal": { "action": "removeClass", "class": "hidden" } }' class="hidden">
+    <h2>Change a business name</h2>
+    <p><a href="?p=business">Change a business name</a></p>
+  </div>
+  <div data-wb-urlmapping='{ "p=business": { "action": "removeClass", "class": "hidden" } }' class="hidden">
+    <h2>Change of name for personal taxes, benefits or refunds</h2>
+    <p><a href="?p=personal">Change your own name</a></p>
+  </div>
+
+
 </div>
 <div class="clearfix"></div>
 <div class="pagedetails">

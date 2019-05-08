@@ -135,7 +135,14 @@
       </ul>
       </div>
     </div>
-    <div class="wb-frmvld">
+
+
+    <div data-wb-urlmapping='{
+      "p=personal": { "action": "addClass", "class": "hidden" },
+      "p=business": { "action": "addClass", "class": "hidden" },
+      "p=trusts": { "action": "addClass", "class": "hidden" },
+      "p=non-residents": { "action": "addClass", "class": "hidden" }
+    }'class="wb-frmvld">
       <!-- <form method="get"> -->
     		<!--Smart question!-->
     		<div id="question1" class="wb-fieldflow" data-wb-fieldflow='{
@@ -157,7 +164,10 @@
       <!-- </form> -->
     </div>
 
-    <div class="hidden" id="personal">
+
+
+
+    <div data-wb-urlmapping='{ "p=personal": { "action": "removeClass", "class": "hidden" } }' class="hidden" id="personal">
       <h2 class="h3">Set up or change direct deposit for personal taxes, benefits or refunds</h2>
       <p>CRA payments you can receive by direct deposit:</p>
       <ul>
@@ -335,7 +345,7 @@
     </div>
 
 
-    <div class="hidden" id="business">
+    <div data-wb-urlmapping='{ "p=business": { "action": "removeClass", "class": "hidden" } }' class="hidden" id="business">
       <h2 class="h3">Set up or change direct deposit for a business</h2>
       <p>CRA payments a business can receive by direct deposit:</p>
       <ul>
@@ -464,7 +474,7 @@
       </details>
     </div>
 
-    <div class="hidden" id="trusts">
+    <div data-wb-urlmapping='{ "p=trusts": { "action": "removeClass", "class": "hidden" } }' class="hidden" id="trusts">
       <h2 class="h3">Set up or change direct deposit for a trust</h2>
       <p>Sign up for direct deposit as a trust if you are the trustee, custodian, executor, or other type of legal representative for a trust receiving a payment.</p>
       <dl class="dl-horizontal">
@@ -487,7 +497,7 @@
 
     </div>
 
-    <div class="hidden" id="non-resident">
+    <div data-wb-urlmapping='{ "p=non-residents": { "action": "removeClass", "class": "hidden" } }' class="hidden" id="non-resident">
       <h2 class="h3">Set up or change direct deposit for a non-resident account holder or NR7-R refund applicant</h2>
       <p>CRA payments that you can sign up to receive by direct deposit:</p>
       <ul>
@@ -542,6 +552,21 @@
         </dd>
       </dl>
       <details>
+    </div>
+
+    <div data-wb-urlmapping='{
+      "p=personal": { "action": "removeClass", "class": "hidden" },
+      "p=business": { "action": "removeClass", "class": "hidden" },
+      "p=trusts": { "action": "removeClass", "class": "hidden" },
+      "p=non-residents": { "action": "removeClass", "class": "hidden" }
+    }' class="hidden">
+      <h2>If you need to change direct deposit or banking details for something other than <span data-wb-urlmapping='{ "p=personal": { "action": "removeClass", "class": "hidden" }' class="hidden">personal taxes, benefits or refunds</span><span data-wb-urlmapping='{ "p=business": { "action": "removeClass", "class": "hidden" }' class="hidden">a business</span><span data-wb-urlmapping='{ "p=trusts": { "action": "removeClass", "class": "hidden" }' class="hidden">a trust</span><span data-wb-urlmapping='{ "p=non-residents": { "action": "removeClass", "class": "hidden" }' class="hidden">non-residents</span>:</h2>
+      <ul>
+        <li data-wb-urlmapping='{ "p=personal": { "action": "addClass", "class": "hidden" }'><a href="?p=personal">Direct deposit for personal taxes, benefits or refunds</a></li>
+        <li data-wb-urlmapping='{ "p=business": { "action": "addClass", "class": "hidden" }'><a href="?p=business">Direct deposit for personal taxes, benefits or refunds</a></li>
+        <li data-wb-urlmapping='{ "p=trusts": { "action": "addClass", "class": "hidden" }'><a href="?p=trusts">Direct deposit for personal taxes, benefits or refunds</a></li>
+        <li data-wb-urlmapping='{ "p=non-residents": { "action": "addClass", "class": "hidden" }'><a href="?p=non-residents">Direct deposit for personal taxes, benefits or refunds</a></li>
+      </ul>
     </div>
 
 
