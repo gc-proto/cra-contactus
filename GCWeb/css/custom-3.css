@@ -107,22 +107,82 @@ div.pagedetails .btn {
 
 }
 
+.checkbox input[type="checkbox"] {
+    opacity: 0;
+}
+
+.checkbox label {
+    position: relative;
+    display: inline-block;
+
+    /*16px width of fake checkbox + 6px distance between fake checkbox and text*/
+    padding-left: 22px;
+}
+
+.checkbox label::before,
+.checkbox label::after {
+    position: absolute;
+    content: "";
+
+    /*Needed for the line-height to take effect*/
+    display: inline-block;
+}
+
+/*Outer box of the fake checkbox*/
+.checkbox label::before{
+    height: 16px;
+    width: 16px;
+
+    border: 1px solid;
+    left: 0px;
+
+    /*(24px line-height - 16px height of fake checkbox) / 2 - 1px for the border
+     *to vertically center it.
+     */
+    top: 3px;
+}
+
+/*Checkmark of the fake checkbox*/
+.checkbox label::after {
+    height: 5px;
+    width: 9px;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+
+    transform: rotate(-45deg);
+
+    left: 4px;
+    top: 7px;
+}
+
+/*Hide the checkmark by default*/
+.checkbox input[type="checkbox"] + label::after {
+    content: none;
+}
+
+/*Unhide on the checked state*/
+.checkbox input[type="checkbox"]:checked + label::after {
+    content: "";
+}
+
+/*Adding focus styles on the outer-box of the fake checkbox*/
+.checkbox input[type="checkbox"]:focus + label::before {
+    outline: rgb(59, 153, 252) auto 5px;
+}
+
 
 
 /* shared components for radio and check */
 
 /* container for checks and radios */
 
-.cst-inputs {
+/* .cst-inputs {
     margin-top: 15px;
-}
+} */
 
-.cst-inputs ul.list-none {
-  margin-block-start: 0em !important;
-}
 
-.cst-inputs span {
-  position: absolute;
+/* .checkbox  {
+
   top: 0;
   left: 0;
   height: 36px;
@@ -130,33 +190,14 @@ div.pagedetails .btn {
   background-color: #eee;
   border: 2px solid #333;
 
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-
-.cst-inputs span:after  {
-  content: "";
-  position: absolute;
-  display: none;
-}
+} */
 
 
-/* surrounding div for hiding default browser components of radio/check */
-
-.cst-inputs input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-
-}
-
-/* controls the container for both checks and radios */
-
-.cst-inputs label {
+/* .checkbox {
   display: block;
   position: relative;
-  padding-left: 55px;
-  margin-bottom: 26px;
+  padding-left: 30px;
+  margin-bottom: 35px;
   cursor: pointer;
   font-size: 19px;
   font-weight: normal;
@@ -165,29 +206,28 @@ div.pagedetails .btn {
   -ms-user-select: none;
   user-select: none;
 
-}
+} */
 
-/* show the checkmark or dot when checked */
-.cst-inputs input:checked ~ span:after {
+
+/* .checkbox label::before {
+
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #333;
+  margin-top:-4px;
+  /* background: transparent; */
+/* }
+
+.checkbox label::after {
+  content: "";
+  position: absolute;
   display: block;
-}
-
-/* sets the background to white */
-.cst-inputs input:checked ~ span {
-  background-color: white;
-}
-/* mouse-over, grey for both */
-.cst-inputs label:hover input ~ span
-{
-  background-color: #ccc;
-}
-
-
-/* end of shared components */
-
-
-/* style the checkmark/indicator */
-.checkbox-container span:after {
   left: 10px;
   top: 2px;
   width: 13px;
@@ -197,23 +237,88 @@ div.pagedetails .btn {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-}
+} */
 
-/* make radio buttons round, fix spacing */
-.radio-container span {
+/* .checkbox label:after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 10px;
+  top: 2px;
+  width: 13px;
+  height: 22px;
+  border: solid #333;
+  border-width: 0 5px 5px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+
+
+   content: "";
+  position: absolute;
+  left:8px;
+  width: 0;
+  height: 0;
+  border: 10px solid currentColor;
   border-radius: 50%;
-  margin-top: -5px;
-}
+  opacity: 0;
+  margin-top:-21px;
+  background: currentColor;
+  opacity: 1;
+} */
 
-/* Style the indicator (dot/circle) */
-.radio-container span:after {
-top: 6px;
-left: 6px;
-width: 20px;
-height: 20px;
-border-radius: 50%;
-background: #333;
-}
+
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+
+/* .checkbox label:after  {
+  content: "";
+  position: absolute;
+  display: none;
+} */
+
+
+/* surrounding div for hiding default browser components of radio/check */
+
+/* .cst-inputs input {
+  position: absolute;
+  opacity: 0;
+} */
+
+/* controls the container for both checks and radios */
+
+/* show the checkmark or dot when checked */
+/* input:checked ~ .checkbox label:after {
+  display: block;
+} */
+
+/* sets the background to white */
+/* .checkbox input:checked ~ label {
+  background-color: red;
+} */
+/* mouse-over, grey */
+/* .checkbox label:hover input ~ label
+{
+  background-color: #ccc;
+} */
+
+
+/* end of shared components */
+
+
+/* style the checkmark/indicator */
+/* .checkbox label:after {
+  left: 10px;
+  top: 2px;
+  width: 13px;
+  height: 22px;
+  border: solid #333;
+  border-width: 0 5px 5px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+} */
+
 
 /** end checks and radios **/
 
