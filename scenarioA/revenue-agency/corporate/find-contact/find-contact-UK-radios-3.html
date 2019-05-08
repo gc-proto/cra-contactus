@@ -70,11 +70,6 @@
 
 
   }
-/*
-  .radio {
-    margin-top:40px;
-  } */
-
 
 
 
@@ -128,8 +123,8 @@
 </nav>
 </header>
 
-<style>
-
+<!-- <style>
+/*
 
 .radio input[type=radio], .radio-inline input[type=radio] {
     position: absolute;
@@ -181,7 +176,70 @@
   font-size:20px!important;
 }
 
-  </style>
+*/
+div.cst-inputs .checkbox input[type="checkbox"] {
+    opacity: 0;
+}
+
+div.cst-inputs .checkbox label {
+    position: relative;
+    display: inline-block;
+
+    /*16px width of fake checkbox + 6px distance between fake checkbox and text*/
+    padding-left: 22px;
+}
+
+div.cst-inputs .checkbox label::before,
+div.cst-inputs .checkbox label::after {
+    position: absolute;
+    content: "";
+
+   /*Needed for the line-height to take effect*/
+    display: inline-block;
+}
+
+ /*Outer box of the fake checkbox*/
+div.cst-inputs .checkbox label::before{
+    height: 16px;
+    width: 16px;
+
+    border: 1px solid;
+    left: 0px;
+
+    /*(24px line-height - 16px height of fake checkbox) / 2 - 1px for the border
+     *to vertically center it.
+     */
+    top: 3px;
+}
+
+ /*Checkmark of the fake checkbox*/
+div.cst-inputs .checkbox label::after {
+    height: 5px;
+    width: 9px;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    transform: rotate(-45deg);
+
+    left: 4px;
+    top: 7px;
+}
+
+/*Hide the checkmark by default*/
+div.cst-inputs .checkbox input[type="checkbox"] + label::after {
+    content: none;
+}
+
+ /*Unhide on the checked state*/
+div.cst-inputs .checkbox input[type="checkbox"]:checked + label::after {
+    content: "";
+}
+
+/*Adding focus styles on the outer-box of the fake checkbox*/
+div.cst-inputs .checkbox input[type="checkbox"]:focus + label::before {
+    outline: rgb(59, 153, 252) auto 5px;
+}
+
+  </style> -->
 
 <!-- class="gc-theme" is doing some weird stuff with the first h2... -->
 <main property="mainContentOfPage" class="container">
@@ -191,7 +249,7 @@
   <p>Answer a few questions to find the telephone number or contact you need.</p>
 
 
-<fieldset id="wb-auto-13" data-wb-fieldflow-origin="question1" data-wb-fieldflow-source="question1" class="wb-fieldflow-init mrgn-bttm-md"><legend class="h5 ">Which of these are you calling for?</legend>
+<!-- <fieldset id="wb-auto-13" data-wb-fieldflow-origin="question1" data-wb-fieldflow-source="question1" class="wb-fieldflow-init mrgn-bttm-md"><legend class="h5 ">Which of these are you calling for?</legend>
 
   <div class="radio"><label for="wb-auto-14">
     <input id="wb-auto-14" type="radio" name="wb-fieldflowwb-auto-1wb-auto-13" value="Personal" data-wb-fieldflow="{&quot;bind&quot;:&quot;wb-auto-6&quot;,&quot;actions&quot;:[{&quot;action&quot;:&quot;redir&quot;,&quot;url&quot;:&quot;find-contact-personal.html&quot;}]}" required="required"> Personal
@@ -212,12 +270,12 @@
   <div class="radio"><label for="wb-auto-20"><input id="wb-auto-20" type="radio" name="wb-fieldflowwb-auto-1wb-auto-13" value="Contact the Commissioner" s="" office'="" data-wb-fieldflow="{&quot;bind&quot;:&quot;wb-auto-12&quot;,&quot;actions&quot;:[{&quot;action&quot;:&quot;redir&quot;,&quot;url&quot;:&quot;../contact-us.html#commissioner&quot;}]}" required="required"> Contact the Commissioner's Office
   </label>
   </div>
-</fieldset>
+</fieldset> -->
 
   <div class="mrgn-tp-lg">
     <legend class="h5 ">Which of these are you calling for?</legend>
     <div class="clearfix"></div>
-<div class="cst-inputs checkbox-container">
+<div class="cst-inputs">
   <ul class="list-unstyled">
   <li class="checkbox">
    <label for="defaultCheck1"><input id="defaultCheck1" type="checkbox" value="opt1">Option 1</label>
